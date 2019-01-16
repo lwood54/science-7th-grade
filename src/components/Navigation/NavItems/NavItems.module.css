@@ -1,3 +1,7 @@
-.NavItems {
-  background-color: blue;
+.NavBar {
+  background-color: orange;
+}
+
+.IconButton {
+  width: 50px;
 }

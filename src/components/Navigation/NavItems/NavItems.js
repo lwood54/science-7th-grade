@@ -1,9 +1,22 @@
 import React, { Component } from "react";
-import classes from "./NavItems.module.css";
+import AppBar from "@material-ui/core/AppBar";
+import cls from "./NavItems.module.css";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
 
 class NavItems extends Component {
   render() {
-    return <h1 className={classes.NavItems}>Nav Item 1</h1>;
+    return (
+      <AppBar position="fixed" color="primary" className={cls.NavBar}>
+        <IconButton
+          className={cls.IconButton}
+          color="inherit"
+          aria-label="Menu"
+        >
+          <MenuIcon onClick={() => alert("hello")} />
+        </IconButton>
+      </AppBar>
+    );
   }
 }
 
