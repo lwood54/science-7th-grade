@@ -1,9 +1,13 @@
 .MenuItems {
-    width: 150px;
+  width: 150px;
+  padding: 0;
+  background-color: purple;
+}
+
+ul {
+  padding: 0;
 }
 
 .Button {
-    width: 100%;
-    color: purple;
-    background-color: rgb(92, 196, 51);
+  width: 100%;
 }
