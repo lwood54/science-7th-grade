@@ -1,9 +1,12 @@
 import React from 'react';
-
-import cls from '../ContentPages.module.css';
+import ContentBase from '../ContentBase/ContentBase';
 
 const homePage = () => {
-    return <h1 className={cls.PageTitle}>Home Page</h1>;
+    return (
+        <div>
+            <ContentBase pageTitle={'Home Page'} />
+        </div>
+    );
 };
 
 export default homePage;
