@@ -1,7 +1,8 @@
 .NavBar {
-  background-color: orange;
+    display: flex;
+    text-align: center;
 }
 
 .IconButton {
-  width: 50px;
+    width: 50px;
 }
