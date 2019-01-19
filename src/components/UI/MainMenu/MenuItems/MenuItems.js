@@ -23,9 +23,12 @@ const menuItems = props => {
     const { classes } = props;
     const items = pageList.map(unit => {
         return (
-            <Link to={unit.pageAddress} className={cls.Link}>
+            <Link
+                to={unit.pageAddress}
+                className={cls.Link}
+                key={unit.unitName} // REMINDER: key goes on the outside most element in array rendering
+            >
                 <Button
-                    key={unit.unitName}
                     // can join multiple classes in an array and convert to string
                     className={[
                         cls.Button,

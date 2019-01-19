@@ -22,7 +22,7 @@ const NavItems = props => {
                     <MenuIcon />
                 </IconButton>
                 <h3 style={{ width: '100%', margin: 'auto' }}>
-                    7th Grade Science
+                    Mr. Wood's Science Class
                 </h3>
             </Toolbar>
         </AppBar>

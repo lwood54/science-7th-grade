@@ -3,3 +3,9 @@
     width: 100%;
     text-align: center;
 }
+
+.ExternalLink {
+    text-decoration: none;
+    color: blue;
+    display: inline-block;
+}
