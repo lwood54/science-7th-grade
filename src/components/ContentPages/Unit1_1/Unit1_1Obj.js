@@ -21,14 +21,14 @@ const unit1_1Obj = {
     ],
     TEKS: [
         {
-            teksNum: TEKS[0].teksNum,
-            teksContent: TEKS[0].teksContent,
-            ssLink: TEKS[0].ssLink
+            teksNum: TEKS[18].teksNum,
+            teksContent: TEKS[18].teksContent,
+            ssLink: TEKS[18].ssLink
         },
         {
-            teksNum: TEKS[1].teksNum,
-            teksContent: TEKS[1].teksContent,
-            ssLink: TEKS[1].ssLink
+            teksNum: TEKS[20].teksNum,
+            teksContent: TEKS[20].teksContent,
+            ssLink: TEKS[20].ssLink
         }
     ],
     summary:

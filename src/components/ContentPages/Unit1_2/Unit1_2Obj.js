@@ -20,6 +20,11 @@ const unit1_2Obj = {
     ],
     TEKS: [
         {
+            teksNum: TEKS[0].teksNum,
+            teksContent: TEKS[0].teksContent,
+            ssLink: TEKS[0].ssLink
+        },
+        {
             teksNum: TEKS[2].teksNum,
             teksContent: TEKS[2].teksContent,
             ssLink: TEKS[2].ssLink
@@ -35,14 +40,9 @@ const unit1_2Obj = {
             ssLink: TEKS[4].ssLink
         },
         {
-            teksNum: TEKS[5].teksNum,
-            teksContent: TEKS[5].teksContent,
-            ssLink: TEKS[5].ssLink
-        },
-        {
-            teksNum: TEKS[6].teksNum,
-            teksContent: TEKS[6].teksContent,
-            ssLink: TEKS[6].ssLink
+            teksNum: TEKS[21].teksNum,
+            teksContent: TEKS[21].teksContent,
+            ssLink: TEKS[21].ssLink
         }
     ],
     summary:
@@ -58,5 +58,5 @@ const unit1_2Obj = {
         }
     ]
 };
-
+console.log(TEKS);
 export default unit1_2Obj;
