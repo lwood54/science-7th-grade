@@ -58,5 +58,4 @@ const unit1_2Obj = {
         }
     ]
 };
-console.log(TEKS);
 export default unit1_2Obj;
