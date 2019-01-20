@@ -16,7 +16,7 @@ import ListItem from '@material-ui/core/ListItem';
 import Menu from '@material-ui/core/Menu';
 import { Link } from 'react-router-dom';
 
-import contentBaseClasses from './ContentBase.module.css';
+import contentCardTemplateClasses from './ContentCardTemplate.module.css';
 
 const styles = theme => ({
     card: {
@@ -77,7 +77,7 @@ export class ContentBase extends Component {
                     <a
                         href={item[k]}
                         key={k}
-                        className={contentBaseClasses.Link}
+                        className={contentCardTemplateClasses.Link}
                     >
                         {k}
                     </a>
@@ -86,7 +86,7 @@ export class ContentBase extends Component {
                 return (
                     <Link
                         to={item[k]}
-                        className={contentBaseClasses.Link}
+                        className={contentCardTemplateClasses.Link}
                         key={k}
                     >
                         {k}
@@ -103,7 +103,7 @@ export class ContentBase extends Component {
                     <a
                         href={item.ssLink}
                         target="blank"
-                        className={contentBaseClasses.ExternalLink}
+                        className={contentCardTemplateClasses.ExternalLink}
                     >
                         {item.teksContent}
                     </a>
@@ -115,7 +115,7 @@ export class ContentBase extends Component {
         });
         return (
             <React.Fragment>
-                <Card className={contentBaseClasses.BaseGap}>
+                <Card className={contentCardTemplateClasses.BaseGap}>
                     <CardHeader
                         action={
                             // allows placement of content in header
@@ -125,7 +125,9 @@ export class ContentBase extends Component {
                                     anchorEl={this.state.anchorEl}
                                     open={this.state.expandedVertMenu}
                                     onClose={this.vertMenuHandler}
-                                    className={contentBaseClasses.VertMenu}
+                                    className={
+                                        contentCardTemplateClasses.VertMenu
+                                    }
                                 >
                                     {menuItems}
                                 </Menu>
