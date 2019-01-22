@@ -28,12 +28,11 @@ const unit2_1Obj = {
     summary:
         'In this unit we will observe and analyze the differences between plant and animal cells.',
     vertMenuItems: [
-        { Home: '/' },
-        { 'Unit Main Page': '/unit2_1' },
-        { Game: '/unit2_1/dig_rev_2_1' },
-        { 'Mini Quiz': '/unit2_1/mini_quiz_2_1' }, // double check about using history, like history.match + min
+        { home: '/' },
+        { unitMain: '/unit2_1' },
+        { game: '/unit2_1/game2_1' },
         {
-            'Quizlet Card Set':
+            quizletLink:
                 'https://quizlet.com/323414709/18-19-unit-21-organelles-plant-and-animal-cells-flash-cards/'
         }
     ]

@@ -50,8 +50,7 @@ const unit1_2Obj = {
     vertMenuItems: [
         { Home: '/' },
         { 'Unit Main Page': '/unit1_2' },
-        { Game: '/unit1_2/dig_rev_1_2' },
-        { 'Mini Quiz': '/unit1_2/mini_quiz_1_2' },
+        { Game: '/unit1_2/game1_2' },
         {
             'Quizlet Card Set':
                 'https://quizlet.com/317790663/18-19-unit-12-energy-in-living-systems-flash-cards/'

@@ -22,13 +22,19 @@ const NavItems = props => {
                 >
                     <MenuIcon />
                 </IconButton>
-                <div style={{ width: '100%', margin: 'auto' }}>
-                    {props.title}
+                <h3 className={cls.Title}>{props.title}</h3>
+                <div className={cls.LinkContainer}>
+                    {props.gameLink ? (
+                        <Link to={props.gameLink} className={cls.Link}>
+                            Game
+                        </Link>
+                    ) : null}
+                    {props.quizletLink ? (
+                        <a href={props.quizletLink} className={cls.Link}>
+                            Quizlet
+                        </a>
+                    ) : null}
                 </div>
-                {props.gameLink ? <Link to={props.gameLink}>Game</Link> : null}
-                {props.quizletLink ? (
-                    <a href={props.quizletLink}>Quizlet</a>
-                ) : null}
             </Toolbar>
         </AppBar>
     );

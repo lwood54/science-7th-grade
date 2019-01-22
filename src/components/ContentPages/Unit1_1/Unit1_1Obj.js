@@ -1,7 +1,7 @@
 import TEKS from '../TEKS';
 
 const unit1_1Obj = {
-    title: 'This is Unit 1.1',
+    title: 'Unit 1.1',
     subtitle: 'Cell Theory and Levels of Organization',
     pageExtension: '/unit1_1',
     imageLocation: '/static/images/cards/dividing_cells.jpg',
@@ -34,12 +34,11 @@ const unit1_1Obj = {
     summary:
         'In this unit we will cover the 3 main parts of cell theory and observe the levels of organization that make up cells in living things.',
     vertMenuItems: [
-        { Home: '/' },
-        { 'Unit Main Page': '/unit1_1' },
-        { Game: '/unit1_1/game1_1' },
-        { 'Mini Quiz': '/unit1_1/mini_quiz_1_1' }, // double check about using history, like history.match + min
+        { home: '/' },
+        { unitMain: '/unit1_1' },
+        { game: '/unit1_1/game1_1' },
         {
-            'Quizlet Card Set':
+            quizletLink:
                 'https://quizlet.com/323414709/18-19-unit-21-organelles-plant-and-animal-cells-flash-cards/'
         }
     ]
