@@ -45,7 +45,7 @@ const unit3_1Obj = {
     vertMenuItems: [
         { Home: '/' },
         { 'Unit Main Page': '/unit3_1' },
-        { 'Digital Review': '/unit3_1/dig_rev_3_1' },
+        { Game: '/unit3_1/dig_rev_3_1' },
         { 'Mini Quiz': '/unit3_1/mini_quiz_3_1' },
         {
             'Quizlet Card Set':

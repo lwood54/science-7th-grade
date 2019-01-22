@@ -30,7 +30,7 @@ const unit2_1Obj = {
     vertMenuItems: [
         { Home: '/' },
         { 'Unit Main Page': '/unit2_1' },
-        { 'Digital Review': '/unit2_1/dig_rev_2_1' },
+        { Game: '/unit2_1/dig_rev_2_1' },
         { 'Mini Quiz': '/unit2_1/mini_quiz_2_1' }, // double check about using history, like history.match + min
         {
             'Quizlet Card Set':

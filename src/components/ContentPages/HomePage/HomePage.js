@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import ContentCardTemplate from '../ContentCardTemplate/ContentCardTemplate';
+import NavigationBar from '../../Navigation/NavigationBar/NavigationBar';
 
 import Unit1_1Obj from '../Unit1_1/Unit1_1Obj';
 import Unit1_2Obj from '../Unit1_2/Unit1_2Obj';
@@ -18,6 +19,11 @@ class HomePage extends Component {
     render() {
         return (
             <div>
+                <NavigationBar
+                    title="Mr. Wood's Science Page"
+                    gameLink={null}
+                    quizletLink={null}
+                />
                 {/* DESTRUCTURE object created for page content */}
                 <ContentCardTemplate {...Unit1_1Obj} />
                 <ContentCardTemplate {...Unit1_2Obj} />

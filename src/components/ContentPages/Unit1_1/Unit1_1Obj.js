@@ -1,7 +1,7 @@
 import TEKS from '../TEKS';
 
 const unit1_1Obj = {
-    title: 'Unit 1.1',
+    title: 'This is Unit 1.1',
     subtitle: 'Cell Theory and Levels of Organization',
     pageExtension: '/unit1_1',
     imageLocation: '/static/images/cards/dividing_cells.jpg',
@@ -36,7 +36,7 @@ const unit1_1Obj = {
     vertMenuItems: [
         { Home: '/' },
         { 'Unit Main Page': '/unit1_1' },
-        { 'Digital Review': '/unit1_1/dig_rev_1_1' },
+        { Game: '/unit1_1/game1_1' },
         { 'Mini Quiz': '/unit1_1/mini_quiz_1_1' }, // double check about using history, like history.match + min
         {
             'Quizlet Card Set':

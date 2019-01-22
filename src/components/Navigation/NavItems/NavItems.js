@@ -4,6 +4,7 @@ import cls from './NavItems.module.css';
 import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
 
 // NavItems contains the AppBar which is the parent to
 // the IconButton, which when clicked calls the 'menuClicked' function being passed
@@ -21,9 +22,13 @@ const NavItems = props => {
                 >
                     <MenuIcon />
                 </IconButton>
-                <h3 style={{ width: '100%', margin: 'auto' }}>
-                    Mr. Wood's Science Class
-                </h3>
+                <div style={{ width: '100%', margin: 'auto' }}>
+                    {props.title}
+                </div>
+                {props.gameLink ? <Link to={props.gameLink}>Game</Link> : null}
+                {props.quizletLink ? (
+                    <a href={props.quizletLink}>Quizlet</a>
+                ) : null}
             </Toolbar>
         </AppBar>
     );
