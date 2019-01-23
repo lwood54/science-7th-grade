@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
+import cls from './Layout.module.css';
+
 class Layout extends Component {
     render() {
         return (
             <div>
-                <div style={{ marginTop: '70px' }} {...this.props}>
+                <div className={cls.CardContainer} {...this.props}>
                     {this.props.children}
                 </div>
             </div>

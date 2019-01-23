@@ -42,7 +42,6 @@ class App extends Component {
                         this will send the wrapped components AS props? or will send
                         the props.children?
                     */}
-
                     <Switch>
                         <Route path="/unit1_1" component={UnitOneOne} />
                         <Route path="/unit1_2" component={UnitOneTwo} />

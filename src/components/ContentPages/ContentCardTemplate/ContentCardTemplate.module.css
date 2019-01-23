@@ -10,7 +10,7 @@
     display: inline-block;
 }
 
-.BaseGap {
+.Card {
     margin-bottom: 20px;
 }
 
@@ -37,4 +37,23 @@
 .Link:hover {
     background-color: #29b6f6;
     color: #b4ffff;
+}
+
+.PopUp {
+    width: 100%;
+}
+
+.AddMenu:focus {
+    outline-style: none;
+}
+
+@media (min-width: 800px) {
+    .Card {
+        width: 45%;
+        display: inline-block;
+        margin: 2.5%;
+    }
+
+    .ExpandedLock {
+    }
 }
