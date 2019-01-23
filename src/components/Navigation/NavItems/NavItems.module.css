@@ -1,28 +1,40 @@
 .NavBar {
-    display: flex;
-    text-align: center;
+  display: flex;
+  text-align: center;
 }
 
 .IconButton {
-    width: 50px;
+  width: 50px;
 }
 
 .Title {
-    width: 80%;
+  width: 80%;
 }
 
 .LinkContainer {
-    display: flex;
+  display: flex;
 }
 
-.Link {
-    text-decoration: none;
-    outline: none;
-    text-transform: uppercase;
+.Link,
+.Home {
+  text-decoration: none;
+  outline: none;
+  text-transform: uppercase;
+  display: inline-block;
+  color: inherit;
+  width: 100%;
+  margin: auto;
+  padding: 12px;
+  text-align: center;
+}
+
+.Home {
+  display: none;
+}
+
+@media (min-width: 450px) {
+  /* In addition, home needs to disappear when the screen is smaller than 450px*/
+  .Home {
     display: inline-block;
-    color: inherit;
-    width: 100%;
-    margin: auto;
-    padding: 12px;
-    text-align: center;
+  }
 }
