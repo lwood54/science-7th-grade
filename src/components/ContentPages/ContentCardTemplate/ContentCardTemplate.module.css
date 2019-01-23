@@ -16,9 +16,10 @@
 
 .VertMenu {
     display: flex;
-    width: 300px;
+    width: 90%;
     padding: 20px;
     margin: auto;
+    /* margin-block-start: 3em; */
 }
 
 .Link {
