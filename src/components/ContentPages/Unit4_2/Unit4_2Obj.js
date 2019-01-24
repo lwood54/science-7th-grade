@@ -24,22 +24,23 @@ const unit4_2Obj = {
     TEKS: [
         {
             teksNum: TEKS[12].teksNum,
+            teksLabel: TEKS[12].teksLabel,
             teksContent: TEKS[12].teksContent,
-            ssLink: TEKS[12].ssLink
+            teksQuiz: TEKS[12].teksQuiz
         },
         {
             teksNum: TEKS[5].teksNum,
+            teksLabel: TEKS[5].teksLabel,
             teksContent: TEKS[5].teksContent,
-            ssLink: TEKS[5].ssLink
+            teksQuiz: TEKS[5].teksQuiz
         }
     ],
     summary:
         'In this unit, we look at how catastrophic events affect ecosystems. We will also observe and analyze the process that ecosystems go through to reach homeostasis.',
     vertMenuItems: [
         { Home: '/' },
-        { 'Unit Main Page': '/unit4_2' },
-        { Game: '/unit4_2/dig_rev_4_2' },
-        { 'Mini Quiz': '/unit4_2/mini_quiz_4_2' },
+        { 'Unit Page': '/unit4_2' },
+        { Game: '/unit4_2/game4_2' },
         {
             'Quizlet Card Set':
                 'https://quizlet.com/267717343/unit-43-review-ecological-succession-and-catastrophic-events-flash-cards/'

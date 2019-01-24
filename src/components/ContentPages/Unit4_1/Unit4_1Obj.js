@@ -22,32 +22,35 @@ const unit4_1Obj = {
     TEKS: [
         {
             teksNum: TEKS[13].teksNum,
+            teksLabel: TEKS[13].teksLabel,
             teksContent: TEKS[13].teksContent,
-            ssLink: TEKS[13].ssLink
+            teksQuiz: TEKS[13].teksQuiz
         },
         {
             teksNum: TEKS[14].teksNum,
+            teksLabel: TEKS[14].teksLabel,
             teksContent: TEKS[14].teksContent,
-            ssLink: TEKS[14].ssLink
+            teksQuiz: TEKS[14].teksQuiz
         },
         {
             teksNum: TEKS[15].teksNum,
+            teksLabel: TEKS[15].teksLabel,
             teksContent: TEKS[15].teksContent,
-            ssLink: TEKS[15].ssLink
+            teksQuiz: TEKS[15].teksQuiz
         },
         {
             teksNum: TEKS[16].teksNum,
+            teksLabel: TEKS[16].teksLabel,
             teksContent: TEKS[16].teksContent,
-            ssLink: TEKS[16].ssLink
+            teksQuiz: TEKS[16].teksQuiz
         }
     ],
     summary:
         'In this unit, we learn how to use dichotomous keys. We also observe and understand the factors that influence natural selection.',
     vertMenuItems: [
         { Home: '/' },
-        { 'Unit Main Page': '/unit4_1' },
-        { Game: '/unit4_1/dig_rev_4_1' },
-        { 'Mini Quiz': '/unit4_1/mini_quiz_4_1' },
+        { 'Unit Page': '/unit4_1' },
+        { Game: '/unit4_1/game4_1' },
         {
             'Quizlet Card Set':
                 'https://quizlet.com/260458413/natural-selection-selective-breeding-and-adaptations-unit-41-flash-cards/'

@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Layout from './hoc/Layout/Layout';
-import PageList from './components/ContentPages/PageList/PageList';
+// import PageList from './components/ContentPages/PageList/PageList';
 import HomePage from './components/ContentPages/HomePage/HomePage';
 // JSX Rendering requires pascal case...which apparently doesn't allow for Unit1_2, etc.
 import UnitOneOne from './components/ContentPages/Unit1_1/Unit1_1';
+import GameOneOne from './components/ContentPages/Unit1_1/Game1_1/Game1_1';
 import UnitOneTwo from './components/ContentPages/Unit1_2/Unit1_2';
 import UnitTwoOne from './components/ContentPages/Unit2_1/Unit2_1';
 import UnitTwoTwo from './components/ContentPages/Unit2_2/Unit2_2';
@@ -26,7 +27,7 @@ import UnitSixTwo from './components/ContentPages/Unit6_2/Unit6_2';
 
 // ALSO...can I create an array of page objects.
 
-const pageListArray = PageList();
+// const pageListArray = PageList();
 
 class App extends Component {
     render() {
@@ -43,7 +44,8 @@ class App extends Component {
                         the props.children?
                     */}
                     <Switch>
-                        <Route path="/unit1_1" component={UnitOneOne} />
+                        <Route path="/unit1_1" exact component={UnitOneOne} />
+                        <Route path="/unit1_1/game1_1" component={GameOneOne} />
                         <Route path="/unit1_2" component={UnitOneTwo} />
                         <Route path="/unit2_1" component={UnitTwoOne} />
                         <Route path="/unit2_2" component={UnitTwoTwo} />
@@ -54,10 +56,7 @@ class App extends Component {
                         <Route path="/unit5_2" component={UnitFiveTwo} />
                         <Route path="/unit6_1" component={UnitSixOne} />
                         <Route path="/unit6_2" component={UnitSixTwo} />
-                        <Route
-                            path={pageListArray[0].pageAddress}
-                            component={HomePage}
-                        />
+                        <Route path="/" component={HomePage} />
                     </Switch>
                 </Layout>
             </div>

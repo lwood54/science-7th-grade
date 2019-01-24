@@ -1,7 +1,7 @@
 import TEKS from '../TEKS';
 
 const unit5_1Obj = {
-    title: 'Unit 5.2',
+    title: 'Unit 5.1',
     subtitle: 'Biomes and Biodiversity',
     pageExtension: '/unit5_1',
     imageLocation: '/static/images/cards/rainforest.jpeg',
@@ -19,22 +19,23 @@ const unit5_1Obj = {
     TEKS: [
         {
             teksNum: TEKS[10].teksNum,
+            teksLabel: TEKS[10].teksLabel,
             teksContent: TEKS[10].teksContent,
-            ssLink: TEKS[10].ssLink
+            teksQuiz: TEKS[10].teksQuiz
         },
         {
             teksNum: TEKS[11].teksNum,
+            teksLabel: TEKS[11].teksLabel,
             teksContent: TEKS[11].teksContent,
-            ssLink: TEKS[11].ssLink
+            teksQuiz: TEKS[11].teksQuiz
         }
     ],
     summary:
         'In this unit, we look at a range of environments from microhabitats to biomes and how biodiversity contributes to their sustainability.',
     vertMenuItems: [
         { Home: '/' },
-        { 'Unit Main Page': '/unit5_1' },
-        { Game: '/unit5_1/dig_rev_5_1' },
-        { 'Mini Quiz': '/unit5_1/mini_quiz_5_1' },
+        { 'Unit Page': '/unit5_1' },
+        { Game: '/unit5_1/game5_1' },
         {
             'Quizlet Card Set':
                 'https://quizlet.com/275509969/unit-51-biomes-microhabitats-and-biodiversity-flash-cards/'

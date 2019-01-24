@@ -26,27 +26,29 @@ const unit3_1Obj = {
     TEKS: [
         {
             teksNum: TEKS[23].teksNum,
+            teksLabel: TEKS[23].teksLabel,
             teksContent: TEKS[23].teksContent,
-            ssLink: TEKS[23].ssLink
+            teksQuiz: TEKS[23].teksQuiz
         },
         {
             teksNum: TEKS[24].teksNum,
+            teksLabel: TEKS[24].teksLabel,
             teksContent: TEKS[24].teksContent,
-            ssLink: TEKS[24].ssLink
+            teksQuiz: TEKS[24].teksQuiz
         },
         {
             teksNum: TEKS[25].teksNum,
+            teksLabel: TEKS[25].teksLabel,
             teksContent: TEKS[25].teksContent,
-            ssLink: TEKS[25].ssLink
+            teksQuiz: TEKS[25].teksQuiz
         }
     ],
     summary:
         'In this unit, we look at reproduction at the cellular level and understand how traits are passed to following generations.',
     vertMenuItems: [
         { Home: '/' },
-        { 'Unit Main Page': '/unit3_1' },
-        { Game: '/unit3_1/dig_rev_3_1' },
-        { 'Mini Quiz': '/unit3_1/mini_quiz_3_1' },
+        { 'Unit Page': '/unit3_1' },
+        { Game: '/unit3_1/game3_1' },
         {
             'Quizlet Card Set':
                 'https://quizlet.com/248404046/unit-31-genetics-and-reproduction-flash-cards/'

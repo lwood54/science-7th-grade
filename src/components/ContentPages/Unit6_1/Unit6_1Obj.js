@@ -21,22 +21,23 @@ const unit6_1Obj = {
     TEKS: [
         {
             teksNum: TEKS[6].teksNum,
+            teksLabel: TEKS[6].teksLabel,
             teksContent: TEKS[6].teksContent,
-            ssLink: TEKS[6].ssLink
+            teksQuiz: TEKS[6].teksQuiz
         },
         {
             teksNum: TEKS[7].teksNum,
+            teksLabel: TEKS[7].teksLabel,
             teksContent: TEKS[7].teksContent,
-            ssLink: TEKS[7].ssLink
+            teksQuiz: TEKS[7].teksQuiz
         }
     ],
     summary:
         'In this unit, we look how weathering, erosion, and deposition affect an ecosystem. We will also look at the human impact on ground water and watersheds.',
     vertMenuItems: [
         { Home: '/' },
-        { 'Unit Main Page': '/unit6_1' },
-        { Game: '/unit6_1/dig_rev_6_1' },
-        { 'Mini Quiz': '/unit6_1/mini_quiz_6_1' },
+        { 'Unit Page': '/unit6_1' },
+        { Game: '/unit6_1/game6_1' },
         {
             'Quizlet Card Set':
                 'https://quizlet.com/287611603/unit-61-weathering-erosion-deposition-and-watersheds-flash-cards/'

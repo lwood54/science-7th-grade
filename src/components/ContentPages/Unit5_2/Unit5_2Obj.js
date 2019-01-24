@@ -22,17 +22,17 @@ const unit5_2Obj = {
     TEKS: [
         {
             teksNum: TEKS[1].teksNum,
+            teksLabel: TEKS[1].teksLabel,
             teksContent: TEKS[1].teksContent,
-            ssLink: TEKS[1].ssLink
+            teksQuiz: TEKS[1].teksQuiz
         }
     ],
     summary:
         'In this unit, we look at the relationshiop between organisms that live together in an ecosystem and how energy is passed between them.',
     vertMenuItems: [
         { Home: '/' },
-        { 'Unit Main Page': '/unit5_2' },
-        { Game: '/unit5_2/dig_rev_5_2' },
-        { 'Mini Quiz': '/unit5_2/mini_quiz_5_2' },
+        { 'Unit Page': '/unit5_2' },
+        { Game: '/unit5_2/game5_2' },
         {
             'Quizlet Card Set':
                 'https://quizlet.com/280032865/unit-53-ecology-and-energy-transfer-flash-cards/'

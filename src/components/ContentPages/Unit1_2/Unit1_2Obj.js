@@ -21,35 +21,40 @@ const unit1_2Obj = {
     TEKS: [
         {
             teksNum: TEKS[0].teksNum,
+            teksLabel: TEKS[0].teksLabel,
             teksContent: TEKS[0].teksContent,
-            ssLink: TEKS[0].ssLink
+            teksQuiz: TEKS[0].teksQuiz
         },
         {
             teksNum: TEKS[2].teksNum,
+            teksLabel: TEKS[2].teksLabel,
             teksContent: TEKS[2].teksContent,
-            ssLink: TEKS[2].ssLink
+            teksQuiz: TEKS[2].teksQuiz
         },
         {
             teksNum: TEKS[3].teksNum,
+            teksLabel: TEKS[3].teksLabel,
             teksContent: TEKS[3].teksContent,
-            ssLink: TEKS[3].ssLink
+            teksQuiz: TEKS[3].teksQuiz
         },
         {
             teksNum: TEKS[4].teksNum,
+            teksLabel: TEKS[4].teksLabel,
             teksContent: TEKS[4].teksContent,
-            ssLink: TEKS[4].ssLink
+            teksQuiz: TEKS[4].teksQuiz
         },
         {
             teksNum: TEKS[21].teksNum,
+            teksLabel: TEKS[21].teksLabel,
             teksContent: TEKS[21].teksContent,
-            ssLink: TEKS[21].ssLink
+            teksQuiz: TEKS[21].teksQuiz
         }
     ],
     summary:
         'In this unit, we look at how and why energy transformations take place within living systems.',
     vertMenuItems: [
         { Home: '/' },
-        { 'Unit Main Page': '/unit1_2' },
+        { 'Unit Page': '/unit1_2' },
         { Game: '/unit1_2/game1_2' },
         {
             'Quizlet Card Set':
