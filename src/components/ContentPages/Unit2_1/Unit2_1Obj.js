@@ -33,7 +33,7 @@ const unit2_1Obj = {
         { 'Unit Page': '/unit2_1' },
         { Game: '/unit2_1/game2_1' },
         {
-            quizletLink:
+            Quizlet:
                 'https://quizlet.com/323414709/18-19-unit-21-organelles-plant-and-animal-cells-flash-cards/'
         }
     ]

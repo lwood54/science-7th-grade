@@ -139,7 +139,14 @@ export class ContentBase extends Component {
                                 </Menu>
                             </IconButton>
                         }
-                        title={this.props.title}
+                        title={
+                            <Link
+                                to={this.props.pageExtension}
+                                className={contentCardTemplateClasses.PageLink}
+                            >
+                                {this.props.title}
+                            </Link>
+                        }
                         subheader={this.props.subtitle}
                     />
                     <CardMedia

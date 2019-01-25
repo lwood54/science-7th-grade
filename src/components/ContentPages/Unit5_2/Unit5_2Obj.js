@@ -34,7 +34,7 @@ const unit5_2Obj = {
         { 'Unit Page': '/unit5_2' },
         { Game: '/unit5_2/game5_2' },
         {
-            'Quizlet Card Set':
+            Quizlet:
                 'https://quizlet.com/280032865/unit-53-ecology-and-energy-transfer-flash-cards/'
         }
     ]

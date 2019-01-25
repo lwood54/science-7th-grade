@@ -37,7 +37,7 @@ const unit5_1Obj = {
         { 'Unit Page': '/unit5_1' },
         { Game: '/unit5_1/game5_1' },
         {
-            'Quizlet Card Set':
+            Quizlet:
                 'https://quizlet.com/275509969/unit-51-biomes-microhabitats-and-biodiversity-flash-cards/'
         }
     ]

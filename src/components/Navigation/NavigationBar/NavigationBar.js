@@ -24,6 +24,7 @@ export class NavigationBar extends Component {
                     gameLink={this.props.gameLink}
                     quizletLink={this.props.quizletLink}
                     homeLink={this.props.homeLink}
+                    unitMain={this.props.unitMain}
                 />
                 <MainMenu
                     openedMenu={this.state.menuIsOpen}

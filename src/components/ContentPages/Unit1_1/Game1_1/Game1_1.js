@@ -11,23 +11,28 @@ const game1_1 = props => {
             return item['Quizlet'];
         })
         .join('');
-    const gameLink = Unit1_1Obj.vertMenuItems
-        .map(item => {
-            return item['Game'];
-        })
-        .join('');
+    // const gameLink = Unit1_1Obj.vertMenuItems
+    //     .map(item => {
+    //         return item['Game'];
+    //     })
+    //     .join('');
     const homeLink = Unit1_1Obj.vertMenuItems
         .map(item => {
             return item['Home'];
+        })
+        .join('');
+    const unitMain = Unit1_1Obj.vertMenuItems
+        .map(item => {
+            return item['Unit Page'];
         })
         .join('');
     return (
         <React.Fragment>
             <NavigationBar
                 title={Unit1_1Obj.title}
-                gameLink={gameLink}
                 quizletLink={quizletLink}
                 homeLink={homeLink}
+                unitMain={unitMain}
             />
             <h1 className={cls.Title}>Game 1.1 Page</h1>
         </React.Fragment>

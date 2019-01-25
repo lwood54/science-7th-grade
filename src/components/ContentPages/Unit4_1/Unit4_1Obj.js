@@ -52,7 +52,7 @@ const unit4_1Obj = {
         { 'Unit Page': '/unit4_1' },
         { Game: '/unit4_1/game4_1' },
         {
-            'Quizlet Card Set':
+            Quizlet:
                 'https://quizlet.com/260458413/natural-selection-selective-breeding-and-adaptations-unit-41-flash-cards/'
         }
     ]

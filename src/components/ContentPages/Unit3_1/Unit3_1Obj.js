@@ -50,7 +50,7 @@ const unit3_1Obj = {
         { 'Unit Page': '/unit3_1' },
         { Game: '/unit3_1/game3_1' },
         {
-            'Quizlet Card Set':
+            Quizlet:
                 'https://quizlet.com/248404046/unit-31-genetics-and-reproduction-flash-cards/'
         }
     ]

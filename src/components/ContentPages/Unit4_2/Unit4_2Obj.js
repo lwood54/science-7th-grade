@@ -42,7 +42,7 @@ const unit4_2Obj = {
         { 'Unit Page': '/unit4_2' },
         { Game: '/unit4_2/game4_2' },
         {
-            'Quizlet Card Set':
+            Quizlet:
                 'https://quizlet.com/267717343/unit-43-review-ecological-succession-and-catastrophic-events-flash-cards/'
         }
     ]

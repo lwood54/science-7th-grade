@@ -31,7 +31,7 @@ const unit2_2Obj = {
         { 'Unit Page': '/unit2_2' },
         { Game: '/unit2_2/game2_2' },
         {
-            'Quizlet Card Set':
+            Quizlet:
                 'https://quizlet.com/330016195/18-19-unit-22-body-systems-flash-cards/'
         }
     ]

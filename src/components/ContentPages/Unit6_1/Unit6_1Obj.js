@@ -39,7 +39,7 @@ const unit6_1Obj = {
         { 'Unit Page': '/unit6_1' },
         { Game: '/unit6_1/game6_1' },
         {
-            'Quizlet Card Set':
+            Quizlet:
                 'https://quizlet.com/287611603/unit-61-weathering-erosion-deposition-and-watersheds-flash-cards/'
         }
     ]

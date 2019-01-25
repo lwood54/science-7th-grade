@@ -22,7 +22,8 @@
     /* margin-block-start: 3em; */
 }
 
-.Link {
+.Link,
+.PageLink {
     text-decoration: none;
     outline: none;
     text-transform: uppercase;

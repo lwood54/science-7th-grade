@@ -29,6 +29,11 @@ const NavItems = props => {
                             Home
                         </Link>
                     ) : null}
+                    {props.unitMain ? (
+                        <Link to={props.unitMain} className={cls.Link}>
+                            Unit
+                        </Link>
+                    ) : null}
                     {props.gameLink ? (
                         <Link to={props.gameLink} className={cls.Link}>
                             Game
