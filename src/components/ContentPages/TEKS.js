@@ -4,7 +4,17 @@ const teks = [
         teksLabel: 'Photosynthesis',
         teksContent:
             'recognize that radiant energy from the Sun is transformed into chemical energy through the process of photosynthesis',
-        teksQuiz: '/quiz7_5A'
+        teksQuiz: '/quiz7_5A',
+        questions: [
+            {
+                text:
+                    'What is the name of the process that converts sunlight (radiant energy) into chemical energy (glucose)?',
+                wrong1: 'Cellular Respiration',
+                wrong2: 'Osmosis',
+                wrong3: 'Photokinesis',
+                correct: 'Photosynthesis'
+            }
+        ]
     },
     {
         teksNum: '7.5 B',

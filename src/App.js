@@ -27,6 +27,32 @@ import UnitSixOne from './components/ContentPages/Unit6_1/Unit6_1';
 import GameSixOne from './components/ContentPages/Unit6_1/Game6_1/Game6_1';
 import UnitSixTwo from './components/ContentPages/Unit6_2/Unit6_2';
 import GameSixTwo from './components/ContentPages/Unit6_2/Game6_2/Game6_2';
+import Quiz7_5A from './components/ContentPages/Quizzes/Quiz7_5A';
+import Quiz7_5B from './components/ContentPages/Quizzes/Quiz7_5B';
+import Quiz7_6A from './components/ContentPages/Quizzes/Quiz7_6A';
+import Quiz7_7A from './components/ContentPages/Quizzes/Quiz7_7A';
+import Quiz7_7B from './components/ContentPages/Quizzes/Quiz7_7B';
+import Quiz7_8A from './components/ContentPages/Quizzes/Quiz7_8A';
+import Quiz7_8B from './components/ContentPages/Quizzes/Quiz7_8B';
+import Quiz7_8C from './components/ContentPages/Quizzes/Quiz7_8B';
+import Quiz7_9A from './components/ContentPages/Quizzes/Quiz7_9A';
+import Quiz7_9B from './components/ContentPages/Quizzes/Quiz7_9B';
+import Quiz7_10A from './components/ContentPages/Quizzes/Quiz7_10A';
+import Quiz7_10B from './components/ContentPages/Quizzes/Quiz7_10B';
+import Quiz7_10C from './components/ContentPages/Quizzes/Quiz7_10C';
+import Quiz7_11A from './components/ContentPages/Quizzes/Quiz7_11A';
+import Quiz7_11B from './components/ContentPages/Quizzes/Quiz7_11B';
+import Quiz7_11C from './components/ContentPages/Quizzes/Quiz7_11C';
+import Quiz7_12A from './components/ContentPages/Quizzes/Quiz7_12A';
+import Quiz7_12B from './components/ContentPages/Quizzes/Quiz7_12B';
+import Quiz7_12C from './components/ContentPages/Quizzes/Quiz7_12C';
+import Quiz7_12D from './components/ContentPages/Quizzes/Quiz7_12D';
+import Quiz7_12F from './components/ContentPages/Quizzes/Quiz7_12F';
+import Quiz7_13A from './components/ContentPages/Quizzes/Quiz7_13A';
+import Quiz7_13B from './components/ContentPages/Quizzes/Quiz7_13B';
+import Quiz7_14A from './components/ContentPages/Quizzes/Quiz7_14A';
+import Quiz7_14B from './components/ContentPages/Quizzes/Quiz7_9A';
+import Quiz7_14C from './components/ContentPages/Quizzes/Quiz7_14C';
 
 // look into code splitting for the page renders. No need
 // to load all pages, only the one being accessed.
@@ -56,6 +82,7 @@ class App extends Component {
                     <Switch>
                         <Route path="/unit1_1" exact component={UnitOneOne} />
                         <Route path="/unit1_1/game1_1" component={GameOneOne} />
+                        <Route path="/quiz7_5A" component={Quiz7_5A} />
                         <Route path="/unit1_2" exact component={UnitOneTwo} />
                         <Route path="/unit1_2/game1_2" component={GameOneTwo} />
                         <Route path="/unit2_1" exact component={UnitTwoOne} />
