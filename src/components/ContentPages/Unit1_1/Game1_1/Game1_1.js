@@ -3,7 +3,7 @@ import React from 'react';
 import Unit1_1Obj from '../Unit1_1Obj';
 import NavigationBar from '../../../Navigation/NavigationBar/NavigationBar';
 
-import cls from './Game1_1.module.css';
+import cls from '../../Game.module.css';
 
 const game1_1 = props => {
     const quizletLink = Unit1_1Obj.vertMenuItems
