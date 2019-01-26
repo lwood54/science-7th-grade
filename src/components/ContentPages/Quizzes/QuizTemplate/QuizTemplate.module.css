@@ -1,0 +1,11 @@
+.Paper,
+.Wrong {
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+}
+
+.Button {
+    width: 75%;
+    margin: auto;
+}

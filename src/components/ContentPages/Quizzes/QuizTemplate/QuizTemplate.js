@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+
+import CorrectScreen from './CorrectScreen';
+import WrongScreen from './WrongScreen';
+import CompleteScreen from './CompleteScreen';
 
 // import cls from './QuizTemplate.module.css';
 
@@ -15,6 +20,15 @@ const styles = theme => ({
         marginTop: '10px',
         width: '98%',
         backgroundColor: 'blue'
+    },
+    Paper: {
+        padding: '15px',
+        margin: 'auto'
+    },
+    Wrong: {
+        padding: '15px',
+        margin: 'auto',
+        backgroundColor: 'red'
     }
 });
 
@@ -56,18 +70,23 @@ export class QuizTemplate extends Component {
             // user is notified that they were wrong
             this.setState({
                 displayQuestionsArray: updatedDisplayQuestions,
-                correctQuestionsArray: updatedCorrectQuestions
+                correctQuestionsArray: updatedCorrectQuestions,
+                answerStatus: 'correct'
             });
         } else {
             // shuffle the question order and keep the question in the question bank
+            updatedDisplayQuestions = this.shuffleArray(
+                updatedDisplayQuestions
+            );
+            this.setState({
+                displayQuestionsArray: updatedDisplayQuestions,
+                answerStatus: 'wrong'
+            });
         }
     };
 
-    answerStatusHandler = () => {
-        // I want to update the screen to say
-        // "Congratulations, that was correct" if it was right
-        // "Sorry, that was wrong" if it was wrong
-        // I can't decide if it should re-render after timeout or on button next press
+    handleNext = () => {
+        this.setState({ answerStatus: 'none' });
     };
 
     render() {
@@ -97,21 +116,32 @@ export class QuizTemplate extends Component {
                 );
             });
         } else {
-            answers = (
-                <h2>
-                    Great job, you've gotten all the practice questions correct!
-                </h2>
-            );
+            answers = <CompleteScreen />;
         }
 
         return (
-            <div>
+            <Paper
+                className={
+                    this.state.answerStatus === 'wrong'
+                        ? '' + classes.Wrong
+                        : '' + classes.Paper
+                }
+            >
                 <h1>{this.props.teksNum}</h1>
-                {this.state.displayQuestionsArray.length > 0 ? (
-                    <h2>{this.state.displayQuestionsArray[0].text}</h2>
-                ) : null}
-                {answers}
-            </div>
+
+                {this.state.answerStatus === 'correct' ? (
+                    <CorrectScreen handleNext={this.handleNext} />
+                ) : this.state.answerStatus === 'wrong' ? (
+                    <WrongScreen handleNext={this.handleNext} />
+                ) : (
+                    <React.Fragment>
+                        {this.state.displayQuestionsArray.length > 0 ? (
+                            <h2>{this.state.displayQuestionsArray[0].text}</h2>
+                        ) : null}
+                        {answers}
+                    </React.Fragment>
+                )}
+            </Paper>
         );
     }
 }

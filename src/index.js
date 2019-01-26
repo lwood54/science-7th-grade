@@ -13,6 +13,7 @@ const theme = createMuiTheme({
     palette: {
         primary: { main: '#009688' },
         secondary: { main: '#03a9f4' },
+        wrong: { main: '#e53935' },
         error: { main: '#e53935' }
     },
     typography: { useNextVariants: true } // useNextVariant allows use of Material-UI v2
