@@ -9,10 +9,35 @@ const teks = [
             {
                 text:
                     'What is the name of the process that converts sunlight (radiant energy) into chemical energy (glucose)?',
-                wrong1: 'Cellular Respiration',
-                wrong2: 'Osmosis',
-                wrong3: 'Photokinesis',
-                correct: 'Photosynthesis'
+                answers: [
+                    { wrong1: 'Cellular Respiration' },
+                    { wrong2: 'Osmosis' },
+                    { wrong3: 'Photokinesis' },
+                    { correct: 'Photosynthesis' }
+                ],
+                image: ''
+            },
+            {
+                text:
+                    'Identify the type of energy conversion taking place during photosynthesis.',
+                answers: [
+                    { wrong1: 'chemical to radiant' },
+                    { wrong2: 'radiant to kinetic' },
+                    { wrong3: 'chemical to kinetic' },
+                    { correct: 'radiant to chemical' }
+                ],
+                image: ''
+            },
+            {
+                text:
+                    'Which of the following is the initial source of energy for most organisms on Earth?',
+                answers: [
+                    { wrong1: 'glucose' },
+                    { wrong2: 'chemical energy' },
+                    { wrong3: 'producers' },
+                    { correct: 'radiant energy' }
+                ],
+                image: ''
             }
         ]
     },

@@ -82,7 +82,6 @@ class App extends Component {
                     <Switch>
                         <Route path="/unit1_1" exact component={UnitOneOne} />
                         <Route path="/unit1_1/game1_1" component={GameOneOne} />
-                        <Route path="/quiz7_5A" component={Quiz7_5A} />
                         <Route path="/unit1_2" exact component={UnitOneTwo} />
                         <Route path="/unit1_2/game1_2" component={GameOneTwo} />
                         <Route path="/unit2_1" exact component={UnitTwoOne} />
@@ -118,6 +117,32 @@ class App extends Component {
                         <Route path="/unit6_1/game6_1" component={GameSixOne} />
                         <Route path="/unit6_2" exact component={UnitSixTwo} />
                         <Route path="/unit6_2/game6_2" component={GameSixTwo} />
+                        <Route path="/quiz7_5A" component={Quiz7_5A} />
+                        <Route path="/quiz7_5B" component={Quiz7_5B} />
+                        <Route path="/quiz7_6A" component={Quiz7_6A} />
+                        <Route path="/quiz7_7A" component={Quiz7_7A} />
+                        <Route path="/quiz7_7B" component={Quiz7_7B} />
+                        <Route path="/quiz7_8A" component={Quiz7_8A} />
+                        <Route path="/quiz7_8B" component={Quiz7_8B} />
+                        <Route path="/quiz7_8C" component={Quiz7_8C} />
+                        <Route path="/quiz7_9A" component={Quiz7_9A} />
+                        <Route path="/quiz7_9B" component={Quiz7_9B} />
+                        <Route path="/quiz7_10A" component={Quiz7_10A} />
+                        <Route path="/quiz7_10B" component={Quiz7_10B} />
+                        <Route path="/quiz7_10C" component={Quiz7_10C} />
+                        <Route path="/quiz7_11A" component={Quiz7_11A} />
+                        <Route path="/quiz7_11B" component={Quiz7_11B} />
+                        <Route path="/quiz7_11C" component={Quiz7_11C} />
+                        <Route path="/quiz7_12A" component={Quiz7_12A} />
+                        <Route path="/quiz7_12B" component={Quiz7_12B} />
+                        <Route path="/quiz7_12C" component={Quiz7_12C} />
+                        <Route path="/quiz7_12D" component={Quiz7_12D} />
+                        <Route path="/quiz7_12F" component={Quiz7_12F} />
+                        <Route path="/quiz7_13A" component={Quiz7_13A} />
+                        <Route path="/quiz7_13B" component={Quiz7_13B} />
+                        <Route path="/quiz7_14A" component={Quiz7_14A} />
+                        <Route path="/quiz7_14B" component={Quiz7_14B} />
+                        <Route path="/quiz7_14C" component={Quiz7_14C} />
                         <Route path="/" component={HomePage} />
                     </Switch>
                 </Layout>
