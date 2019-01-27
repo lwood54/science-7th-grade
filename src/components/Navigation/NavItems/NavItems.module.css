@@ -28,6 +28,13 @@
     text-align: center;
 }
 
+.Link:hover,
+.Home:hover {
+    background-color: rgba(0, 132, 112, 0.6);
+    border-radius: 4px;
+    color: #303836;
+}
+
 .Home {
     display: none;
 }

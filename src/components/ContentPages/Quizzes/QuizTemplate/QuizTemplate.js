@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import CorrectScreen from './CorrectScreen';
 import WrongScreen from './WrongScreen';
 import CompleteScreen from './CompleteScreen';
+import NavigationBar from '../../../Navigation/NavigationBar/NavigationBar';
 
 import cls from './QuizTemplate.module.css';
 
@@ -32,11 +33,13 @@ export class QuizTemplate extends Component {
         numWrong: 0
     };
 
-    clickedAnswerHandler = (v, ev) => {
-        console.log(v);
+    clickedAnswerHandler = v => {
         let updatedDisplayQuestions = [...this.state.displayQuestionsArray];
         let updatedCorrectQuestions = [...this.state.correctQuestionsArray];
+        let updatedNumCorrect = this.state.numCorrect;
+        let updatedNumWrong = this.state.numWrong;
         if (v === 'correct') {
+            updatedNumCorrect += 1;
             // move index 0 question to correctQuestionsArray
             // and remove it from displayQuestionsArray
             updatedCorrectQuestions.push(
@@ -47,16 +50,19 @@ export class QuizTemplate extends Component {
             this.setState({
                 displayQuestionsArray: updatedDisplayQuestions,
                 correctQuestionsArray: updatedCorrectQuestions,
-                answerStatus: 'correct'
+                answerStatus: 'correct',
+                numCorrect: updatedNumCorrect
             });
         } else {
+            updatedNumWrong += 1;
             // shuffle the question order and keep the question in the question bank
             updatedDisplayQuestions = this.shuffleArray(
                 updatedDisplayQuestions
             );
             this.setState({
                 displayQuestionsArray: updatedDisplayQuestions,
-                answerStatus: 'wrong'
+                answerStatus: 'wrong',
+                numWrong: updatedNumWrong
             });
         }
     };
@@ -65,20 +71,34 @@ export class QuizTemplate extends Component {
         this.setState({ answerStatus: 'none' });
     };
 
+    handleReset = () => {
+        this.setState({
+            displayQuestionsArray: this.shuffleArray(this.props.questions),
+            correctQuestionsArray: [],
+            answerStatus: 'none',
+            numCorrect: 0,
+            numWrong: 0
+        });
+    };
+
     render() {
         // set default answer choices
         let answers = null;
         // check to make sure the array is not empty
         if (this.state.displayQuestionsArray.length > 0) {
+            // shuffle a copied array of display questions from first index position
+            // each question object has an array of answer objects like this: {correct status: answer choice}
             let shuffledAnswers = this.shuffleArray([
                 ...this.state.displayQuestionsArray[0].answers
             ]);
+            // set answers = a series of buttons that display the value of key:value
             answers = shuffledAnswers.map(answer => {
+                // Object.keys creats an array of keys from the object, there is only
+                // one key in these objects. This sets v = to value for that key:value pair
                 let v = Object.keys(answer)[0];
                 return (
-                    <div className={cls.AnswerButtonContainer}>
+                    <div className={cls.AnswerButtonContainer} key={v}>
                         <Button
-                            key={v}
                             color="primary"
                             variant="contained"
                             className={cls.AnswerButton}
@@ -90,25 +110,35 @@ export class QuizTemplate extends Component {
                 );
             });
         } else {
-            answers = <CompleteScreen />;
+            answers = <CompleteScreen handleReset={this.handleReset} />;
         }
 
         return (
-            <Paper className={cls.Paper}>
-                <h1>{this.props.teksNum}</h1>
-                {this.state.answerStatus === 'correct' ? (
-                    <CorrectScreen handleNext={this.handleNext} />
-                ) : this.state.answerStatus === 'wrong' ? (
-                    <WrongScreen handleNext={this.handleNext} />
-                ) : (
-                    <div>
-                        {this.state.displayQuestionsArray.length > 0 ? (
-                            <h2>{this.state.displayQuestionsArray[0].text}</h2>
-                        ) : null}
-                        <div className={cls.AnswerContainer}>{answers}</div>
-                    </div>
-                )}
-            </Paper>
+            <div style={{ textAlign: 'center', margin: 'auto' }}>
+                <NavigationBar title={this.props.teksNum} homeLink="/" />
+                <Paper className={cls.Paper}>
+                    {this.state.answerStatus === 'correct' ? (
+                        <CorrectScreen handleNext={this.handleNext} />
+                    ) : this.state.answerStatus === 'wrong' ? (
+                        <WrongScreen handleNext={this.handleNext} />
+                    ) : (
+                        <div>
+                            {this.state.displayQuestionsArray.length > 0 ? (
+                                <h2>
+                                    {this.state.displayQuestionsArray[0].text}
+                                </h2>
+                            ) : null}
+                            <div className={cls.AnswerContainer}>{answers}</div>
+                        </div>
+                    )}
+                    <h2 className={cls.qNums}>
+                        CORRECT: <em>{this.state.numCorrect}</em>
+                    </h2>
+                    <h2 className={cls.qNums}>
+                        WRONG: <em>{this.state.numWrong}</em>
+                    </h2>
+                </Paper>
+            </div>
         );
     }
 }

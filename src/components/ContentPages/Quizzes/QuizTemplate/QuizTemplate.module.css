@@ -9,20 +9,31 @@
     margin: 10px auto;
     display: flex;
     flex-direction: column;
+    text-align: center;
     /* border: 2px solid black; */
 }
 
 .AnswerButtonContainer {
     width: 100%;
-    margin-top: 15px;
+    margin: 15px auto;
+    height: 75px;
     /* border: 2px solid red; */
 }
 
 .AnswerButton {
-    width: 90%;
+    width: 100%;
     margin: 10px;
     height: 75px;
     display: inline-block;
+}
+
+.qNums {
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+.Heading {
+    text-align: center;
 }
 
 @media (min-width: 750px) {
@@ -32,6 +43,6 @@
     }
 
     .AnswerButtonContainer {
-        width: 50%;
+        width: 45%;
     }
 }
