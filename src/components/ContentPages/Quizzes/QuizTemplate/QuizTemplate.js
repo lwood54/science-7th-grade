@@ -1,36 +1,12 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 
 import CorrectScreen from './CorrectScreen';
 import WrongScreen from './WrongScreen';
 import CompleteScreen from './CompleteScreen';
 
-// import cls from './QuizTemplate.module.css';
-
-const styles = theme => ({
-    Answer: {
-        margin: '1%',
-        marginTop: '10px',
-        width: '98%'
-    },
-    Correct: {
-        margin: '1%',
-        marginTop: '10px',
-        width: '98%',
-        backgroundColor: 'blue'
-    },
-    Paper: {
-        padding: '15px',
-        margin: 'auto'
-    },
-    Wrong: {
-        padding: '15px',
-        margin: 'auto',
-        backgroundColor: 'red'
-    }
-});
+import cls from './QuizTemplate.module.css';
 
 export class QuizTemplate extends Component {
     // NOTE: MUST put this method above state to use inside state
@@ -90,8 +66,6 @@ export class QuizTemplate extends Component {
     };
 
     render() {
-        // get classes from withStyles props
-        const { classes } = this.props;
         // set default answer choices
         let answers = null;
         // check to make sure the array is not empty
@@ -102,17 +76,17 @@ export class QuizTemplate extends Component {
             answers = shuffledAnswers.map(answer => {
                 let v = Object.keys(answer)[0];
                 return (
-                    <Button
-                        key={v}
-                        color="primary"
-                        variant="contained"
-                        className={
-                            this.state.answer ? classes.Correct : classes.Answer
-                        }
-                        onClick={() => this.clickedAnswerHandler(v)}
-                    >
-                        {answer[v]}
-                    </Button>
+                    <div className={cls.AnswerButtonContainer}>
+                        <Button
+                            key={v}
+                            color="primary"
+                            variant="contained"
+                            className={cls.AnswerButton}
+                            onClick={() => this.clickedAnswerHandler(v)}
+                        >
+                            {answer[v]}
+                        </Button>
+                    </div>
                 );
             });
         } else {
@@ -120,30 +94,23 @@ export class QuizTemplate extends Component {
         }
 
         return (
-            <Paper
-                className={
-                    this.state.answerStatus === 'wrong'
-                        ? '' + classes.Wrong
-                        : '' + classes.Paper
-                }
-            >
+            <Paper className={cls.Paper}>
                 <h1>{this.props.teksNum}</h1>
-
                 {this.state.answerStatus === 'correct' ? (
                     <CorrectScreen handleNext={this.handleNext} />
                 ) : this.state.answerStatus === 'wrong' ? (
                     <WrongScreen handleNext={this.handleNext} />
                 ) : (
-                    <React.Fragment>
+                    <div>
                         {this.state.displayQuestionsArray.length > 0 ? (
                             <h2>{this.state.displayQuestionsArray[0].text}</h2>
                         ) : null}
-                        {answers}
-                    </React.Fragment>
+                        <div className={cls.AnswerContainer}>{answers}</div>
+                    </div>
                 )}
             </Paper>
         );
     }
 }
 
-export default withStyles(styles)(QuizTemplate);
+export default QuizTemplate;

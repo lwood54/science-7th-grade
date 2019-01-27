@@ -5,7 +5,33 @@
     text-align: center;
 }
 
-.Button {
-    width: 75%;
-    margin: auto;
+.AnswerContainer {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+}
+
+.AnswerButtonContainer {
+    width: 100%;
+    margin-top: 15px;
+    /* border: 2px solid red; */
+}
+
+.AnswerButton {
+    width: 90%;
+    margin: 10px;
+    height: 75px;
+    display: inline-block;
+}
+
+@media (min-width: 750px) {
+    .AnswerContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .AnswerButtonContainer {
+        width: 50%;
+    }
 }
