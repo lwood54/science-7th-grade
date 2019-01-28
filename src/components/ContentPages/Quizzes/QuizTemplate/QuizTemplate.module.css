@@ -23,7 +23,7 @@
 .AnswerButton {
     width: 100%;
     margin: 10px;
-    height: 75px;
+    height: 85px;
     display: inline-block;
 }
 
@@ -32,6 +32,11 @@
     margin: 5px 10px;
 }
 
+.QuizImage {
+    width: 75%;
+}
+
+/* I don't hink I'm using this class. */
 .Heading {
     text-align: center;
 }
@@ -44,5 +49,9 @@
 
     .AnswerButtonContainer {
         width: 45%;
+    }
+
+    .QuizImage {
+        width: 50%;
     }
 }

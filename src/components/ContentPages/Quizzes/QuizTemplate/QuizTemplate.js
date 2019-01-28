@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+// import foodweb from './images/foodweb.jpg';
 
 import CorrectScreen from './CorrectScreen';
 import WrongScreen from './WrongScreen';
@@ -124,9 +125,44 @@ export class QuizTemplate extends Component {
                     ) : (
                         <div>
                             {this.state.displayQuestionsArray.length > 0 ? (
-                                <h2>
-                                    {this.state.displayQuestionsArray[0].text}
-                                </h2>
+                                // saved images within src...to keep them with their components
+                                // used require('./image/file/location') from within the TEKS
+                                // object, then just called that object value for the src below
+                                // in the <img> tag
+                                <div>
+                                    {
+                                        // identifies how many questions are left
+                                    }
+                                    <h3>
+                                        {
+                                            this.state.displayQuestionsArray
+                                                .length
+                                        }{' '}
+                                        questions remaining
+                                    </h3>
+                                    {
+                                        // if the image is truthy, as in not an amptey array, it will
+                                        // display the image
+                                    }
+                                    {this.state.displayQuestionsArray[0]
+                                        .image ? (
+                                        <img
+                                            className={cls.QuizImage}
+                                            src={
+                                                this.state
+                                                    .displayQuestionsArray[0]
+                                                    .image
+                                            }
+                                            alt={this.props.teksLabel}
+                                        />
+                                    ) : null}
+                                    <h2>
+                                        {
+                                            this.state.displayQuestionsArray[0]
+                                                .text
+                                        }
+                                    </h2>
+                                </div>
                             ) : null}
                             <div className={cls.AnswerContainer}>{answers}</div>
                         </div>

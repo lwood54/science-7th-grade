@@ -13,8 +13,7 @@ const completeScreen = props => {
             <Link
                 to="/"
                 style={{
-                    textDecoration: 'none',
-                    width: '50%'
+                    textDecoration: 'none'
                 }}
                 className={cls.AnswerButtonContainer}
             >
