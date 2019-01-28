@@ -133,13 +133,25 @@ export class QuizTemplate extends Component {
                                     {
                                         // identifies how many questions are left
                                     }
-                                    <h3>
-                                        {
-                                            this.state.displayQuestionsArray
-                                                .length
-                                        }{' '}
-                                        questions remaining
-                                    </h3>
+                                    {this.state.displayQuestionsArray.length >
+                                    1 ? (
+                                        <h3>
+                                            {
+                                                this.state.displayQuestionsArray
+                                                    .length
+                                            }{' '}
+                                            questions remaining
+                                        </h3>
+                                    ) : this.state.displayQuestionsArray
+                                          .length === 1 ? (
+                                        <h3>
+                                            {
+                                                this.state.displayQuestionsArray
+                                                    .length
+                                            }{' '}
+                                            question remaining
+                                        </h3>
+                                    ) : null}
                                     {
                                         // if the image is truthy, as in not an amptey array, it will
                                         // display the image

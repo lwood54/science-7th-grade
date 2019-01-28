@@ -26,7 +26,7 @@ const teks = [
                     { wrong3: 'chemical to kinetic' },
                     { correct: 'radiant to chemical' }
                 ],
-                image: ''
+                image: require('./Quizzes/QuizTemplate/images/photosynthDiagram.jpg')
             },
             {
                 text:
