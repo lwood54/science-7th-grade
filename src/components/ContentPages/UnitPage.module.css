@@ -1,108 +1,163 @@
+/**************************** CONTAINER STYLES *********************/
 .ContentContainer {
-    padding: 2%;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
-
-.TEKS {
-    text-decoration: none;
-    outline: none;
-    display: inline-block;
-    color: blue;
-    width: 100%;
-    font-size: 0.75em;
-    box-sizing: border-box;
-    margin: auto;
-    text-align: center;
-    transition: 3s;
-}
-
-.TEKS:hover {
-    color: #005b4f;
-    transition: 1s;
-}
-
-.TEKSTitle {
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.Notes {
-    width: 100%;
-    box-sizing: border-box;
-    /* border: 2px solid black; */
-    padding: 0 25px;
+	border: 3px solid yellow;
+	padding: 5px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
 }
 
 .NotesContainer {
-    vertical-align: middle;
-    display: flex;
-    flex-direction: column;
+	border: 4px solid pink;
+	vertical-align: middle;
+	display: flex;
+	flex-direction: column;
 }
 
 .ImageContainer {
-    /* border: 2px solid black; */
-    height: 150px;
-    line-height: 150px;
-    transition: 1s;
+	width: 100%;
+	height: 150px;
+	line-height: 150px;
+	margin: 10px;
+	transition: 1s;
+	border: 2px solid black;
+	text-align: center;
 }
+
+.ImageContainerLarge {
+	border: 2px dotted red;
+	width: 100%;
+	padding: 2px;
+	text-align: center;
+	height: 150px;
+	line-height: 150px;
+	transition: 1s;
+}
+
+/************************* COMPONENT STYLES ************************/
+.TEKS {
+	text-decoration: none;
+	outline: none;
+	display: inline-block;
+	color: blue;
+	width: 100%;
+	font-size: 0.75em;
+	box-sizing: border-box;
+	margin: auto;
+	text-align: center;
+	transition: 3s;
+}
+
+.TEKS:hover {
+	color: #005b4f;
+	transition: 1s;
+}
+
+.TEKSTitle {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.Heading,
+.Subheading {
+	text-align: center;
+	font-weight: bold;
+}
+
+.Notes {
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid black;
+	padding: 0 25px;
+}
+
+/*********************************** SETTINGS FOR SMALL IMAGES *******************************/
 
 .Image {
-    width: 100%;
-    margin: 5px;
-    vertical-align: middle;
+	width: 80%;
+	margin: 5px;
+	box-sizing: border-box;
+	vertical-align: middle;
 }
 
+/*********************************** SETTINGS FOR LARGE IMAGES *******************************/
+
+.ImageLarge {
+	height: 80%;
+	margin: auto;
+	vertical-align: middle;
+}
+
+/************************************************************************************/
+/*                      ALL MEDIA QUEREIS                                           */
+/************************************************************************************/
+
+/****************************************** MIN-WIDTH: 600px *****************************************/
 @media (min-width: 600px) {
-    .ImageContainer {
-        height: 200px;
-        line-height: 200px;
-        transition: 1s;
-    }
+	/**************************** CONTAINER STYLES *********************/
+	.ImageContainer {
+		height: 200px;
+		line-height: 200px;
+		transition: 1s;
+	}
 }
 
+/****************************************** MIN-WIDTH: 750px *****************************************/
 @media (min-width: 750px) {
-    .ContentContainer {
-        width: 100%;
-        padding: 5%;
-    }
+	/**************************** CONTAINER STYLES *********************/
+	.ContentContainer {
+		width: 100%;
+		padding: 5%;
+	}
 
-    .Notes {
-        margin: auto;
-    }
+	.NotesContainer {
+		justify-content: space-between;
+	}
 
-    .NotesContainer {
-        justify-content: space-between;
-    }
+	.ImageContainer {
+		/* border: 2px solid black; */
+		height: 250px;
+		line-height: 250px;
+		transition: 1s;
+	}
 
-    .ImageContainer {
-        /* border: 2px solid black; */
-        height: 250px;
-        line-height: 250px;
-        transition: 1s;
-    }
+	.ImageContainerLarge {
+		width: 100%;
+		height: 250px;
+	}
+	/************************* COMPONENT STYLES ************************/
+	.Notes {
+		margin: auto;
+	}
 }
 
+/****************************************** MIN-WIDTH: 1050px *****************************************/
 @media (min-width: 1050px) {
-    .ContentContainer {
-        padding: 10px;
-    }
-    .NotesContainer {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+	/**************************** CONTAINER STYLES *********************/
+	.ContentContainer {
+		padding: 10px;
+	}
+	.NotesContainer {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
 
-    .Notes {
-        width: 45%;
-        padding-top: 0;
-    }
+	.ImageContainer {
+		height: 400px;
+		width: 75%;
+		margin: auto;
+		line-height: 400px;
+		/* border: 2px solid black; */
+		transition: 1s;
+	}
 
-    .ImageContainer {
-        height: 400px;
-        width: 75%;
-        margin: auto;
-        line-height: 400px;
-        /* border: 2px solid black; */
-        transition: 1s;
-    }
+	.ImageContainerLarge {
+		width: 100%;
+		height: 350px;
+	}
+
+	/************************* COMPONENT STYLES ************************/
+	.Notes {
+		width: 45%;
+		padding-top: 0;
+	}
 }
