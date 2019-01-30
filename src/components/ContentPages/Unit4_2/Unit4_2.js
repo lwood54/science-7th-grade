@@ -111,30 +111,46 @@ const unit4_2 = props => {
                                                 </p>
                                         </div>
                                 </div>
-                                <h3 className={cls.Subheading}>
-                                        Primary Succession
-                                </h3>
-                                <Paper className={cls.NotesContainer}>
-                                        <div className={cls.Notes}>
-                                                <p>
-                                                        This occurs when an
-                                                        ecosystem is starting
-                                                        from bare rock. Whether
-                                                        the bare rock is due to
-                                                        human causes or natural
-                                                        events, such as lava
-                                                        flow or earthquakes,
-                                                        primary succession must
-                                                        begin by breaking down
-                                                        bare rock.
-                                                </p>
-                                        </div>
-                                        <div className={cls.ImageContainer}>
-                                                <img
-                                                        src={primary_succession}
-                                                        alt="primary succession"
-                                                        className={cls.Image}
-                                                />
+                                <Paper>
+                                        <h3 className={cls.Subheading}>
+                                                Primary Succession
+                                        </h3>
+                                        <div className={cls.NotesContainer}>
+                                                <div className={cls.Notes}>
+                                                        <p>
+                                                                This occurs when
+                                                                an ecosystem is
+                                                                starting from
+                                                                bare rock.
+                                                                Whether the bare
+                                                                rock is due to
+                                                                human causes or
+                                                                natural events,
+                                                                such as lava
+                                                                flow or
+                                                                earthquakes,
+                                                                primary
+                                                                succession must
+                                                                begin by
+                                                                breaking down
+                                                                bare rock.
+                                                        </p>
+                                                </div>
+                                                <div
+                                                        className={
+                                                                cls.ImageContainer
+                                                        }
+                                                >
+                                                        <img
+                                                                src={
+                                                                        primary_succession
+                                                                }
+                                                                alt="primary succession"
+                                                                className={
+                                                                        cls.Image
+                                                                }
+                                                        />
+                                                </div>
                                         </div>
                                 </Paper>
                                 <div className={cls.NotesContainer}>
