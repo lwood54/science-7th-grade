@@ -18,7 +18,7 @@ import GameThreeOne from "./components/ContentPages/UnitContent/Unit3_1/Game3_1/
 import UnitFourOne from "./components/ContentPages/UnitContent/Unit4_1/Unit4_1";
 import GameFourOne from "./components/ContentPages/UnitContent/Unit4_1/Game4_1/Game4_1";
 import UnitFourTwo from "./components/ContentPages/UnitContent/Unit4_2/Unit4_2";
-import GameFourTwo from "./components/ContentPages/UnitContent/Unit4_2/Game4_2/Game4_2";
+import GameFourTwo from "./components/ContentPages/UnitContent/Unit4_2/Game4_2";
 import UnitFiveOne from "./components/ContentPages/UnitContent/Unit5_1/Unit5_1";
 import GameFiveOne from "./components/ContentPages/UnitContent/Unit5_1/Game5_1/Game5_1";
 import UnitFiveTwo from "./components/ContentPages/UnitContent/Unit5_2/Unit5_2";
