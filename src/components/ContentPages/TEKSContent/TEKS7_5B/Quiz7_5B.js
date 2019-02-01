@@ -1,14 +1,14 @@
 import React from 'react';
 
-import TEKS from '../TEKS';
+import Obj7_5B from './Obj7_5B';
 
-import QuizTemplate from './QuizTemplate/QuizTemplate';
+import QuizTemplate from '../../../Templates/QuizTemplate/QuizTemplate';
 
-const teksObj = TEKS.find(item => {
-    return item['teksNum'] === '7.5 B';
-});
+// const teksObj = TEKS.find(item => {
+//         return item['teksNum'] === '7.5 B';
+// });
 const quiz7_5B = () => {
-    return <QuizTemplate {...teksObj} />;
+        return <QuizTemplate {...Obj7_5B} />;
 };
 
 export default quiz7_5B;

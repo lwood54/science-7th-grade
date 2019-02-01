@@ -2,7 +2,7 @@ import React from 'react';
 import Paper from '@material-ui/core/Paper';
 
 import Unit1_2Obj from './Unit1_2Obj';
-import NavigationBar from '../../Navigation/NavigationBar/NavigationBar';
+import NavigationBar from '../../../Navigation/NavigationBar/NavigationBar';
 import cls from './Unit1_2.module.css';
 
 const unit1_2 = props => {
