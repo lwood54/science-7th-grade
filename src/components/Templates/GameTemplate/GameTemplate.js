@@ -21,10 +21,82 @@ class GameTemplate extends Component {
                 console.log('Allowing Drop');
         };
 
+        setCorrect(targ, dragElement) {
+                targ.style.backgroundColor = 'green';
+                dragElement.setAttribute('draggable', false);
+                dragElement.style.boxShadow = 'none';
+                dragElement.style.cursor = 'not-allowed';
+        }
+
+        setWrong(targ, dragElement) {
+                targ.style.backgroundColor = 'red';
+                dragElement.style.boxShadow = '2px 2px 4px black';
+        }
+
+        mouseOver = ev => {
+                ev.target.style.transform = 'scale(1.1)';
+                ev.target.style.transition = 'all 0.3s';
+        };
+
+        mouseOut = ev => {
+                ev.target.style.transform = 'scale(1.0)';
+                ev.target.style.transition = 'all 0.1s';
+        };
+
         handleDrop = event => {
-                event.preventDefault();
-                let data = event.dataTransfer.getData('text');
-                event.target.appendChild(document.getElementById(data));
+                console.log(event.target.children.length);
+                console.log('classList: ', event.target.classList[0]);
+                let targetClassListVal = event.target.classList[0];
+                console.log(targetClassListVal);
+                if (event.target.children.length > 0) {
+                        return false;
+                } else if (!event.target.classList[0].includes('Target')) {
+                        return false;
+                } else {
+                        let parentClasses = event.target.parentNode.classList;
+                        let parentEntries = Object.entries(parentClasses)[0][1];
+                        try {
+                                event.preventDefault();
+                                let data = event.dataTransfer.getData('text');
+                                let targ = event.target;
+                                let dragItem = document.getElementById(data);
+                                targ.appendChild(document.getElementById(data));
+                                let dataIndex3 = parseInt(data.split('')[3]);
+                                if (parentEntries.includes('col5')) {
+                                        if (dataIndex3 === 5) {
+                                                this.setCorrect(targ, dragItem);
+                                        } else {
+                                                this.setWrong(targ, dragItem);
+                                        }
+                                } else if (parentEntries.includes('col4')) {
+                                        if (dataIndex3 === 4) {
+                                                this.setCorrect(targ, dragItem);
+                                        } else {
+                                                this.setWrong(targ, dragItem);
+                                        }
+                                } else if (parentEntries.includes('col3')) {
+                                        if (dataIndex3 === 3) {
+                                                this.setCorrect(targ, dragItem);
+                                        } else {
+                                                this.setWrong(targ, dragItem);
+                                        }
+                                } else if (parentEntries.includes('col2')) {
+                                        if (dataIndex3 === 2) {
+                                                this.setCorrect(targ, dragItem);
+                                        } else {
+                                                this.setWrong(targ, dragItem);
+                                        }
+                                } else if (parentEntries.includes('col1')) {
+                                        if (dataIndex3 === 1) {
+                                                this.setCorrect(targ, dragItem);
+                                        } else {
+                                                this.setWrong(targ, dragItem);
+                                        }
+                                }
+                        } catch (err) {
+                                console.log('error: ', err);
+                        }
+                }
         };
         render() {
                 const quizletLink = this.props.vertMenuItems
@@ -65,19 +137,6 @@ class GameTemplate extends Component {
                                 <div className={cls.CardDeckContainer}>
                                         <CardDeck startingDrag={this.handleDrag} {...this.props.game} />
                                 </div>
-                                <div
-                                        id="dragItem1"
-                                        className={cls.DragItem}
-                                        onDragStart={this.handleDrag}
-                                        draggable
-                                >
-                                        <span className={cls.textBox}>DRAG</span>
-                                </div>
-                                <div
-                                        className={cls.DropBox}
-                                        onDragOver={this.handleDragOver}
-                                        onDrop={this.handleDrop}
-                                />
                         </div>
                 );
         }
