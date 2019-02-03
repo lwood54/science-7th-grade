@@ -1,6 +1,21 @@
 import React from 'react';
 
-import cls from './NewGameTemplate.module.css';
+import cls from './GameTemplate.module.css';
+
+const shuffleArray = array => {
+        // copy array to manipulate
+        let arrayCopy = [...array];
+        console.log('arrayCopy: ', arrayCopy);
+        let mixedArray = [];
+        // loop through copy until no elements left
+        while (arrayCopy.length > 0) {
+                let randNum = Math.floor(Math.random() * arrayCopy.length);
+                // add removed elements to mixedArray as looping occurs
+                mixedArray.push(arrayCopy.splice(randNum, 1)[0]);
+        }
+        console.log('mixedArray: ', mixedArray);
+        return mixedArray;
+};
 
 const CardDeck = props => {
         let cardsArray = [];
@@ -10,7 +25,6 @@ const CardDeck = props => {
                 if (col.includes('col')) {
                         return Object.keys(props[col]).map(item => {
                                 id++;
-                                console.log('col:', col);
                                 if (item === 'image') {
                                         return (
                                                 <div
@@ -48,8 +62,20 @@ const CardDeck = props => {
                 }
                 return null;
         });
-        console.log(cardsArray);
-        return <div className={cls.CardStackLocation}>{cardsArray}</div>;
+        console.log('cardsArray: ', cardsArray);
+        let allCards = [];
+        cardsArray.forEach(item => {
+                if (Array.isArray(item)) {
+                        item.forEach(card => {
+                                allCards.push(card);
+                        });
+                } else {
+                        allCards.push(item);
+                }
+        });
+        let shuffledCards = shuffleArray(allCards);
+        console.log('shuffledCards: ', shuffledCards);
+        return <div className={cls.CardStackLocation}>{shuffledCards}</div>;
 };
 
 export default CardDeck;

@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 
 import NavigationBar from '../../Navigation/NavigationBar/NavigationBar';
 // import GameBoard from './GameBoard';
-import NewGameBoard from './NewGameBoard';
+import GameBoard from './GameBoard';
 import CardDeck from './CardDeck';
 
-// import cls from './GameTemplate.module.css';
-import cls from './NewGameTemplate.module.css';
+import cls from './GameTemplate.module.css';
 
 // need to import game object that will be passed in the props
 // and used for rendering the cards and column headings.
@@ -14,22 +13,22 @@ import cls from './NewGameTemplate.module.css';
 class GameTemplate extends Component {
         handleDrag = event => {
                 event.dataTransfer.setData('text', event.target.id);
-                console.log('event.target.id: ', event.target.id);
         };
         handleDragOver = event => {
                 event.preventDefault();
-                console.log('Allowing Drop');
         };
 
         setCorrect(targ, dragElement) {
-                targ.style.backgroundColor = 'green';
+                targ.style.backgroundColor = '#00897b';
+                dragElement.style.backgroundColor = '#00897b';
+                dragElement.style.color = 'white';
                 dragElement.setAttribute('draggable', false);
                 dragElement.style.boxShadow = 'none';
                 dragElement.style.cursor = 'not-allowed';
         }
 
         setWrong(targ, dragElement) {
-                targ.style.backgroundColor = 'red';
+                targ.style.backgroundColor = '#ba000d';
                 dragElement.style.boxShadow = '2px 2px 4px black';
         }
 
@@ -44,10 +43,6 @@ class GameTemplate extends Component {
         };
 
         handleDrop = event => {
-                console.log(event.target.children.length);
-                console.log('classList: ', event.target.classList[0]);
-                let targetClassListVal = event.target.classList[0];
-                console.log(targetClassListVal);
                 if (event.target.children.length > 0) {
                         return false;
                 } else if (!event.target.classList[0].includes('Target')) {
@@ -129,7 +124,7 @@ class GameTemplate extends Component {
                                 />
                                 <h1 className={cls.Title}>{this.props.title} Review Game</h1>
 
-                                <NewGameBoard
+                                <GameBoard
                                         draggingOver={this.handleDragOver}
                                         droppedOn={this.handleDrop}
                                         {...this.props.game}

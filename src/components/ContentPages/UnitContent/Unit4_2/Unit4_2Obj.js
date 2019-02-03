@@ -50,37 +50,37 @@ const unit4_2Obj = {
         game: {
                 col1: {
                         heading: 'Microhabitat',
-                        hint: 'A flowerbed in front of a school.',
+                        hint: 'A flowerbed in front of a school',
                         image: require('./images/microhabitat.jpg'),
                         definition:
-                                'A habitat that is of small extent and is different from its surrounding habitat.'
+                                'A habitat that is of small extent and is different from its surrounding habitat'
                 },
                 col2: {
                         heading: 'Tornado',
-                        hint: 'Churnin winds, top speed over 300 mph.',
+                        hint: 'Churning winds, top speed over 300 mph',
                         image: require('./images/tornado.jpg'),
                         definition:
-                                'A destructive vortex of violently rotating winds having the appearance of a funnel-shaped cloud.'
+                                'A destructive vortex of violently rotating winds having the appearance of a funnel-shaped cloud'
                 },
                 col3: {
                         heading: 'Flood',
-                        hint: 'excess water',
+                        hint: 'Excess water',
                         image: require('./images/flooding.jpg'),
-                        definition: 'an overflowing of large amounts of water beyond its normal confines'
+                        definition: 'An overflowing of large amounts of water beyond its normal confines'
                 },
                 col4: {
                         heading: 'Earthquake',
-                        hint: 'these are common along transform boundaries and can cause tsunamis',
+                        hint: 'These are common along transform boundaries and can cause tsunamis',
                         image: require('./images/earthquake.jpg'),
                         definition:
-                                'Suddent, violent shaking of the ground, usually due to slipping or colliding tectonic plates.'
+                                'Sudden, violent shaking of the ground, usually due to slipping or colliding tectonic plates'
                 },
                 col5: {
                         heading: 'Hurricane',
                         hint: 'Churning winds, top speed over 160 mph',
                         image: require('./images/hurricane.jpg'),
                         definition:
-                                'High velocity vortex that forms over warm ocean water and often causes flooding.'
+                                'High velocity vortex that forms over warm ocean water and often causes flooding'
                 }
         }
 };
