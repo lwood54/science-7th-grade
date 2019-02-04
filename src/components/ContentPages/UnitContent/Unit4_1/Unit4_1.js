@@ -3,6 +3,7 @@ import Paper from '@material-ui/core/Paper';
 
 import Unit4_1Obj from './Unit4_1Obj';
 import NavigationBar from '../../../Navigation/NavigationBar/NavigationBar';
+import UnitPageTemplate from "../../../Templates/UnitPageTemplate/UnitPageTemplate";
 import { Link } from 'react-router-dom';
 
 import cls from './Unit4_1.module.css';
@@ -34,6 +35,9 @@ const unit4_1 = props => {
                                 homeLink={homeLink}
                                 TEKSArray={Unit4_1Obj.TEKS}
                         />
+                        <UnitPageTemplate {...Unit4_1Obj}>
+				<p>Content coming soon!</p>
+			</UnitPageTemplate>
                         <Paper className={cls.ContentContainer}>
                                 <h1 className={cls.TEKSTitle}>
                                         {Unit4_1Obj.TEKS[0].teksNum}
