@@ -5,7 +5,6 @@ import cls from './GameTemplate.module.css';
 const shuffleArray = array => {
         // copy array to manipulate
         let arrayCopy = [...array];
-        console.log('arrayCopy: ', arrayCopy);
         let mixedArray = [];
         // loop through copy until no elements left
         while (arrayCopy.length > 0) {
@@ -13,7 +12,6 @@ const shuffleArray = array => {
                 // add removed elements to mixedArray as looping occurs
                 mixedArray.push(arrayCopy.splice(randNum, 1)[0]);
         }
-        console.log('mixedArray: ', mixedArray);
         return mixedArray;
 };
 
@@ -62,7 +60,6 @@ const CardDeck = props => {
                 }
                 return null;
         });
-        console.log('cardsArray: ', cardsArray);
         let allCards = [];
         cardsArray.forEach(item => {
                 if (Array.isArray(item)) {
@@ -74,7 +71,6 @@ const CardDeck = props => {
                 }
         });
         let shuffledCards = shuffleArray(allCards);
-        console.log('shuffledCards: ', shuffledCards);
         return <div className={cls.CardStackLocation}>{shuffledCards}</div>;
 };
 
