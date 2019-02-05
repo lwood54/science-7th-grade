@@ -171,17 +171,53 @@ class GameTemplate extends Component {
 	appendChild = (targetId, cardId) => {
 		let targetsCopy = [...this.state.targets];
 		let cardsCopy = [...this.state.cards];
-		console.log("targetId: ", targetId);
-		console.log("cardId: ", cardId);
+		// console.log("targetId: ", targetId);
+		// console.log("cardId: ", cardId);
 		let targetIdIndex3 = targetId.split("")[3];
-		console.log("targetIdIndex3: ", targetIdIndex3);
+		// console.log("targetIdIndex3: ", targetIdIndex3);
 		let cardIdIndex3 = cardId.split("")[3];
-		console.log("cardIdIndex3: ", cardIdIndex3);
+		// console.log("cardIdIndex3: ", cardIdIndex3);
 		if (targetIdIndex3 === cardIdIndex3) {
+			console.log("this spot works!");
 			this.updateCorrect();
-		} else {
-			this.updateWrong();
+			targetsCopy.forEach((target, i) => {
+				let focusedTarget = target.props.children[1].props.children;
+				for (let j = 0; j < 3; j++) {
+					console.log("focusedTarget[j].id: ", focusedTarget[j].props.id);
+					console.log("targetId", targetId);
+					if (focusedTarget[j].props.id === targetId) {
+						cardsCopy.forEach((card, k) => {
+							if (cardsCopy[k].props.id === cardId) {
+								// will have to do a long chain splice here,
+								// navigate through tree, probably can use
+								// focusedTarget[j] and index to splice.
+							}
+						});
+					}
+				}
+
+				console.log("focusedTarget: ", focusedTarget[0].props.id);
+			});
 		}
+		// 		if (target.props.id === targetId) {
+		// 			console.log("target id matches, now loop through cards");
+		// 			cardsCopy.forEach((card, k) => {
+		// 				if (card.props.id === cardId) {
+		// 					targetsCopy.splice(
+		// 						i,
+		// 						1,
+		// 						<div {...target.props} key={target.props.id}>
+		// 							{card}
+		// 						</div>
+		// 					);
+		// 					cardsCopy.splice(k, 1);
+		// 				}
+		// 			});
+		// 		}
+		// 	});
+		// } else {
+		// 	this.updateWrong();
+		// }
 		// targetsCopy.forEach((target, i) => {
 		// 	console.log("id", target.props.id);
 		// 	if (target.props.id.includes("col1")) {
@@ -203,10 +239,10 @@ class GameTemplate extends Component {
 		// 		return <div {...target.props} key={target.props.id} />;
 		// 	}
 		// });
-		// this.setState({
-		// 	targets: targetsCopy,
-		// 	cards: cardsCopy
-		// });
+		this.setState({
+			targets: targetsCopy,
+			cards: cardsCopy
+		});
 	};
 
 	handleDrop = ev => {
