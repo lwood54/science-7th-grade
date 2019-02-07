@@ -20,7 +20,7 @@ const Transition = props => {
         return <Slide direction="up" {...props} />;
 };
 
-class GameTemplate extends Component {
+class GameTemplate2 extends Component {
         state = {
                 correctAnswers: 0,
                 wrongAnswers: 0,
@@ -66,7 +66,7 @@ class GameTemplate extends Component {
                 // is there a better location to create the card deck and target arrays?
                 let cards = [];
                 // copy the game object so this can be manipulated and used to update state
-                let gameCopy = { ...this.props.game };
+                let gameCopy = { ...this.props.game2 };
                 // create an array of columns (keys) that can be iterated and used to
                 // access their values
                 let arrayOfCols = Object.keys(gameCopy);
@@ -420,20 +420,15 @@ class GameTemplate extends Component {
                                 return item['Unit Page'];
                         })
                         .join('');
-                const gameLink = this.props.vertMenuItems
-                        .map(item => {
-                                return item['Game'];
-                        })
-                        .join('');
                 const restart = (
                         <Button onClick={this.handleRestart} variant="contained" color="primary">
                                 Restart
                         </Button>
                 );
-                const nextSection = (
-                        <Link to={`${gameLink}b`} className={cls.Link}>
+                const unitPage = (
+                        <Link to={unitMain} className={cls.Link}>
                                 <Button variant="contained" color="primary">
-                                        Move on to Section 2
+                                        Back to the Main Unit Page
                                 </Button>
                         </Link>
                 );
@@ -447,7 +442,7 @@ class GameTemplate extends Component {
                                         unitMain={unitMain}
                                 />
                                 <Dialog
-                                        open={this.state.correctAnswers === 4}
+                                        open={this.state.correctAnswers === 15}
                                         TransitionComponent={Transition}
                                         keepMounted
                                         onClose={this.handleClose}
@@ -468,13 +463,13 @@ class GameTemplate extends Component {
                                         </DialogContent>
                                         <DialogActions>
                                                 {restart}
-                                                {nextSection}
+                                                {unitPage}
                                         </DialogActions>
                                 </Dialog>
                                 <div className={cls.GameBoard}>
                                         <div className={cls.Col}>
                                                 <h1 className={cls.colTitle}>
-                                                        {this.props.game.col1.heading}
+                                                        {this.props.game2.col1.heading}
                                                 </h1>
                                                 {this.state.targets[0]}
                                                 {this.state.targets[1]}
@@ -482,7 +477,7 @@ class GameTemplate extends Component {
                                         </div>
                                         <div className={cls.Col}>
                                                 <h1 className={cls.colTitle}>
-                                                        {this.props.game.col2.heading}
+                                                        {this.props.game2.col2.heading}
                                                 </h1>
                                                 {this.state.targets[3]}
                                                 {this.state.targets[4]}
@@ -490,7 +485,7 @@ class GameTemplate extends Component {
                                         </div>
                                         <div className={cls.Col}>
                                                 <h1 className={cls.colTitle}>
-                                                        {this.props.game.col3.heading}
+                                                        {this.props.game2.col3.heading}
                                                 </h1>
                                                 {this.state.targets[6]}
                                                 {this.state.targets[7]}
@@ -498,7 +493,7 @@ class GameTemplate extends Component {
                                         </div>
                                         <div className={cls.Col}>
                                                 <h1 className={cls.colTitle}>
-                                                        {this.props.game.col4.heading}
+                                                        {this.props.game2.col4.heading}
                                                 </h1>
                                                 {this.state.targets[9]}
                                                 {this.state.targets[10]}
@@ -506,7 +501,7 @@ class GameTemplate extends Component {
                                         </div>
                                         <div className={cls.Col}>
                                                 <h1 className={cls.colTitle}>
-                                                        {this.props.game.col5.heading}
+                                                        {this.props.game2.col5.heading}
                                                 </h1>
                                                 {this.state.targets[12]}
                                                 {this.state.targets[13]}
@@ -529,4 +524,4 @@ class GameTemplate extends Component {
         }
 }
 
-export default GameTemplate;
+export default GameTemplate2;
