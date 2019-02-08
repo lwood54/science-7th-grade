@@ -31,9 +31,72 @@ const unit2_2Obj = {
                 { 'Unit Page': '/unit2_2' },
                 { Game: '/unit2_2/game2_2' },
                 {
-                        Quizlet:
-                                'https://quizlet.com/330016195/18-19-unit-22-body-systems-flash-cards/'
+                        Quizlet: 'https://quizlet.com/330016195/18-19-unit-22-body-systems-flash-cards/'
                 }
-        ]
+        ],
+        game: {
+                col1: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col2: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col3: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col4: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col5: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                }
+        },
+        game2: {
+                col1: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col2: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col3: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col4: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col5: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                }
+        }
 };
 export default unit2_2Obj;

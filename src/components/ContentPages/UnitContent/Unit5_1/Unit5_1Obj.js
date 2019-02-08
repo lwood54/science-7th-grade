@@ -41,6 +41,70 @@ const unit5_1Obj = {
                         Quizlet:
                                 'https://quizlet.com/275509969/unit-51-biomes-microhabitats-and-biodiversity-flash-cards/'
                 }
-        ]
+        ],
+        game: {
+                col1: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col2: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col3: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col4: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col5: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                }
+        },
+        game2: {
+                col1: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col2: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col3: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col4: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col5: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                }
+        }
 };
 export default unit5_1Obj;

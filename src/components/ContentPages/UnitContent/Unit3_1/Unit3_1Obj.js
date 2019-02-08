@@ -55,6 +55,70 @@ const unit3_1Obj = {
                         Quizlet:
                                 'https://quizlet.com/248404046/unit-31-genetics-and-reproduction-flash-cards/'
                 }
-        ]
+        ],
+        game: {
+                col1: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col2: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col3: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col4: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col5: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                }
+        },
+        game2: {
+                col1: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col2: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col3: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col4: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col5: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                }
+        }
 };
 export default unit3_1Obj;

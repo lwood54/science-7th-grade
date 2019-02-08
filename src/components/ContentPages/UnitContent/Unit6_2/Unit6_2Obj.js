@@ -39,9 +39,72 @@ const unit6_2Obj = {
                 { 'Unit Page': '/unit6_2' },
                 { Game: '/unit6_2/game6_2' },
                 {
-                        Quizlet:
-                                'https://quizlet.com/287617961/unit-62-space-work-force-flash-cards/'
+                        Quizlet: 'https://quizlet.com/287617961/unit-62-space-work-force-flash-cards/'
                 }
-        ]
+        ],
+        game: {
+                col1: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col2: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col3: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col4: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col5: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                }
+        },
+        game2: {
+                col1: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col2: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col3: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col4: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col5: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                }
+        }
 };
 export default unit6_2Obj;

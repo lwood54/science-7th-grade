@@ -6,28 +6,38 @@ import Layout from './hoc/Layout/Layout';
 import HomePage from './components/ContentPages/HomePage/HomePage';
 // JSX Rendering requires pascal case...which apparently doesn't allow for Unit1_2, etc.
 import UnitOneOne from './components/ContentPages/UnitContent/Unit1_1/Unit1_1';
-import GameOneOne from './components/ContentPages/UnitContent/Unit1_1/Game1_1/Game1_1';
+import GameOneOne from './components/ContentPages/UnitContent/Unit1_1/Game1_1';
+import GameOneOneB from './components/ContentPages/UnitContent/Unit1_1/Game1_1b';
 import UnitOneTwo from './components/ContentPages/UnitContent/Unit1_2/Unit1_2';
-import GameOneTwo from './components/ContentPages/UnitContent/Unit1_2/Game1_2/Game1_2';
+import GameOneTwo from './components/ContentPages/UnitContent/Unit1_2/Game1_2';
+import GameOneTwoB from './components/ContentPages/UnitContent/Unit1_2/Game1_2b';
 import UnitTwoOne from './components/ContentPages/UnitContent/Unit2_1/Unit2_1';
-import GameTwoOne from './components/ContentPages/UnitContent/Unit2_1/Game2_1/Game2_1';
+import GameTwoOne from './components/ContentPages/UnitContent/Unit2_1/Game2_1';
+import GameTwoOneB from './components/ContentPages/UnitContent/Unit2_1/Game2_1b';
 import UnitTwoTwo from './components/ContentPages/UnitContent/Unit2_2/Unit2_2';
-import GameTwoTwo from './components/ContentPages/UnitContent/Unit2_2/Game2_2/Game2_2';
+import GameTwoTwo from './components/ContentPages/UnitContent/Unit2_2/Game2_2';
+import GameTwoTwoB from './components/ContentPages/UnitContent/Unit2_2/Game2_2b';
 import UnitThreeOne from './components/ContentPages/UnitContent/Unit3_1/Unit3_1';
-import GameThreeOne from './components/ContentPages/UnitContent/Unit3_1/Game3_1/Game3_1';
+import GameThreeOne from './components/ContentPages/UnitContent/Unit3_1/Game3_1';
+import GameThreeOneB from './components/ContentPages/UnitContent/Unit3_1/Game3_1b';
 import UnitFourOne from './components/ContentPages/UnitContent/Unit4_1/Unit4_1';
-import GameFourOne from './components/ContentPages/UnitContent/Unit4_1/Game4_1/Game4_1';
+import GameFourOne from './components/ContentPages/UnitContent/Unit4_1/Game4_1';
+import GameFourOneB from './components/ContentPages/UnitContent/Unit4_1/Game4_1b';
 import UnitFourTwo from './components/ContentPages/UnitContent/Unit4_2/Unit4_2';
 import GameFourTwo from './components/ContentPages/UnitContent/Unit4_2/Game4_2';
 import GameFourTwoB from './components/ContentPages/UnitContent/Unit4_2/Game4_2b';
 import UnitFiveOne from './components/ContentPages/UnitContent/Unit5_1/Unit5_1';
-import GameFiveOne from './components/ContentPages/UnitContent/Unit5_1/Game5_1/Game5_1';
+import GameFiveOne from './components/ContentPages/UnitContent/Unit5_1/Game5_1';
+import GameFiveOneB from './components/ContentPages/UnitContent/Unit5_1/Game5_1b';
 import UnitFiveTwo from './components/ContentPages/UnitContent/Unit5_2/Unit5_2';
-import GameFiveTwo from './components/ContentPages/UnitContent/Unit5_2/Game5_2/Game5_2';
+import GameFiveTwo from './components/ContentPages/UnitContent/Unit5_2/Game5_2';
+import GameFiveTwoB from './components/ContentPages/UnitContent/Unit5_2/Game5_2b';
 import UnitSixOne from './components/ContentPages/UnitContent/Unit6_1/Unit6_1';
-import GameSixOne from './components/ContentPages/UnitContent/Unit6_1/Game6_1/Game6_1';
+import GameSixOne from './components/ContentPages/UnitContent/Unit6_1/Game6_1';
+import GameSixOneB from './components/ContentPages/UnitContent/Unit6_1/Game6_1b';
 import UnitSixTwo from './components/ContentPages/UnitContent/Unit6_2/Unit6_2';
-import GameSixTwo from './components/ContentPages/UnitContent/Unit6_2/Game6_2/Game6_2';
+import GameSixTwo from './components/ContentPages/UnitContent/Unit6_2/Game6_2';
+import GameSixTwoB from './components/ContentPages/UnitContent/Unit6_2/Game6_2b';
 import Quiz7_5A from './components/ContentPages/TEKSContent/TEKS7_5A/Quiz7_5A';
 import Quiz7_5B from './components/ContentPages/TEKSContent/TEKS7_5B/Quiz7_5B';
 import Quiz7_6A from './components/ContentPages/TEKSContent/TEKS7_6A/Quiz7_6A';
@@ -82,17 +92,55 @@ class App extends Component {
                     */}
                                         <Switch>
                                                 <Route path="/unit1_1" exact component={UnitOneOne} />
-                                                <Route path="/unit1_1/game1_1" component={GameOneOne} />
+                                                <Route path="/unit1_1/game1_1" exact component={GameOneOne} />
+                                                <Route
+                                                        path="/unit1_1/game1_1b"
+                                                        exact
+                                                        component={GameOneOneB}
+                                                />
                                                 <Route path="/unit1_2" exact component={UnitOneTwo} />
-                                                <Route path="/unit1_2/game1_2" component={GameOneTwo} />
+                                                <Route path="/unit1_2/game1_2" exact component={GameOneTwo} />
+                                                <Route
+                                                        path="/unit1_2/game1_2b"
+                                                        exact
+                                                        component={GameOneTwoB}
+                                                />
                                                 <Route path="/unit2_1" exact component={UnitTwoOne} />
-                                                <Route path="/unit2_1/game2_1" component={GameTwoOne} />
+                                                <Route path="/unit2_1/game2_1" exact component={GameTwoOne} />
+                                                <Route
+                                                        path="/unit2_1/game2_1b"
+                                                        exact
+                                                        component={GameTwoOneB}
+                                                />
                                                 <Route path="/unit2_2" exact component={UnitTwoTwo} />
-                                                <Route path="/unit2_2/game2_2" component={GameTwoTwo} />
+                                                <Route path="/unit2_2/game2_2" exact component={GameTwoTwo} />
+                                                <Route
+                                                        path="/unit2_2/game2_2b"
+                                                        exact
+                                                        component={GameTwoTwoB}
+                                                />
                                                 <Route path="/unit3_1" exact component={UnitThreeOne} />
-                                                <Route path="/unit3_1/game3_1" component={GameThreeOne} />
+                                                <Route
+                                                        path="/unit3_1/game3_1"
+                                                        exact
+                                                        component={GameThreeOne}
+                                                />
+                                                <Route
+                                                        path="/unit3_1/game3_1b"
+                                                        exact
+                                                        component={GameThreeOneB}
+                                                />
                                                 <Route path="/unit4_1" exact component={UnitFourOne} />
-                                                <Route path="/unit4_1/game4_1" component={GameFourOne} />
+                                                <Route
+                                                        path="/unit4_1/game4_1"
+                                                        exact
+                                                        component={GameFourOne}
+                                                />
+                                                <Route
+                                                        path="/unit4_1/game4_1b"
+                                                        exact
+                                                        component={GameFourOneB}
+                                                />
                                                 <Route path="/unit4_2" exact component={UnitFourTwo} />
                                                 <Route
                                                         path="/unit4_2/game4_2"
@@ -105,13 +153,41 @@ class App extends Component {
                                                         component={GameFourTwoB}
                                                 />
                                                 <Route path="/unit5_1" exact component={UnitFiveOne} />
-                                                <Route path="/unit5_1/game5_1" component={GameFiveOne} />
+                                                <Route
+                                                        path="/unit5_1/game5_1"
+                                                        exact
+                                                        component={GameFiveOne}
+                                                />
+                                                <Route
+                                                        path="/unit5_1/game5_1b"
+                                                        exact
+                                                        component={GameFiveOneB}
+                                                />
                                                 <Route path="/unit5_2" exact component={UnitFiveTwo} />
-                                                <Route path="/unit5_2/game5_2" component={GameFiveTwo} />
+                                                <Route
+                                                        path="/unit5_2/game5_2"
+                                                        exact
+                                                        component={GameFiveTwo}
+                                                />
+                                                <Route
+                                                        path="/unit5_2/game5_2b"
+                                                        exact
+                                                        component={GameFiveTwoB}
+                                                />
                                                 <Route path="/unit6_1" exact component={UnitSixOne} />
-                                                <Route path="/unit6_1/game6_1" component={GameSixOne} />
+                                                <Route path="/unit6_1/game6_1" exact component={GameSixOne} />
+                                                <Route
+                                                        path="/unit6_1/game6_1b"
+                                                        exact
+                                                        component={GameSixOneB}
+                                                />
                                                 <Route path="/unit6_2" exact component={UnitSixTwo} />
-                                                <Route path="/unit6_2/game6_2" component={GameSixTwo} />
+                                                <Route path="/unit6_2/game6_2" exact component={GameSixTwo} />
+                                                <Route
+                                                        path="/unit6_2/game6_2b"
+                                                        exact
+                                                        component={GameSixTwoB}
+                                                />
                                                 <Route path="/quiz7_5A" component={Quiz7_5A} />
                                                 <Route path="/quiz7_5B" component={Quiz7_5B} />
                                                 <Route path="/quiz7_6A" component={Quiz7_6A} />

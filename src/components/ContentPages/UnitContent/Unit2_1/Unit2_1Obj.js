@@ -26,8 +26,7 @@ const unit2_1Obj = {
                         teksQuiz: Obj7_12D.teksQuiz
                 }
         ],
-        summary:
-                'In this unit we will observe and analyze the differences between plant and animal cells.',
+        summary: 'In this unit we will observe and analyze the differences between plant and animal cells.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit2_1' },
@@ -36,7 +35,71 @@ const unit2_1Obj = {
                         Quizlet:
                                 'https://quizlet.com/323414709/18-19-unit-21-organelles-plant-and-animal-cells-flash-cards/'
                 }
-        ]
+        ],
+        game: {
+                col1: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col2: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col3: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col4: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col5: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                }
+        },
+        game2: {
+                col1: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col2: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col3: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col4: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col5: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                }
+        }
 };
 
 export default unit2_1Obj;

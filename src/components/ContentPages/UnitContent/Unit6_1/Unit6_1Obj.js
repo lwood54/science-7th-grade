@@ -3,8 +3,7 @@ import Obj7_8C from '../../TEKSContent/TEKS7_8C/Obj7_8C';
 
 const unit6_1Obj = {
         title: 'Unit 6.1',
-        subtitle:
-                'Weathering, Erosion, Deposition, Ground Water, and Watersheds',
+        subtitle: 'Weathering, Erosion, Deposition, Ground Water, and Watersheds',
         pageExtension: '/unit6_1',
         imageLocation: '/static/images/cards/erosion.jpg',
         imgTitle: 'erosion',
@@ -44,6 +43,70 @@ const unit6_1Obj = {
                         Quizlet:
                                 'https://quizlet.com/287611603/unit-61-weathering-erosion-deposition-and-watersheds-flash-cards/'
                 }
-        ]
+        ],
+        game: {
+                col1: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col2: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col3: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col4: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col5: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                }
+        },
+        game2: {
+                col1: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col2: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col3: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col4: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                },
+                col5: {
+                        heading: '',
+                        hint: '',
+                        image: '',
+                        definition: ''
+                }
+        }
 };
 export default unit6_1Obj;

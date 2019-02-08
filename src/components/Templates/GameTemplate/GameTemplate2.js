@@ -26,8 +26,12 @@ class GameTemplate2 extends Component {
                 wrongAnswers: 0,
                 targets: [],
                 cards: [],
-                incorrectCards: [],
-                showNextButtons: false
+                incorrectCards: []
+        };
+
+        updateScore = () => {
+                const { correctAnswers, wrongAnswers } = this.state;
+                return Math.round(((correctAnswers - wrongAnswers) / correctAnswers) * 100);
         };
 
         handleClose = () => {
@@ -422,7 +426,7 @@ class GameTemplate2 extends Component {
                         .join('');
                 const restart = (
                         <Button onClick={this.handleRestart} variant="contained" color="primary">
-                                Restart
+                                Restart this section
                         </Button>
                 );
                 const unitPage = (
@@ -432,6 +436,8 @@ class GameTemplate2 extends Component {
                                 </Button>
                         </Link>
                 );
+
+                let score = this.updateScore();
 
                 return (
                         <div style={{ width: '100%' }}>
@@ -450,16 +456,17 @@ class GameTemplate2 extends Component {
                                         aria-describedby="alert-dialog-slide-description"
                                 >
                                         <DialogContent>
-                                                <h2>
-                                                        You got a{' '}
-                                                        {Math.round(
-                                                                ((this.state.correctAnswers -
-                                                                        this.state.wrongAnswers) /
-                                                                        this.state.correctAnswers) *
-                                                                        100
-                                                        )}
-                                                        , what would you like to do next?
-                                                </h2>
+                                                {score >= 70 ? (
+                                                        <h2>
+                                                                You won with a score of {score}!!! Great
+                                                                job!!! What would you like to do next?
+                                                        </h2>
+                                                ) : (
+                                                        <h2>
+                                                                Sorry, you got a score of {score}. What would
+                                                                you like to do?
+                                                        </h2>
+                                                )}
                                         </DialogContent>
                                         <DialogActions>
                                                 {restart}

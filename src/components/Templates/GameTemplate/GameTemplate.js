@@ -26,8 +26,12 @@ class GameTemplate extends Component {
                 wrongAnswers: 0,
                 targets: [],
                 cards: [],
-                incorrectCards: [],
-                showNextButtons: false
+                incorrectCards: []
+        };
+
+        updateScore = () => {
+                const { correctAnswers, wrongAnswers } = this.state;
+                return Math.round(((correctAnswers - wrongAnswers) / correctAnswers) * 100);
         };
 
         handleClose = () => {
@@ -427,7 +431,7 @@ class GameTemplate extends Component {
                         .join('');
                 const restart = (
                         <Button onClick={this.handleRestart} variant="contained" color="primary">
-                                Restart
+                                Restart this section
                         </Button>
                 );
                 const nextSection = (
@@ -438,6 +442,8 @@ class GameTemplate extends Component {
                         </Link>
                 );
 
+                let score = this.updateScore();
+
                 return (
                         <div style={{ width: '100%' }}>
                                 <NavigationBar
@@ -447,7 +453,7 @@ class GameTemplate extends Component {
                                         unitMain={unitMain}
                                 />
                                 <Dialog
-                                        open={this.state.correctAnswers === 4}
+                                        open={this.state.correctAnswers === 15}
                                         TransitionComponent={Transition}
                                         keepMounted
                                         onClose={this.handleClose}
@@ -455,20 +461,21 @@ class GameTemplate extends Component {
                                         aria-describedby="alert-dialog-slide-description"
                                 >
                                         <DialogContent>
-                                                <h2>
-                                                        You got a{' '}
-                                                        {Math.round(
-                                                                ((this.state.correctAnswers -
-                                                                        this.state.wrongAnswers) /
-                                                                        this.state.correctAnswers) *
-                                                                        100
-                                                        )}
-                                                        , what would you like to do next?
-                                                </h2>
+                                                {score >= 70 ? (
+                                                        <h2>
+                                                                You passed this section with a score of{' '}
+                                                                {score}!!! Great job!!!
+                                                        </h2>
+                                                ) : (
+                                                        <h2>
+                                                                Sorry, you got a score of {score}. Go ahead
+                                                                and retry this section.
+                                                        </h2>
+                                                )}
                                         </DialogContent>
                                         <DialogActions>
                                                 {restart}
-                                                {nextSection}
+                                                {score >= 70 ? nextSection : null}
                                         </DialogActions>
                                 </Dialog>
                                 <div className={cls.GameBoard}>
