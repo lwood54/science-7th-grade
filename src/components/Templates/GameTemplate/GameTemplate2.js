@@ -13,6 +13,8 @@ import NavigationBar from '../../Navigation/NavigationBar/NavigationBar';
 
 import cls from './GameTemplate.module.css';
 
+import victory_royale from './victory_royale.gif';
+
 // need to import game object that will be passed in the props
 // and used for rendering the cards and column headings.
 
@@ -457,10 +459,18 @@ class GameTemplate2 extends Component {
                                 >
                                         <DialogContent>
                                                 {score >= 70 ? (
-                                                        <h2>
-                                                                You won with a score of {score}!!! Great
-                                                                job!!! What would you like to do next?
-                                                        </h2>
+                                                        <div className={cls.VictoryContainer}>
+                                                                <h2>
+                                                                        You won with a score of {score}!!!
+                                                                        Great job!!! What would you like to do
+                                                                        next?
+                                                                </h2>
+                                                                <img
+                                                                        src={victory_royale}
+                                                                        className={cls.Image}
+                                                                        alt="victory royale"
+                                                                />
+                                                        </div>
                                                 ) : (
                                                         <h2>
                                                                 Sorry, you got a score of {score}. What would

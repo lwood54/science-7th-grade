@@ -138,6 +138,14 @@
         box-sizing: border-box;
 }
 
+.VictoryContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+}
+
 .Image {
         max-width: 80%;
         max-height: 80%;

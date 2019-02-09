@@ -13,6 +13,8 @@ import NavigationBar from '../../Navigation/NavigationBar/NavigationBar';
 
 import cls from './GameTemplate.module.css';
 
+import keep_going from './keep_going.gif';
+
 // need to import game object that will be passed in the props
 // and used for rendering the cards and column headings.
 
@@ -462,10 +464,17 @@ class GameTemplate extends Component {
                                 >
                                         <DialogContent>
                                                 {score >= 70 ? (
-                                                        <h2>
-                                                                You passed this section with a score of{' '}
-                                                                {score}!!! Great job!!!
-                                                        </h2>
+                                                        <div className={cls.VictoryContainer}>
+                                                                <h2>
+                                                                        You passed this section with a score
+                                                                        of {score}!!! Great job!!!
+                                                                </h2>
+                                                                <img
+                                                                        src={keep_going}
+                                                                        className={cls.Image}
+                                                                        alt="keep going Homer Simpson"
+                                                                />
+                                                        </div>
                                                 ) : (
                                                         <h2>
                                                                 Sorry, you got a score of {score}. Go ahead
