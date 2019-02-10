@@ -428,13 +428,13 @@ class GameTemplate2 extends Component {
                         .join('');
                 const restart = (
                         <Button onClick={this.handleRestart} variant="contained" color="primary">
-                                Restart this section
+                                Try section again
                         </Button>
                 );
                 const unitPage = (
                         <Link to={unitMain} className={cls.Link}>
                                 <Button variant="contained" color="primary">
-                                        Back to the Main Unit Page
+                                        Leave to Unit Page
                                 </Button>
                         </Link>
                 );

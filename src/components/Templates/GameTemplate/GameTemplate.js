@@ -433,7 +433,7 @@ class GameTemplate extends Component {
                         .join('');
                 const restart = (
                         <Button onClick={this.handleRestart} variant="contained" color="primary">
-                                Restart this section
+                                Try section again
                         </Button>
                 );
                 const nextSection = (
