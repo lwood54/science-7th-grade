@@ -148,7 +148,7 @@ self.__precacheManifest = [
     "url": "/static/media/foodweb.d2b2a29d.jpg"
   },
   {
-    "revision": "24414f3ebdcc43518135501f72360e4e",
+    "revision": "0fa0e8c367b6a42fb763545df9fd34da",
     "url": "/index.html"
   }
 ];
