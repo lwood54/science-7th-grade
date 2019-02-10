@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "a9e96f86c39eb9c6fdcf",
+    "revision": "79f3de35cbf7dc1dff4d",
     "url": "/static/css/main.9e37b255.chunk.css"
   },
   {
-    "revision": "a9e96f86c39eb9c6fdcf",
-    "url": "/static/js/main.a9e96f86.chunk.js"
+    "revision": "79f3de35cbf7dc1dff4d",
+    "url": "/static/js/main.79f3de35.chunk.js"
   },
   {
     "revision": "877c444229ce084f0ab7",
@@ -180,7 +180,7 @@ self.__precacheManifest = [
     "url": "/static/media/foodweb.d2b2a29d.jpg"
   },
   {
-    "revision": "2e7e27783e824f4e2d9355cd528b6c17",
+    "revision": "8d45ee97d47d3cc2d9514d6029abd549",
     "url": "/index.html"
   }
 ];
