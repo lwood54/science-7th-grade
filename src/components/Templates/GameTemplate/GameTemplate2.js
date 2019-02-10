@@ -5,6 +5,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Slide from '@material-ui/core/Slide';
+import Paper from '@material-ui/core/Paper';
 
 import NavigationBar from '../../Navigation/NavigationBar/NavigationBar';
 
@@ -28,6 +29,7 @@ class GameTemplate2 extends Component {
                 wrongAnswers: 0,
                 targets: [],
                 cards: [],
+                dragClickId: null,
                 incorrectCards: []
         };
 
@@ -50,6 +52,7 @@ class GameTemplate2 extends Component {
                         correctAnswers: 0,
                         wrongAnswers: 0,
                         incorrectCards: [],
+                        dragClickId: null,
                         showNextButtons: false
                 });
         };
@@ -66,6 +69,35 @@ class GameTemplate2 extends Component {
                         mixedArray.push(arrayCopy.splice(randNum, 1)[0]);
                 }
                 return mixedArray;
+        };
+
+        handleCardClick = ev => {
+                if (ev.target.id) {
+                        this.setState({ dragClickId: ev.target.id });
+                } else if (ev.target.parentNode.id) {
+                        this.setState({ dragClickId: ev.target.parentNode.id });
+                }
+        };
+
+        handleTargetClick = ev => {
+                console.log('event click: ', ev.target.id);
+                // if the event target does not have class Target, then it's a no go
+                if (!ev.target.classList[0].includes('Target')) {
+                        return false;
+                } else if (ev.target.children.length > 0) {
+                        // if the drag target already has a child, it's a no go
+                        return false;
+                } else {
+                        if (this.state.dragClickId !== null) {
+                                // if we are good to go, then pass the event target and drag
+                                // item ids to the appendChild function
+                                ev.preventDefault();
+                                let targetId = ev.target.id;
+                                let cardId = this.state.dragClickId;
+                                this.appendChild(targetId, cardId);
+                                this.setState({ dragClickId: null });
+                        }
+                }
         };
 
         createFreshDeck = () => {
@@ -89,6 +121,7 @@ class GameTemplate2 extends Component {
                                                         id={`${col}_${item}`}
                                                         onDragStart={this.handleDrag}
                                                         draggable
+                                                        onClick={this.handleCardClick}
                                                 >
                                                         <img
                                                                 src={gameCopy[col][item]}
@@ -108,6 +141,7 @@ class GameTemplate2 extends Component {
                                                         className={cls.CardContainer}
                                                         onDragStart={this.handleDrag}
                                                         draggable
+                                                        onClick={this.handleCardClick}
                                                 >
                                                         <div className={cls.CardContent}>
                                                                 {gameCopy[col][item]}
@@ -134,6 +168,7 @@ class GameTemplate2 extends Component {
                                                 onDrop={this.handleDrop}
                                                 id={`col${i}_target${j}`}
                                                 key={`col${i}_target${j}`}
+                                                onClick={this.handleTargetClick}
                                         />
                                 );
                         }
@@ -257,6 +292,10 @@ class GameTemplate2 extends Component {
                                                                                                 cls.Target,
                                                                                                 cls.WrongTarget
                                                                                         ].join(' ')}
+                                                                                        onClick={
+                                                                                                this
+                                                                                                        .handleTargetClick
+                                                                                        }
                                                                                 />
                                                                         );
                                                                 }
@@ -348,6 +387,10 @@ class GameTemplate2 extends Component {
                                                                                                 cls.Target,
                                                                                                 cls.WrongTarget
                                                                                         ].join(' ')}
+                                                                                        onClick={
+                                                                                                this
+                                                                                                        .handleTargetClick
+                                                                                        }
                                                                                 />
                                                                         );
                                                                 }
@@ -408,6 +451,7 @@ class GameTemplate2 extends Component {
                         let cardId = ev.dataTransfer.getData('text');
                         this.appendChild(targetId, cardId);
                 }
+                this.setState({ dragClickId: null });
         };
 
         render() {
@@ -536,6 +580,13 @@ class GameTemplate2 extends Component {
                                                 <h4 className={cls.scoreText}>{this.state.correctAnswers}</h4>
                                         </div>
                                 </div>
+                                <Paper className={cls.ScreenSizeMessage}>
+                                        <h1>
+                                                This game is best played with a screen width of at least 700
+                                                px.
+                                        </h1>
+                                        <h3>Try turning your device or changing to a wider device.</h3>
+                                </Paper>
                         </div>
                 );
         }

@@ -24,6 +24,7 @@
 
 .colTitle {
         font-size: 20px;
+        height: 30px;
         text-align: center;
 }
 
@@ -152,9 +153,26 @@
         margin: auto;
 }
 
+.ScreenSizeMessage {
+        display: none;
+}
+
 @media (max-width: 1100px) {
         .CardContent {
                 line-height: 16px;
+        }
+}
+
+@media (max-width: 699px) {
+        .GameBoard,
+        .CardDeckContainer {
+                display: none;
+        }
+
+        .ScreenSizeMessage {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
         }
 }
 

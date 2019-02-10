@@ -88,7 +88,7 @@ const unit5_1Obj = {
                                 'A vast, flat, treeless Arctic region of Europe, Asia, and North America in which the subsoil is permanently frozen'
                 },
                 col2: {
-                        heading: 'Taiga/Boreal',
+                        heading: 'Taiga',
                         hint: 'A forest that looks like a bunch of Christmas trees',
                         image: require('./images/gifs/taiga.gif'),
                         definition:
