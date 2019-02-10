@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "0aedf886d5e6d920c076",
-    "url": "/static/css/main.b35225a9.chunk.css"
+    "revision": "a9e96f86c39eb9c6fdcf",
+    "url": "/static/css/main.9e37b255.chunk.css"
   },
   {
-    "revision": "0aedf886d5e6d920c076",
-    "url": "/static/js/main.0aedf886.chunk.js"
+    "revision": "a9e96f86c39eb9c6fdcf",
+    "url": "/static/js/main.a9e96f86.chunk.js"
   },
   {
-    "revision": "2ea8234178c8ed253087",
-    "url": "/static/js/1.2ea82341.chunk.js"
+    "revision": "877c444229ce084f0ab7",
+    "url": "/static/js/1.877c4442.chunk.js"
   },
   {
     "revision": "229c360febb4351a89df",
@@ -144,11 +144,43 @@ self.__precacheManifest = [
     "url": "/static/media/ecosystem.186405e3.jpg"
   },
   {
+    "revision": "ffbb7395262f5901f880eb58345e0516",
+    "url": "/static/media/biome.ffbb7395.jpg"
+  },
+  {
+    "revision": "bcc1337d351ef7b22f5d3ab1996bac73",
+    "url": "/static/media/ecoregions.bcc1337d.png"
+  },
+  {
+    "revision": "9c963ca193d727750f2b45f082dc04fe",
+    "url": "/static/media/sustainability.9c963ca1.jpg"
+  },
+  {
+    "revision": "4c4d4bfd3361819528859719fbf2a078",
+    "url": "/static/media/tundra.4c4d4bfd.gif"
+  },
+  {
+    "revision": "6bf48bc5b60310441208608d0145398b",
+    "url": "/static/media/taiga.6bf48bc5.gif"
+  },
+  {
+    "revision": "6edb52161cdfa7e3834e1269a86757af",
+    "url": "/static/media/temperate_forest.6edb5216.gif"
+  },
+  {
+    "revision": "794d80dd9f0c22302dfc2d04b99b732e",
+    "url": "/static/media/rainforest.794d80dd.gif"
+  },
+  {
+    "revision": "8f4d74053d78e2f6bfeea28e656ab3f2",
+    "url": "/static/media/desert.8f4d7405.gif"
+  },
+  {
     "revision": "d2b2a29d15c5928a2883023f93e73843",
     "url": "/static/media/foodweb.d2b2a29d.jpg"
   },
   {
-    "revision": "0fa0e8c367b6a42fb763545df9fd34da",
+    "revision": "2e7e27783e824f4e2d9355cd528b6c17",
     "url": "/index.html"
   }
 ];
