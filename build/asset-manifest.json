@@ -1,9 +1,9 @@
 {
-  "main.css": "/static/css/main.a8fa60bf.chunk.css",
-  "main.js": "/static/js/main.2649b9e7.chunk.js",
-  "main.js.map": "/static/js/main.2649b9e7.chunk.js.map",
-  "static/js/1.5c8a1ea1.chunk.js": "/static/js/1.5c8a1ea1.chunk.js",
-  "static/js/1.5c8a1ea1.chunk.js.map": "/static/js/1.5c8a1ea1.chunk.js.map",
+  "main.css": "/static/css/main.55caa719.chunk.css",
+  "main.js": "/static/js/main.a08982e8.chunk.js",
+  "main.js.map": "/static/js/main.a08982e8.chunk.js.map",
+  "static/js/1.b5a5bdbc.chunk.js": "/static/js/1.b5a5bdbc.chunk.js",
+  "static/js/1.b5a5bdbc.chunk.js.map": "/static/js/1.b5a5bdbc.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
   "static/media/hurricane.jpg": "/static/media/hurricane.4a0ba657.jpg",
@@ -13,6 +13,7 @@
   "static/media/wildfire.jpg": "/static/media/wildfire.17840a45.jpg",
   "static/media/microhabitat.gif": "/static/media/microhabitat.4b3f9d34.gif",
   "static/media/levels_of_organization.jpg": "/static/media/levels_of_organization.ebac94f1.jpg",
+  "static/media/leaf_anatomy.jpg": "/static/media/leaf_anatomy.c350897b.jpg",
   "static/media/keep_going.gif": "/static/media/keep_going.3d261cab.gif",
   "static/media/victory_royale.gif": "/static/media/victory_royale.5c359f7a.gif",
   "static/media/dichot_leaves.jpg": "/static/media/dichot_leaves.8633a3e6.jpg",
@@ -47,8 +48,8 @@
   "static/media/rainforest.gif": "/static/media/rainforest.794d80dd.gif",
   "static/media/desert.gif": "/static/media/desert.8f4d7405.gif",
   "static/media/foodweb.jpg": "/static/media/foodweb.d2b2a29d.jpg",
-  "static/css/main.a8fa60bf.chunk.css.map": "/static/css/main.a8fa60bf.chunk.css.map",
+  "static/css/main.55caa719.chunk.css.map": "/static/css/main.55caa719.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.10ce5d40e16b9bdfb441c7fdf2bc99c4.js": "/precache-manifest.10ce5d40e16b9bdfb441c7fdf2bc99c4.js",
+  "precache-manifest.805008f44c78a0d2afbf6f7371cdd354.js": "/precache-manifest.805008f44c78a0d2afbf6f7371cdd354.js",
   "service-worker.js": "/service-worker.js"
 }
