@@ -1,7 +1,7 @@
 {
-  "main.css": "/static/css/main.55caa719.chunk.css",
-  "main.js": "/static/js/main.a08982e8.chunk.js",
-  "main.js.map": "/static/js/main.a08982e8.chunk.js.map",
+  "main.css": "/static/css/main.8ef092ad.chunk.css",
+  "main.js": "/static/js/main.942dada0.chunk.js",
+  "main.js.map": "/static/js/main.942dada0.chunk.js.map",
   "static/js/1.b5a5bdbc.chunk.js": "/static/js/1.b5a5bdbc.chunk.js",
   "static/js/1.b5a5bdbc.chunk.js.map": "/static/js/1.b5a5bdbc.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
@@ -48,8 +48,8 @@
   "static/media/rainforest.gif": "/static/media/rainforest.794d80dd.gif",
   "static/media/desert.gif": "/static/media/desert.8f4d7405.gif",
   "static/media/foodweb.jpg": "/static/media/foodweb.d2b2a29d.jpg",
-  "static/css/main.55caa719.chunk.css.map": "/static/css/main.55caa719.chunk.css.map",
+  "static/css/main.8ef092ad.chunk.css.map": "/static/css/main.8ef092ad.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.805008f44c78a0d2afbf6f7371cdd354.js": "/precache-manifest.805008f44c78a0d2afbf6f7371cdd354.js",
+  "precache-manifest.97cb3adb950dc93ef4b33d26a985bb8d.js": "/precache-manifest.97cb3adb950dc93ef4b33d26a985bb8d.js",
   "service-worker.js": "/service-worker.js"
 }
