@@ -29,6 +29,7 @@ class GameTemplate2 extends Component {
                 wrongAnswers: 0,
                 targets: [],
                 cards: [],
+                roundOver: false,
                 dragClickId: null,
                 incorrectCards: []
         };
@@ -53,7 +54,7 @@ class GameTemplate2 extends Component {
                         wrongAnswers: 0,
                         incorrectCards: [],
                         dragClickId: null,
-                        showNextButtons: false
+                        roundOver: false
                 });
         };
 
@@ -73,14 +74,17 @@ class GameTemplate2 extends Component {
 
         handleCardClick = ev => {
                 if (ev.target.id) {
+                        ev.target.style.transform = 'scale(1.05)';
+                        ev.target.style.backgroundColor = '#0288d1';
                         this.setState({ dragClickId: ev.target.id });
                 } else if (ev.target.parentNode.id) {
+                        ev.target.parentNode.style.transform = 'scale(1.05)';
+                        ev.target.parentNode.style.backgroundColor = '#0288d1';
                         this.setState({ dragClickId: ev.target.parentNode.id });
                 }
         };
 
         handleTargetClick = ev => {
-                console.log('event click: ', ev.target.id);
                 // if the event target does not have class Target, then it's a no go
                 if (!ev.target.classList[0].includes('Target')) {
                         return false;
@@ -432,6 +436,7 @@ class GameTemplate2 extends Component {
                 this.setState({
                         targets: targetsCopy,
                         cards: cardsCopy,
+                        roundOver: cardsCopy.length <= 0,
                         incorrectCards: incorrectCardsCopy
                 });
         };
@@ -494,7 +499,7 @@ class GameTemplate2 extends Component {
                                         unitMain={unitMain}
                                 />
                                 <Dialog
-                                        open={this.state.correctAnswers === 15}
+                                        open={this.state.roundOver}
                                         TransitionComponent={Transition}
                                         keepMounted
                                         onClose={this.handleClose}

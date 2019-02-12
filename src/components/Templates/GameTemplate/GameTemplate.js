@@ -29,6 +29,7 @@ class GameTemplate extends Component {
                 wrongAnswers: 0,
                 targets: [],
                 cards: [],
+                roundOver: false,
                 dragClickId: null,
                 incorrectCards: []
         };
@@ -36,10 +37,6 @@ class GameTemplate extends Component {
         updateScore = () => {
                 const { correctAnswers, wrongAnswers } = this.state;
                 return Math.round(((correctAnswers - wrongAnswers) / correctAnswers) * 100);
-        };
-
-        handleClose = () => {
-                this.setState({ showNextButtons: true });
         };
 
         handleRestart = () => {
@@ -51,9 +48,9 @@ class GameTemplate extends Component {
                         targets,
                         correctAnswers: 0,
                         wrongAnswers: 0,
+                        roundOver: false,
                         incorrectCards: [],
-                        dragClickId: null,
-                        showNextButtons: false
+                        dragClickId: null
                 });
         };
 
@@ -73,8 +70,12 @@ class GameTemplate extends Component {
 
         handleCardClick = ev => {
                 if (ev.target.id) {
+                        ev.target.style.transform = 'scale(1.05)';
+                        ev.target.style.backgroundColor = '#0288d1';
                         this.setState({ dragClickId: ev.target.id });
                 } else if (ev.target.parentNode.id) {
+                        ev.target.parentNode.style.transform = 'scale(1.05)';
+                        ev.target.parentNode.style.backgroundColor = '#0288d1';
                         this.setState({ dragClickId: ev.target.parentNode.id });
                 }
         };
@@ -431,6 +432,7 @@ class GameTemplate extends Component {
                 this.setState({
                         targets: targetsCopy,
                         cards: cardsCopy,
+                        roundOver: cardsCopy.length <= 0,
                         incorrectCards: incorrectCardsCopy
                 });
         };
@@ -488,7 +490,6 @@ class GameTemplate extends Component {
                 );
 
                 let score = this.updateScore();
-
                 return (
                         <div style={{ width: '100%' }}>
                                 <NavigationBar
@@ -498,10 +499,9 @@ class GameTemplate extends Component {
                                         unitMain={unitMain}
                                 />
                                 <Dialog
-                                        open={this.state.correctAnswers === 15}
+                                        open={this.state.roundOver}
                                         TransitionComponent={Transition}
                                         keepMounted
-                                        onClose={this.handleClose}
                                         aria-labelledby="alert-dialog-slide-title"
                                         aria-describedby="alert-dialog-slide-description"
                                 >

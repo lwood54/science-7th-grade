@@ -50,8 +50,7 @@ const obj7_10C = {
                         image: require('./images/primary_succession.png')
                 },
                 {
-                        text:
-                                'Why does primary succession take so much lonnger than secondary succssion?',
+                        text: 'Why does primary succession take so much longer than secondary succssion?',
                         answers: [
                                 {
                                         wrong1:

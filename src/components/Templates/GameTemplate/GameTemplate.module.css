@@ -4,7 +4,7 @@
 }
 
 .Target {
-        height: 150px;
+        height: 125px;
         width: 100%;
         box-sizing: border-box;
         /* border-bottom: 1px solid #00796b; */
@@ -64,10 +64,9 @@
 }
 
 .CardDeckContainer {
-        width: 100%;
+        width: 98%;
         height: 220px;
         padding: 10px;
-        /* border: 2px solid red; */
         position: absolute;
         display: flex;
         box-sizing: border-box;
@@ -91,6 +90,10 @@
         box-shadow: 3px 4px 2px -3px gray;
         border-radius: 3px;
 }
+
+/* .CardContainer:active {
+        transform: scale(1.05);
+} */
 
 .CardStackLocation {
         /* border: 3px solid blue; */
