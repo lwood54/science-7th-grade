@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "942dada0cc84eee0ee34",
-    "url": "/static/css/main.8ef092ad.chunk.css"
+    "revision": "3a575cba90555036795c",
+    "url": "/static/css/main.098904c2.chunk.css"
   },
   {
-    "revision": "942dada0cc84eee0ee34",
-    "url": "/static/js/main.942dada0.chunk.js"
+    "revision": "3a575cba90555036795c",
+    "url": "/static/js/main.3a575cba.chunk.js"
   },
   {
-    "revision": "b5a5bdbc97f64a51c6a8",
-    "url": "/static/js/1.b5a5bdbc.chunk.js"
+    "revision": "5f1555c891eabeec933a",
+    "url": "/static/js/1.5f1555c8.chunk.js"
   },
   {
     "revision": "229c360febb4351a89df",
@@ -184,7 +184,47 @@ self.__precacheManifest = [
     "url": "/static/media/foodweb.d2b2a29d.jpg"
   },
   {
-    "revision": "a91fe96dd7809a2541f231f283f57f94",
+    "revision": "b7366b2cba6122942a189ab1ec928049",
+    "url": "/static/media/food_chain.b7366b2c.jpg"
+  },
+  {
+    "revision": "6803a630b02d73b38cab48fabcab9e21",
+    "url": "/static/media/food_web.6803a630.jpg"
+  },
+  {
+    "revision": "f6f1831b8e0a176c634c898dcaf56c1e",
+    "url": "/static/media/energy_pyramid.f6f1831b.jpg"
+  },
+  {
+    "revision": "29cc69327d58ebaf7bc8123fe35ac84c",
+    "url": "/static/media/primary_consumer.29cc6932.jpg"
+  },
+  {
+    "revision": "f4698b0ce79e74cbbb18fad84262f62c",
+    "url": "/static/media/secondary_consumer.f4698b0c.jpg"
+  },
+  {
+    "revision": "c4cb79993eb00266754aaefcf9cd2903",
+    "url": "/static/media/tertiary_consumer.c4cb7999.jpg"
+  },
+  {
+    "revision": "9eecf5fd974a4f9855af0ad17c68a623",
+    "url": "/static/media/decomposer.9eecf5fd.jpg"
+  },
+  {
+    "revision": "c95bb0aeb0abe67266f97883252c2271",
+    "url": "/static/media/leaves.c95bb0ae.jpg"
+  },
+  {
+    "revision": "124675ba5e0fe0ffb8710c94be970215",
+    "url": "/static/media/wind_mills.124675ba.jpg"
+  },
+  {
+    "revision": "a1e7000efce1a6d786c7ffcf2fd269c5",
+    "url": "/static/media/decay.a1e7000e.jpg"
+  },
+  {
+    "revision": "0c9ecd2c1aa16598c17289daeff63665",
     "url": "/index.html"
   }
 ];
