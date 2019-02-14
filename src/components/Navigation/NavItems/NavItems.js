@@ -11,43 +11,49 @@ import { Link } from 'react-router-dom';
 // the 'menuClicked' function would  call the toggleMenuHandler in
 // the Layout.js component
 const NavItems = props => {
-    return (
-        <AppBar position="fixed" color="primary" className={cls.NavBar}>
-            <Toolbar>
-                <IconButton
-                    className={cls.IconButton}
-                    color="inherit"
-                    aria-label="Menu"
-                    onClick={props.menuClicked}
-                >
-                    <MenuIcon />
-                </IconButton>
-                <h3 className={cls.Title}>{props.title}</h3>
-                <div className={cls.LinkContainer}>
-                    {props.homeLink ? (
-                        <Link to={props.homeLink} className={cls.Home}>
-                            Home
-                        </Link>
-                    ) : null}
-                    {props.unitMain ? (
-                        <Link to={props.unitMain} className={cls.Link}>
-                            Unit
-                        </Link>
-                    ) : null}
-                    {props.gameLink ? (
-                        <Link to={props.gameLink} className={cls.Link}>
-                            Game
-                        </Link>
-                    ) : null}
-                    {props.quizletLink ? (
-                        <a href={props.quizletLink} className={cls.Link}>
-                            Quizlet
-                        </a>
-                    ) : null}
-                </div>
-            </Toolbar>
-        </AppBar>
-    );
+        let titleClassName = null;
+        if (props.isHomePage) {
+                titleClassName = cls.HomePageTitle;
+        } else {
+                titleClassName = cls.Title;
+        }
+        return (
+                <AppBar position="fixed" color="primary" className={cls.NavBar}>
+                        <Toolbar>
+                                <IconButton
+                                        className={cls.IconButton}
+                                        color="inherit"
+                                        aria-label="Menu"
+                                        onClick={props.menuClicked}
+                                >
+                                        <MenuIcon />
+                                </IconButton>
+                                <h3 className={titleClassName}>{props.title}</h3>
+                                <div className={cls.LinkContainer}>
+                                        {props.homeLink ? (
+                                                <Link to={props.homeLink} className={cls.Home}>
+                                                        Home
+                                                </Link>
+                                        ) : null}
+                                        {props.unitMain ? (
+                                                <Link to={props.unitMain} className={cls.Link}>
+                                                        Unit
+                                                </Link>
+                                        ) : null}
+                                        {props.gameLink ? (
+                                                <Link to={props.gameLink} className={cls.Link}>
+                                                        Game
+                                                </Link>
+                                        ) : null}
+                                        {props.quizletLink ? (
+                                                <a href={props.quizletLink} className={cls.Link}>
+                                                        Quizlet
+                                                </a>
+                                        ) : null}
+                                </div>
+                        </Toolbar>
+                </AppBar>
+        );
 };
 
 export default NavItems;

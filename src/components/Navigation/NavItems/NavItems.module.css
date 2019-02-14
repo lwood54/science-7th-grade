@@ -1,47 +1,52 @@
 .NavBar {
-    display: flex;
-    text-align: center;
+        display: flex;
+        text-align: center;
 }
 
 .IconButton {
-    width: 50px;
+        width: 50px;
 }
 
 .Title {
-    width: 80%;
+        width: 100%;
+        margin-left: 12%;
+}
+
+.HomePageTitle {
+        width: 100%;
 }
 
 .LinkContainer {
-    display: flex;
+        display: flex;
 }
 
 .Link,
 .Home {
-    text-decoration: none;
-    outline: none;
-    text-transform: uppercase;
-    display: inline-block;
-    color: inherit;
-    width: 100%;
-    margin: auto;
-    padding: 12px;
-    text-align: center;
+        text-decoration: none;
+        outline: none;
+        text-transform: uppercase;
+        display: inline-block;
+        color: inherit;
+        width: 100%;
+        margin: auto;
+        padding: 12px;
+        text-align: center;
 }
 
 .Link:hover,
 .Home:hover {
-    background-color: rgba(0, 132, 112, 0.6);
-    border-radius: 4px;
-    color: #303836;
+        background-color: rgba(0, 132, 112, 0.6);
+        border-radius: 4px;
+        color: #303836;
 }
 
 .Home {
-    display: none;
+        display: none;
 }
 
 @media (min-width: 450px) {
-    /* Home will appear when the screen is larger than 450px*/
-    .Home {
-        display: inline-block;
-    }
+        /* Home will appear when the screen is larger than 450px*/
+        .Home {
+                display: inline-block;
+        }
 }
