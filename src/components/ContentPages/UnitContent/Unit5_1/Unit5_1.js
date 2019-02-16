@@ -3,6 +3,8 @@ import React from 'react';
 import Unit5_1Obj from './Unit5_1Obj';
 import NavigationBar from '../../../Navigation/NavigationBar/NavigationBar';
 import UnitPageTemplate from '../../../Templates/UnitPageTemplate/UnitPageTemplate';
+import Notes10A from '../../TEKSContent/TEKS7_10A/Notes7_10A';
+import Notes10B from '../../TEKSContent/TEKS7_10B/Notes7_10B';
 
 const unit5_1 = props => {
         // search for keys this way instead of hard coding array index because I may change that in the future.
@@ -31,7 +33,8 @@ const unit5_1 = props => {
                                 TEKSArray={Unit5_1Obj.TEKS}
                         />
                         <UnitPageTemplate {...Unit5_1Obj}>
-                                <p>Content Coming Soon </p>
+                                <Notes10A />
+                                <Notes10B />
                         </UnitPageTemplate>
                 </React.Fragment>
         );

@@ -4,6 +4,8 @@ import Unit5_2Obj from './Unit5_2Obj';
 import NavigationBar from '../../../Navigation/NavigationBar/NavigationBar';
 import UnitPageTemplate from '../../../Templates/UnitPageTemplate/UnitPageTemplate';
 
+import Notes5B from '../../TEKSContent/TEKS7_5B/Notes7_5B';
+
 const unit5_2 = props => {
         // search for keys this way instead of hard coding array index because I may change that in the future.
         const quizletLink = Unit5_2Obj.vertMenuItems
@@ -31,7 +33,7 @@ const unit5_2 = props => {
                                 TEKSArray={Unit5_2Obj.TEKS}
                         />
                         <UnitPageTemplate {...Unit5_2Obj}>
-                                <p>Content coming soon!</p>
+                                <Notes5B />
                         </UnitPageTemplate>
                 </React.Fragment>
         );

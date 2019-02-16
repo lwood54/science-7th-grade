@@ -1,3 +1,12 @@
+When adding new unit content:
+
+##make sure to -
+
+- create the Notes.js file in the TEKS specific folder
+- copy paste from a previous Notes.js file, then update with new TEKS objects and export name and title
+- import the Notes.js file for whatever TEKS will be used into the Unit.js file
+- wrap the Note.js component with the <UnitPageTemplate>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
