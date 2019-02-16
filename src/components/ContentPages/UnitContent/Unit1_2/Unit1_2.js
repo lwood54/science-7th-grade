@@ -1,39 +1,23 @@
 import React from 'react';
 
 import Unit1_2Obj from './Unit1_2Obj';
-import NavigationBar from '../../../Navigation/NavigationBar/NavigationBar';
 import UnitPageTemplate from '../../../Templates/UnitPageTemplate/UnitPageTemplate';
 
+import Notes5A from '../../TEKSContent/TEKS7_5A/Notes7_5A';
+import Notes6A from '../../TEKSContent/TEKS7_6A/Notes7_6A';
+import Notes7A from '../../TEKSContent/TEKS7_7A/Notes7_7A';
+import Notes7B from '../../TEKSContent/TEKS7_7B/Notes7_7B';
+import Notes13A from '../../TEKSContent/TEKS7_13A/Notes7_13A';
+
 const unit1_2 = props => {
-        // search for keys this way instead of hard coding array index because I may change that in the future.
-        const quizletLink = Unit1_2Obj.vertMenuItems
-                .map(item => {
-                        return item['Quizlet'];
-                })
-                .join('');
-        const gameLink = Unit1_2Obj.vertMenuItems
-                .map(item => {
-                        return item['Game'];
-                })
-                .join('');
-        const homeLink = Unit1_2Obj.vertMenuItems
-                .map(item => {
-                        return item['Home'];
-                })
-                .join('');
         return (
-                <React.Fragment>
-                        <NavigationBar
-                                title={Unit1_2Obj.title}
-                                gameLink={gameLink}
-                                quizletLink={quizletLink}
-                                homeLink={homeLink}
-                                TEKSArray={Unit1_2Obj.TEKS}
-                        />
-                        <UnitPageTemplate {...Unit1_2Obj}>
-                                <p>Content coming soon!</p>
-                        </UnitPageTemplate>
-                </React.Fragment>
+                <UnitPageTemplate {...Unit1_2Obj}>
+                        <Notes5A />
+                        <Notes6A />
+                        <Notes7A />
+                        <Notes7B />
+                        <Notes13A />
+                </UnitPageTemplate>
         );
 };
 

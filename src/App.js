@@ -58,6 +58,7 @@ import Quiz7_12A from './components/ContentPages/TEKSContent/TEKS7_12A/Quiz7_12A
 import Quiz7_12B from './components/ContentPages/TEKSContent/TEKS7_12B/Quiz7_12B';
 import Quiz7_12C from './components/ContentPages/TEKSContent/TEKS7_12C/Quiz7_12C';
 import Quiz7_12D from './components/ContentPages/TEKSContent/TEKS7_12D/Quiz7_12D';
+import Quiz7_12E from './components/ContentPages/TEKSContent/TEKS7_12E/Quiz7_12E';
 import Quiz7_12F from './components/ContentPages/TEKSContent/TEKS7_12F/Quiz7_12F';
 import Quiz7_13A from './components/ContentPages/TEKSContent/TEKS7_13A/Quiz7_13A';
 import Quiz7_13B from './components/ContentPages/TEKSContent/TEKS7_13B/Quiz7_13B';
@@ -208,6 +209,7 @@ class App extends Component {
                                                 <Route path="/quiz7_12B" component={Quiz7_12B} />
                                                 <Route path="/quiz7_12C" component={Quiz7_12C} />
                                                 <Route path="/quiz7_12D" component={Quiz7_12D} />
+                                                <Route path="/quiz7_12E" component={Quiz7_12E} />
                                                 <Route path="/quiz7_12F" component={Quiz7_12F} />
                                                 <Route path="/quiz7_13A" component={Quiz7_13A} />
                                                 <Route path="/quiz7_13B" component={Quiz7_13B} />

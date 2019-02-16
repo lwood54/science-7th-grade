@@ -1,57 +1,67 @@
 .Paper,
 .Wrong {
-    padding: 15px;
-    margin: auto;
-    text-align: center;
+        padding: 15px;
+        margin: auto;
+        text-align: center;
 }
 
 .AnswerContainer {
-    margin: 10px auto;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    /* border: 2px solid black; */
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        /* border: 2px solid black; */
 }
 
 .AnswerButtonContainer {
-    width: 100%;
-    margin: 15px auto;
-    height: 75px;
-    /* border: 2px solid red; */
+        width: 100%;
+        margin: 15px auto;
+        height: 75px;
+        /* border: 2px solid red; */
+}
+.OptionsButtonContainer {
+        width: 100%;
+        margin: 15px auto;
+        height: 75px;
 }
 
 .AnswerButton {
-    width: 100%;
-    margin: 10px;
-    height: 85px;
-    display: inline-block;
+        width: 100%;
+        margin: 10px;
+        height: 85px;
+        display: inline-block;
 }
 
 .qNums {
-    display: inline-block;
-    margin: 5px 10px;
+        display: inline-block;
+        margin: 5px 10px;
 }
 
 .QuizImage {
-    width: 75%;
+        width: 75%;
 }
 
 /* I don't hink I'm using this class. */
 .Heading {
-    text-align: center;
+        text-align: center;
 }
 
+/************************************* MEDIA QUERIES *******************************/
 @media (min-width: 750px) {
-    .AnswerContainer {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+        .AnswerContainer {
+                flex-direction: row;
+                flex-wrap: wrap;
+        }
 
-    .AnswerButtonContainer {
-        width: 45%;
-    }
+        .AnswerButtonContainer {
+                width: 45%;
+        }
 
-    .QuizImage {
-        width: 50%;
-    }
+        .OptionsButtonContainer {
+                width: 32%;
+        }
+
+        .QuizImage {
+                width: 50%;
+        }
 }

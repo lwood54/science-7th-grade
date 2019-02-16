@@ -19,7 +19,7 @@ const notes7_8A = props => {
                         teksNum={Obj7_8A.teksNum}
                         teksContent={Obj7_8A.teksContent}
                         teksQuiz={Obj7_8A.teksQuiz}
-                        title="Catastrophic Events"
+                        title={Obj7_8A.teksLabel}
                 >
                         <div className={cls.NotesContainer}>
                                 <div className={cls.ImageContainer}>

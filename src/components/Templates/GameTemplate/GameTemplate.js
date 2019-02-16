@@ -177,6 +177,7 @@ class GameTemplate extends Component {
         };
 
         componentDidMount() {
+                window.scrollTo(0, 0);
                 let cards = this.createFreshDeck();
                 let targets = this.createTargets();
                 this.setState({

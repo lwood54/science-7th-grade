@@ -8,7 +8,6 @@
         width: 100%;
         box-sizing: border-box;
         /* border-bottom: 1px solid #00796b; */
-        cursor: pointer;
         padding: 5px;
         position: relative;
         display: flex;
@@ -24,7 +23,7 @@
 
 .colTitle {
         font-size: 20px;
-        height: 30px;
+        height: 35px;
         text-align: center;
 }
 
@@ -89,11 +88,8 @@
         background-color: #03a9f4;
         box-shadow: 3px 4px 2px -3px gray;
         border-radius: 3px;
+        cursor: move;
 }
-
-/* .CardContainer:active {
-        transform: scale(1.05);
-} */
 
 .CardStackLocation {
         /* border: 3px solid blue; */

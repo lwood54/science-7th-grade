@@ -19,7 +19,7 @@ const notes7_10C = props => {
                         teksNum={Obj7_10C.teksNum}
                         teksQuiz={Obj7_10C.teksQuiz}
                         teksContent={Obj7_10C.teksContent}
-                        title="Ecological Succession"
+                        title={Obj7_10C.teksLabel}
                 >
                         <div className={cls.NotesContainer}>
                                 <div className={cls.ImageContainer}>

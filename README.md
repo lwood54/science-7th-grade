@@ -1,11 +1,38 @@
-When adding new unit content:
+## When adding new unit content:
 
-##make sure to -
+make sure to -
 
 - create the Notes.js file in the TEKS specific folder
 - copy paste from a previous Notes.js file, then update with new TEKS objects and export name and title
 - import the Notes.js file for whatever TEKS will be used into the Unit.js file
 - wrap the Note.js component with the <UnitPageTemplate>
+
+################
+Notes.js blueprint:
+import React from 'react';
+
+import NotesTemplate from '../../../Templates/NotesTemplate/NotesTemplate';
+import Obj7_5A from './Obj7_5A';
+
+import cls from '../../../Templates/NotesTemplate/NotesTemplate.module.css';
+
+//////////////////// PICTURE IMPORTS /////////////////////////////////
+
+const notes7_5A = props => {
+return (
+<NotesTemplate
+                        teksNum={Obj7_5A.teksNum}
+                        teksContent={Obj7_5A.teksContent}
+                        teksQuiz={Obj7_5A.teksQuiz}
+                        title="INPUT TITLE HERE"
+                >
+<h1>notes7_5A</h1>
+</NotesTemplate>
+);
+};
+
+export default notes7_5A;
+###################
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
