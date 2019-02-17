@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "ee3686d13ffb7d616b67",
-    "url": "/static/css/main.f5b5eb8b.chunk.css"
+    "revision": "a08e25a94e8f0c9ae838",
+    "url": "/static/css/main.67f36d39.chunk.css"
   },
   {
-    "revision": "ee3686d13ffb7d616b67",
-    "url": "/static/js/main.ee3686d1.chunk.js"
+    "revision": "a08e25a94e8f0c9ae838",
+    "url": "/static/js/main.a08e25a9.chunk.js"
   },
   {
-    "revision": "4076e8e251220360d85c",
-    "url": "/static/js/1.4076e8e2.chunk.js"
+    "revision": "7311c90569ff0b93fe24",
+    "url": "/static/js/1.7311c905.chunk.js"
   },
   {
     "revision": "229c360febb4351a89df",
@@ -18,6 +18,10 @@ self.__precacheManifest = [
   {
     "revision": "4b3f9d345ce6ca54aa43e64673ce67f2",
     "url": "/static/media/microhabitat.4b3f9d34.gif"
+  },
+  {
+    "revision": "8f4d74053d78e2f6bfeea28e656ab3f2",
+    "url": "/static/media/desert.8f4d7405.gif"
   },
   {
     "revision": "4a0ba657dad6d8aba933bb359de33112",
@@ -40,6 +44,30 @@ self.__precacheManifest = [
     "url": "/static/media/wildfire.17840a45.jpg"
   },
   {
+    "revision": "3b485366715a0c9eabb2b02a788000b4",
+    "url": "/static/media/temperate_rainforest.3b485366.gif"
+  },
+  {
+    "revision": "746b87ef63fc5da697117a2fa0ada1fa",
+    "url": "/static/media/biomes_map.746b87ef.jpg"
+  },
+  {
+    "revision": "921944ae7bd24ca1934de89720861f96",
+    "url": "/static/media/tropical_rainforest.921944ae.gif"
+  },
+  {
+    "revision": "85850debeafc43787f8caf722d72b4f0",
+    "url": "/static/media/biodiversity.85850deb.jpg"
+  },
+  {
+    "revision": "f858978717d4c660e789b3e721e00993",
+    "url": "/static/media/pitcher_plant.f8589787.jpg"
+  },
+  {
+    "revision": "f44abb74594f846ce6afa9d8a9b551a1",
+    "url": "/static/media/camouflaged.f44abb74.jpg"
+  },
+  {
     "revision": "4c4d4bfd3361819528859719fbf2a078",
     "url": "/static/media/tundra.4c4d4bfd.gif"
   },
@@ -52,8 +80,8 @@ self.__precacheManifest = [
     "url": "/static/media/temperate_forest.6edb5216.gif"
   },
   {
-    "revision": "8f4d74053d78e2f6bfeea28e656ab3f2",
-    "url": "/static/media/desert.8f4d7405.gif"
+    "revision": "794d80dd9f0c22302dfc2d04b99b732e",
+    "url": "/static/media/rainforest.794d80dd.gif"
   },
   {
     "revision": "bcc1337d351ef7b22f5d3ab1996bac73",
@@ -104,10 +132,6 @@ self.__precacheManifest = [
     "url": "/static/media/tornado_damage_trees.0e67b8ba.jpg"
   },
   {
-    "revision": "746b87ef63fc5da697117a2fa0ada1fa",
-    "url": "/static/media/biomes_map.746b87ef.jpg"
-  },
-  {
     "revision": "d43a244e07633b3b2394aef19c7ab87f",
     "url": "/static/media/abiotic_factors.d43a244e.png"
   },
@@ -124,12 +148,12 @@ self.__precacheManifest = [
     "url": "/static/media/tropical_grassland.24aa5d19.gif"
   },
   {
-    "revision": "3b485366715a0c9eabb2b02a788000b4",
-    "url": "/static/media/temperate_rainforest.3b485366.gif"
+    "revision": "bb10aebeeb72aee6ea341fb82e844645",
+    "url": "/static/media/desert_roots.bb10aebe.jpg"
   },
   {
-    "revision": "921944ae7bd24ca1934de89720861f96",
-    "url": "/static/media/tropical_rainforest.921944ae.gif"
+    "revision": "a788bcadd236e1d0731dee374ec3fac2",
+    "url": "/static/media/camel.a788bcad.jpg"
   },
   {
     "revision": "ec557166ec70fede450aff6e0923ec26",
@@ -192,6 +216,10 @@ self.__precacheManifest = [
     "url": "/static/media/climax_community.88a6167d.gif"
   },
   {
+    "revision": "7de1c9837c54c9da7585a7c573104797",
+    "url": "/static/media/rainforest_sunlight.7de1c983.jpg"
+  },
+  {
     "revision": "186405e38547c874ae357506887aeb9e",
     "url": "/static/media/ecosystem.186405e3.jpg"
   },
@@ -202,10 +230,6 @@ self.__precacheManifest = [
   {
     "revision": "9c963ca193d727750f2b45f082dc04fe",
     "url": "/static/media/sustainability.9c963ca1.jpg"
-  },
-  {
-    "revision": "794d80dd9f0c22302dfc2d04b99b732e",
-    "url": "/static/media/rainforest.794d80dd.gif"
   },
   {
     "revision": "d2b2a29d15c5928a2883023f93e73843",
@@ -284,7 +308,7 @@ self.__precacheManifest = [
     "url": "/static/media/saturated.5a91bb71.jpg"
   },
   {
-    "revision": "57c35ec508adb9e3f96515e15f894de1",
+    "revision": "a36480dcb4a413e0b2d170a584a52c19",
     "url": "/index.html"
   }
 ];

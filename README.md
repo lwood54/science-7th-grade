@@ -26,6 +26,7 @@ return (
                         teksQuiz={Obj7_5A.teksQuiz}
                         title="INPUT TITLE HERE"
                 >
+
 <h1>notes7_5A</h1>
 </NotesTemplate>
 );
@@ -33,6 +34,25 @@ return (
 
 export default notes7_5A;
 ###################
+
+####################
+
+## When adding quiz questions to the TEKS object:
+
+In file like: Obj7_10A.js
+inside the object, you have a questions key,
+questions: [
+{
+text: '',
+answers: [
+{wrong1: ''},
+{wrong2: ''},
+{wrong3: ''},
+{correct: ''}
+],
+image: require('') // leave as an empty string if there is no image needed
+}
+]
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

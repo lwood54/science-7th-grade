@@ -162,7 +162,7 @@ export class QuizTemplate extends Component {
                                                                                 </h3>
                                                                         ) : null}
                                                                         {
-                                                                                // if the image is truthy, as in not an amptey array, it will
+                                                                                // if the image is truthy, as in not an empty string, it will
                                                                                 // display the image
                                                                         }
                                                                         {this.state.displayQuestionsArray[0]

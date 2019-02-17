@@ -16,6 +16,9 @@ import Unit6_1Obj from '../UnitContent/Unit6_1/Unit6_1Obj';
 import Unit6_2Obj from '../UnitContent/Unit6_2/Unit6_2Obj';
 
 class HomePage extends Component {
+        componentDidMount() {
+                window.scrollTo(0, 0);
+        }
         render() {
                 return (
                         <div>
