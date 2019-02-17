@@ -2,7 +2,7 @@ const obj7_5A = {
         teksNum: '7.5 A',
         teksLabel: 'Photosynthesis',
         teksContent:
-                'recognize that radiant energy from the Sun is transformed into chemical energy through the process of photosynthesis',
+                'Recognize that radiant energy from the Sun is transformed into chemical energy through the process of photosynthesis.',
         teksQuiz: '/quiz7_5A',
         questions: [
                 {
@@ -17,8 +17,7 @@ const obj7_5A = {
                         image: require('./images/plant.jpg')
                 },
                 {
-                        text:
-                                'Identify the type of energy conversion taking place during photosynthesis.',
+                        text: 'Identify the type of energy conversion taking place during photosynthesis.',
                         answers: [
                                 { wrong1: 'chemical to radiant' },
                                 { wrong2: 'radiant to kinetic' },

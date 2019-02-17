@@ -2,7 +2,7 @@ const obj7_14A = {
         teksNum: '7.14 A',
         teksLabel: 'Heredity',
         teksContent:
-                'define heredity as the passage of genetic instructions from one generation to the next generation',
+                'Define heredity as the passage of genetic instructions from one generation to the next generation.',
         teksQuiz: '/quiz7_14A',
         questions: []
 };

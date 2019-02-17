@@ -5,7 +5,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
-
 // NavItems contains the AppBar which is the parent to
 // the IconButton, which when clicked calls the 'menuClicked' function being passed
 // the 'menuClicked' function would  call the toggleMenuHandler in

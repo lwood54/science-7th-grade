@@ -2,20 +2,17 @@ const obj7_5B = {
         teksNum: '7.5 B',
         teksLabel: 'Food Chains and Webs',
         teksContent:
-                'diagram the flow of energy through living systems, including food chains, food webs, and energy pyramids',
+                'Diagram the flow of energy through living systems, including food chains, food webs, and energy pyramids.',
         teksQuiz: '/quiz7_5B',
         questions: [
                 {
-                        text:
-                                'What do the arrows in a food chain or web represent?',
+                        text: 'What do the arrows in a food chain or web represent?',
                         answers: [
                                 {
-                                        wrong1:
-                                                'The  arrows point from the predators to the prey.'
+                                        wrong1: 'The  arrows point from the predators to the prey.'
                                 },
                                 {
-                                        wrong2:
-                                                "It isn't an arrow, it's a line."
+                                        wrong2: "It isn't an arrow, it's a line."
                                 },
                                 {
                                         wrong3:

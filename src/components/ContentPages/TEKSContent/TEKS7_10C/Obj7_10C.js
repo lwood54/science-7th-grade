@@ -2,7 +2,7 @@ const obj7_10C = {
         teksNum: '7.10 C',
         teksLabel: 'Ecological Succession',
         teksContent:
-                'observe, record, and describe the role of ecological succession such as in a microhabitat of a garden with weeds',
+                'Observe, record, and describe the role of ecological succession such as in a microhabitat of a garden with weeds.',
         teksQuiz: '/quiz7_10C',
         questions: [
                 {

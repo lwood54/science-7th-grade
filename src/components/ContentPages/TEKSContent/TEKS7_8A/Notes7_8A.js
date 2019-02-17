@@ -68,7 +68,7 @@ const notes7_8A = props => {
                                 <div className={cls.Notes}>
                                         <p>
                                                 When catastrophic events occur, they bring with them different
-                                                amounts of destruction. In one instance, it may result for a
+                                                amounts of destruction. In one instance, they may result in a
                                                 major inconvience for an ecosystem, but a quick recovery, such
                                                 as light flooding. In other instances, like a massive volcanic
                                                 eruption, there may be total destruction of an ecosystem that
@@ -87,15 +87,15 @@ const notes7_8A = props => {
                                         </p>
                                         <p>
                                                 Upon investigation, scientists discovered that wildfires
-                                                actual play a key role in cycling nutrients and can increase
+                                                actually play a key role in cycling nutrients and can increase
                                                 the biodiversity in an ecosystem.
                                         </p>
                                 </div>
                                 <div className={cls.Notes}>
                                         <p>
-                                                There are even some special organisms like giant redwoods that
-                                                require wildfires to spread their seeds. The destruction of
-                                                leaves and limbs of these competitive giants allows young
+                                                There are even some special organisms, like giant redwoods,
+                                                that require wildfires to spread their seeds. The destruction
+                                                of leaves and limbs of these competitive giants allows young
                                                 sapplings to gain essential exposure to sunlight!
                                         </p>
                                 </div>
@@ -123,9 +123,9 @@ const notes7_8A = props => {
                                 <div className={cls.Notes}>
                                         <p>
                                                 <em>Volcanoes</em> are able to massively affect an ecosystem
-                                                by the removal of land when enormous eruptions can explode,
-                                                resulting in tons of ash to be sent into the sky for long
-                                                periods of time which can cause cooling and reduced plant
+                                                by the removal of land when enormous eruptions occur,
+                                                resulting in tons of ash being sent into the sky for long
+                                                periods of time, which can cause cooling and reduced plant
                                                 growth.
                                         </p>
                                 </div>
@@ -141,9 +141,9 @@ const notes7_8A = props => {
                                 <div className={cls.Notes}>
                                         <p>
                                                 On the other hand, volcanoes can also release molten rock, or
-                                                lava, which when cools forms new land. That new land will
+                                                lava, which when cooled, forms new land. That new land will
                                                 eventually get broken down over centuries, combining with
-                                                organic matter, forming nutrient rich soil that can be amazing
+                                                organic matter, to form nutrient rich soil that can be amazing
                                                 for plant life.
                                         </p>
                                 </div>
