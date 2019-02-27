@@ -596,16 +596,14 @@ class GameTemplateB extends Component {
                                                         </h4>
                                                 </div>
                                         </div>
-                                        <Paper className={cls.ScreenSizeMessage}>
-                                                <h1>
-                                                        This game is best played with a screen width of at
-                                                        least 700 px.
-                                                </h1>
-                                                <h3>
-                                                        Try turning your device or changing to a wider device.
-                                                </h3>
-                                        </Paper>
                                 </div>
+                                <Paper className={cls.ScreenSizeMessage}>
+                                        <h1>
+                                                This game is best played with a screen width of at least 700
+                                                px.
+                                        </h1>
+                                        <h3>Try turning your device or changing to a wider device.</h3>
+                                </Paper>
                         </div>
                 );
         }
