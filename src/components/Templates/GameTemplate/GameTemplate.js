@@ -531,66 +531,76 @@ class GameTemplate extends Component {
                                                 {score >= 70 ? nextSection : null}
                                         </DialogActions>
                                 </Dialog>
-                                <div className={cls.GameBoard}>
-                                        <div className={cls.Col}>
-                                                <h1 className={cls.colTitle}>
-                                                        {this.props.game.col1.heading}
-                                                </h1>
-                                                {this.state.targets[0]}
-                                                {this.state.targets[1]}
-                                                {this.state.targets[2]}
+                                <div className={cls.GameContainer}>
+                                        <div className={cls.GameBoard}>
+                                                <div className={cls.Col}>
+                                                        <h1 className={cls.colTitle}>
+                                                                {this.props.game.col1.heading}
+                                                        </h1>
+                                                        {this.state.targets[0]}
+                                                        {this.state.targets[1]}
+                                                        {this.state.targets[2]}
+                                                </div>
+                                                <div className={cls.Col}>
+                                                        <h1 className={cls.colTitle}>
+                                                                {this.props.game.col2.heading}
+                                                        </h1>
+                                                        {this.state.targets[3]}
+                                                        {this.state.targets[4]}
+                                                        {this.state.targets[5]}
+                                                </div>
+                                                <div className={cls.Col}>
+                                                        <h1 className={cls.colTitle}>
+                                                                {this.props.game.col3.heading}
+                                                        </h1>
+                                                        {this.state.targets[6]}
+                                                        {this.state.targets[7]}
+                                                        {this.state.targets[8]}
+                                                </div>
+                                                <div className={cls.Col}>
+                                                        <h1 className={cls.colTitle}>
+                                                                {this.props.game.col4.heading}
+                                                        </h1>
+                                                        {this.state.targets[9]}
+                                                        {this.state.targets[10]}
+                                                        {this.state.targets[11]}
+                                                </div>
+                                                <div className={cls.Col}>
+                                                        <h1 className={cls.colTitle}>
+                                                                {this.props.game.col5.heading}
+                                                        </h1>
+                                                        {this.state.targets[12]}
+                                                        {this.state.targets[13]}
+                                                        {this.state.targets[14]}
+                                                </div>
                                         </div>
-                                        <div className={cls.Col}>
-                                                <h1 className={cls.colTitle}>
-                                                        {this.props.game.col2.heading}
-                                                </h1>
-                                                {this.state.targets[3]}
-                                                {this.state.targets[4]}
-                                                {this.state.targets[5]}
+                                        <div className={cls.CardDeckContainer}>
+                                                <div className={cls.CardStackLocation}>
+                                                        {this.state.cards}
+                                                </div>
+                                                <div className={cls.IncorrectScore}>
+                                                        <h2>Incorrect</h2>
+                                                        <h4 className={cls.scoreText}>
+                                                                {this.state.wrongAnswers}
+                                                        </h4>
+                                                </div>
+                                                <div className={cls.CorrectScore}>
+                                                        <h2>Correct</h2>
+                                                        <h4 className={cls.scoreText}>
+                                                                {this.state.correctAnswers}
+                                                        </h4>
+                                                </div>
                                         </div>
-                                        <div className={cls.Col}>
-                                                <h1 className={cls.colTitle}>
-                                                        {this.props.game.col3.heading}
+                                        <Paper className={cls.ScreenSizeMessage}>
+                                                <h1>
+                                                        This game is best played with a screen width of at
+                                                        least 700 px.
                                                 </h1>
-                                                {this.state.targets[6]}
-                                                {this.state.targets[7]}
-                                                {this.state.targets[8]}
-                                        </div>
-                                        <div className={cls.Col}>
-                                                <h1 className={cls.colTitle}>
-                                                        {this.props.game.col4.heading}
-                                                </h1>
-                                                {this.state.targets[9]}
-                                                {this.state.targets[10]}
-                                                {this.state.targets[11]}
-                                        </div>
-                                        <div className={cls.Col}>
-                                                <h1 className={cls.colTitle}>
-                                                        {this.props.game.col5.heading}
-                                                </h1>
-                                                {this.state.targets[12]}
-                                                {this.state.targets[13]}
-                                                {this.state.targets[14]}
-                                        </div>
+                                                <h3>
+                                                        Try turning your device or changing to a wider device.
+                                                </h3>
+                                        </Paper>
                                 </div>
-                                <div className={cls.CardDeckContainer}>
-                                        <div className={cls.CardStackLocation}>{this.state.cards}</div>
-                                        <div className={cls.IncorrectScore}>
-                                                <h2>Incorrect</h2>
-                                                <h4 className={cls.scoreText}>{this.state.wrongAnswers}</h4>
-                                        </div>
-                                        <div className={cls.CorrectScore}>
-                                                <h2>Correct</h2>
-                                                <h4 className={cls.scoreText}>{this.state.correctAnswers}</h4>
-                                        </div>
-                                </div>
-                                <Paper className={cls.ScreenSizeMessage}>
-                                        <h1>
-                                                This game is best played with a screen width of at least 700
-                                                px.
-                                        </h1>
-                                        <h3>Try turning your device or changing to a wider device.</h3>
-                                </Paper>
                         </div>
                 );
         }
