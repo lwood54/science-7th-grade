@@ -9,12 +9,12 @@
 /coverage
 
 # production
-src/*
+# src/*
 public/*
 build/static/css/*.map
 build/static/js/*.map
 
-# misc
+# # misc
 .DS_Store
 .env.local
 .env.development.local

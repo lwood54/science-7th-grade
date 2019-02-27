@@ -73,10 +73,6 @@ import Quiz7_14C from './components/ContentPages/TEKSContent/TEKS7_14C/Quiz7_14C
 // or loop to render the layout and load the PageList component
 // to determine the path? Should work.
 
-// ALSO...can I create an array of page objects.
-
-// const pageListArray = PageList();
-
 class App extends Component {
         render() {
                 // console.log(pageListArray[0].pageAddress);
