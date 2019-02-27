@@ -52,6 +52,11 @@
         width: 150%;
 }
 
+.WrongTarget .CardContent {
+        transform: scale(0.75, 0.75) translateX(-18px);
+        width: 120%;
+}
+
 .CorrectTarget {
         background-color: #00897b;
 }
@@ -173,7 +178,12 @@
 
         .Correct .CardContent {
                 transform: scale(1, 1) translateY(0px);
-                width: 100%;
+                width: 90%;
+        }
+
+        .WrongTarget .CardContent {
+                transform: scale(1, 1) translateX(0);
+                width: 90%;
         }
 
         .CardStackLocation {
