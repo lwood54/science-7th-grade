@@ -584,7 +584,7 @@ class GameTemplateB extends Component {
                                                         {this.state.cards}
                                                 </div>
                                                 <div className={cls.IncorrectScore}>
-                                                        <h2>Wrong</h2>
+                                                        <h2>Incorrect</h2>
                                                         <h4 className={cls.scoreText}>
                                                                 {this.state.wrongAnswers}
                                                         </h4>

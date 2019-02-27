@@ -3,7 +3,7 @@ import React from 'react';
 import NotesTemplate from '../../../Templates/NotesTemplate/NotesTemplate';
 import Obj7_11B from './Obj7_11B';
 
-import cls from '../../../Templates/NotesTemplate/NotesTemplate.module.css';
+// import cls from '../../../Templates/NotesTemplate/NotesTemplate.module.css';
 
 //////////////////// PICTURE IMPORTS /////////////////////////////////
 
