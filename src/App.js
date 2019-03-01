@@ -69,11 +69,6 @@ import Quiz7_14C from './components/ContentPages/TEKSContent/TEKS7_14C/Quiz7_14C
 // look into code splitting for the page renders. No need
 // to load all pages, only the one being accessed.
 
-// PROBLEM: There is alot of redundant code. Can I map this
-// or loop to render the layout and load the PageList component
-// to determine the path? Should work.
-// test to see if git tracked
-
 class App extends Component {
         render() {
                 // console.log(pageListArray[0].pageAddress);
