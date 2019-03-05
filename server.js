@@ -25,7 +25,8 @@ app.listen(port, () => {
 // 5. update .gitignore
 //      a. remove /build
 //      b. add:
-//              src/*
+//              src/* //NOTE: doing .gitignore for  src mean that any changes I made were not tracked by git, not sure
+//                                      why this was put in here from the instructions I found.
 //              public/*
 //              build/static/css/*.map
 //              build/static/js/*.map
