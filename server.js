@@ -7,6 +7,9 @@ app.use(favicon(__dirname + '/build/favicon.ico'));
 // the __dirname is the current directory from where the script is running
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'build')));
+app.get('/loaderio-23055934f30ee0b70426cbcbd95be938.txt', function(req, res)) {
+        res.sendFile(path.join(__dirname, 'loaderio-23055934f30ee0b70426cbcbd95be938.txt'));
+}
 app.get('/*', function(req, res) {
         res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
