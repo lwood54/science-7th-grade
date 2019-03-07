@@ -1,10 +1,10 @@
 .CardContainer {
-    margin-top: 70px;
+        margin-top: 70px;
 }
 
 @media (min-width: 750px) {
-    .CardContainer {
-        display: flex;
-        flex-direction: row;
-    }
+        .CardContainer {
+                display: flex;
+                flex-direction: row;
+        }
 }

@@ -112,6 +112,7 @@ class GameTemplate extends Component {
                 arrayOfCols.forEach(col => {
                         let itemsArray = Object.keys(gameCopy[col]);
                         itemsArray.forEach(item => {
+                                console.log('createFreshDeck(): card being created');
                                 if (item === 'image') {
                                         // add an image card to the array
                                         cards.push(
@@ -161,6 +162,7 @@ class GameTemplate extends Component {
                 // define id's by position in 2 different loops
                 for (let i = 1; i <= 5; i++) {
                         for (let j = 1; j <= 3; j++) {
+                                console.log('createTargets(): target created');
                                 targets.push(
                                         <div
                                                 className={cls.Target}
