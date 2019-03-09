@@ -9,12 +9,33 @@ import React, { useState } from 'react';
 import cls from './GameTemplate.module.css';
 
 const NewGameTemplate = () => {
-        const [count, setCount] = useState(0);
+        const [correctAnswers, setCorrectAnswers] = useState(0); // initial state of 0 is only used during first render
+        const [incorrectAnswers, setIncorrectAnswers] = useState(0);
+        const [targets, setTargets] = useState([]);
+        const [cards, setCards] = useState([]);
+        const [isRoundOver, setIsRoundOver] = useState(false);
+        const [dragClickId, setDragClickId] = useState(null);
+
+        const handleCorrect = () => {
+                setCorrectAnswers(correctAnswers + 1);
+        };
+        const handleIncorrect = () => {
+                setIncorrectAnswers(incorrectAnswers + 1);
+        };
+
         return (
                 <div>
                         <h1 className={cls.Title}>New Game Template</h1>
-                        <p>You clicked {count} times</p>
-                        <button onClick={() => setCount(count + 1)}>Click me</button>
+                        <div className={cls.IncorrectScore}>
+                                <h2>Incorrect</h2>
+                                <h4 className={cls.scoreText}>{incorrectAnswers}</h4>
+                        </div>
+                        <div className={cls.CorrectScore}>
+                                <h2>Correct</h2>
+                                <h4 className={cls.scoreText}>{correctAnswers}</h4>
+                        </div>
+                        <button onClick={handleCorrect}>Increase Correct Score</button>
+                        <button onClick={handleIncorrect}>Increase Incorrect Score</button>
                 </div>
         );
 };
