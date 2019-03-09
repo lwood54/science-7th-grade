@@ -31,6 +31,8 @@ class GameTemplateB extends Component {
                 incorrectCards: []
         };
 
+        calculatedScore = null;
+
         updateScore = () => {
                 const { correctAnswers, wrongAnswers } = this.state;
                 return Math.round(((correctAnswers - wrongAnswers) / correctAnswers) * 100);
@@ -430,11 +432,18 @@ class GameTemplateB extends Component {
                                 }
                         });
                 }
+                let isRoundOver = false;
+                if (cardsCopy.length <= 0) {
+                        this.calculatedScore = this.updateScore();
+                        isRoundOver = true;
+                }
+                // update score
+                // let score = this.updateScore();
                 // update state with all the manipulated arrays
                 this.setState({
                         targets: targetsCopy,
                         cards: cardsCopy,
-                        roundOver: cardsCopy.length <= 0,
+                        roundOver: isRoundOver,
                         incorrectCards: incorrectCardsCopy
                 });
         };
@@ -458,49 +467,36 @@ class GameTemplateB extends Component {
         };
 
         render() {
-                const quizletLink = this.props.vertMenuItems
-                        .map(item => {
-                                return item['Quizlet'];
-                        })
-                        .join('');
-                const homeLink = this.props.vertMenuItems
-                        .map(item => {
-                                return item['Home'];
-                        })
-                        .join('');
-                const unitMain = this.props.vertMenuItems
-                        .map(item => {
-                                return item['Unit Page'];
-                        })
-                        .join('');
+                const navHome = this.props.vertMenuItems[0]['Home'];
+                const navUnit = this.props.vertMenuItems[1]['Unit Page'];
+                const navGame = this.props.vertMenuItems[2]['Game'];
+                const navQuizlet = this.props.vertMenuItems[3]['Quizlet'];
                 const restart = (
                         <Button onClick={this.handleRestart} variant="contained" color="primary">
                                 Try section again
                         </Button>
                 );
                 const restartGame = (
-                        <Link to={this.props.vertMenuItems[2].Game} className={cls.Link}>
+                        <Link to={navGame} className={cls.Link}>
                                 <Button variant="contained" color="primary">
                                         Try Game Again!
                                 </Button>
                         </Link>
                 );
                 const unitPage = (
-                        <Link to={unitMain} className={cls.Link}>
+                        <Link to={navUnit} className={cls.Link}>
                                 <Button variant="contained" color="primary">
                                         Leave to Unit Page
                                 </Button>
                         </Link>
                 );
-
-                let score = this.updateScore();
                 return (
                         <div style={{ width: '100%' }}>
                                 <NavigationBar
                                         title={this.props.title}
-                                        quizletLink={quizletLink}
-                                        homeLink={homeLink}
-                                        unitMain={unitMain}
+                                        quizletLink={navQuizlet}
+                                        homeLink={navHome}
+                                        unitMain={navUnit}
                                 />
                                 <Dialog
                                         open={this.state.roundOver}
@@ -511,12 +507,12 @@ class GameTemplateB extends Component {
                                         aria-describedby="alert-dialog-slide-description"
                                 >
                                         <DialogContent>
-                                                {score >= 70 ? (
+                                                {this.calculatedScore >= 70 ? (
                                                         <div className={cls.VictoryContainer}>
                                                                 <h2>
-                                                                        You won with a score of {score}!!!
-                                                                        Great job!!! What would you like to do
-                                                                        next?
+                                                                        You won with a score of{' '}
+                                                                        {this.calculatedScore}!!! Great job!!!
+                                                                        What would you like to do next?
                                                                 </h2>
                                                                 <img
                                                                         src={victory_royale}
@@ -526,13 +522,14 @@ class GameTemplateB extends Component {
                                                         </div>
                                                 ) : (
                                                         <h2>
-                                                                Sorry, you got a score of {score}. What would
-                                                                you like to do?
+                                                                Sorry, you got a score of{' '}
+                                                                {this.calculatedScore}. What would you like to
+                                                                do?
                                                         </h2>
                                                 )}
                                         </DialogContent>
                                         <DialogActions>
-                                                {score >= 70 ? restartGame : restart}
+                                                {this.calculatedScore >= 70 ? restartGame : restart}
                                                 {unitPage}
                                         </DialogActions>
                                 </Dialog>

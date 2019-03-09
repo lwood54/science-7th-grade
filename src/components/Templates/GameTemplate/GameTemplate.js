@@ -34,7 +34,10 @@ class GameTemplate extends Component {
                 incorrectCards: []
         };
 
+        calculatedScore = null;
+
         updateScore = () => {
+                console.log('updateScore() is running');
                 const { correctAnswers, wrongAnswers } = this.state;
                 return Math.round(((correctAnswers - wrongAnswers) / correctAnswers) * 100);
         };
@@ -431,11 +434,18 @@ class GameTemplate extends Component {
                                 }
                         });
                 }
+                let isRoundOver = false;
+                if (cardsCopy.length <= 0) {
+                        this.calculatedScore = this.updateScore();
+                        isRoundOver = true;
+                }
+                // update score
+                // let score = this.updateScore();
                 // update state with all the manipulated arrays
                 this.setState({
                         targets: targetsCopy,
                         cards: cardsCopy,
-                        roundOver: cardsCopy.length <= 0,
+                        roundOver: isRoundOver,
                         incorrectCards: incorrectCardsCopy
                 });
         };
@@ -463,26 +473,6 @@ class GameTemplate extends Component {
                 const navUnit = this.props.vertMenuItems[1]['Unit Page'];
                 const navGame = this.props.vertMenuItems[2]['Game'];
                 const navQuizlet = this.props.vertMenuItems[3]['Quizlet'];
-                // const quizletLink = this.props.vertMenuItems
-                //         .map(item => {
-                //                 return item['Quizlet'];
-                //         })
-                //         .join('');
-                // const homeLink = this.props.vertMenuItems
-                //         .map(item => {
-                //                 return item['Home'];
-                //         })
-                //         .join('');
-                // const unitMain = this.props.vertMenuItems
-                //         .map(item => {
-                //                 return item['Unit Page'];
-                //         })
-                //         .join('');
-                // const gameLink = this.props.vertMenuItems
-                //         .map(item => {
-                //                 return item['Game'];
-                //         })
-                //         .join('');
                 const restart = (
                         <Button onClick={this.handleRestart} variant="contained" color="primary">
                                 Try section again
@@ -495,8 +485,6 @@ class GameTemplate extends Component {
                                 </Button>
                         </Link>
                 );
-
-                let score = this.updateScore();
                 return (
                         <div style={{ width: '100%' }}>
                                 <NavigationBar
@@ -513,11 +501,12 @@ class GameTemplate extends Component {
                                         aria-describedby="alert-dialog-slide-description"
                                 >
                                         <DialogContent>
-                                                {score >= 70 ? (
+                                                {this.calculatedScore >= 70 ? (
                                                         <div className={cls.VictoryContainer}>
                                                                 <h2>
                                                                         You passed this section with a score
-                                                                        of {score}!!! Great job!!!
+                                                                        of {this.calculatedScore}!!! Great
+                                                                        job!!!
                                                                 </h2>
                                                                 <img
                                                                         src={keep_going}
@@ -527,14 +516,15 @@ class GameTemplate extends Component {
                                                         </div>
                                                 ) : (
                                                         <h2>
-                                                                Sorry, you got a score of {score}. Go ahead
-                                                                and retry this section.
+                                                                Sorry, you got a score of{' '}
+                                                                {this.calculatedScore}. Go ahead and retry
+                                                                this section.
                                                         </h2>
                                                 )}
                                         </DialogContent>
                                         <DialogActions>
                                                 {restart}
-                                                {score >= 70 ? nextSection : null}
+                                                {this.calculatedScore >= 70 ? nextSection : null}
                                         </DialogActions>
                                 </Dialog>
                                 <div className={cls.GameContainer}>
