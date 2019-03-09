@@ -101,6 +101,7 @@ class GameTemplate extends Component {
         };
 
         createFreshDeck = () => {
+                console.log('createFreshDeck --- RAN');
                 // is there a better location to create the card deck and target arrays?
                 let cards = [];
                 // copy the game object so this can be manipulated and used to update state
@@ -112,7 +113,6 @@ class GameTemplate extends Component {
                 arrayOfCols.forEach(col => {
                         let itemsArray = Object.keys(gameCopy[col]);
                         itemsArray.forEach(item => {
-                                console.log('createFreshDeck(): card being created');
                                 if (item === 'image') {
                                         // add an image card to the array
                                         cards.push(
@@ -162,7 +162,6 @@ class GameTemplate extends Component {
                 // define id's by position in 2 different loops
                 for (let i = 1; i <= 5; i++) {
                         for (let j = 1; j <= 3; j++) {
-                                console.log('createTargets(): target created');
                                 targets.push(
                                         <div
                                                 className={cls.Target}
@@ -211,6 +210,7 @@ class GameTemplate extends Component {
         }
 
         appendChild = (targetId, cardId) => {
+                console.log('appendChild');
                 // copying these arrays from state in order to manipulate and update state later
                 let targetsCopy = [...this.state.targets];
                 let cardsCopy = [...this.state.cards];
@@ -459,33 +459,37 @@ class GameTemplate extends Component {
         };
 
         render() {
-                const quizletLink = this.props.vertMenuItems
-                        .map(item => {
-                                return item['Quizlet'];
-                        })
-                        .join('');
-                const homeLink = this.props.vertMenuItems
-                        .map(item => {
-                                return item['Home'];
-                        })
-                        .join('');
-                const unitMain = this.props.vertMenuItems
-                        .map(item => {
-                                return item['Unit Page'];
-                        })
-                        .join('');
-                const gameLink = this.props.vertMenuItems
-                        .map(item => {
-                                return item['Game'];
-                        })
-                        .join('');
+                const navHome = this.props.vertMenuItems[0]['Home'];
+                const navUnit = this.props.vertMenuItems[1]['Unit Page'];
+                const navGame = this.props.vertMenuItems[2]['Game'];
+                const navQuizlet = this.props.vertMenuItems[3]['Quizlet'];
+                // const quizletLink = this.props.vertMenuItems
+                //         .map(item => {
+                //                 return item['Quizlet'];
+                //         })
+                //         .join('');
+                // const homeLink = this.props.vertMenuItems
+                //         .map(item => {
+                //                 return item['Home'];
+                //         })
+                //         .join('');
+                // const unitMain = this.props.vertMenuItems
+                //         .map(item => {
+                //                 return item['Unit Page'];
+                //         })
+                //         .join('');
+                // const gameLink = this.props.vertMenuItems
+                //         .map(item => {
+                //                 return item['Game'];
+                //         })
+                //         .join('');
                 const restart = (
                         <Button onClick={this.handleRestart} variant="contained" color="primary">
                                 Try section again
                         </Button>
                 );
                 const nextSection = (
-                        <Link to={`${gameLink}b`} className={cls.Link}>
+                        <Link to={`${navGame}b`} className={cls.Link}>
                                 <Button variant="contained" color="primary">
                                         Move on to Section 2
                                 </Button>
@@ -497,9 +501,9 @@ class GameTemplate extends Component {
                         <div style={{ width: '100%' }}>
                                 <NavigationBar
                                         title={this.props.title}
-                                        quizletLink={quizletLink}
-                                        homeLink={homeLink}
-                                        unitMain={unitMain}
+                                        quizletLink={navQuizlet}
+                                        homeLink={navHome}
+                                        unitMain={navUnit}
                                 />
                                 <Dialog
                                         open={this.state.roundOver}
