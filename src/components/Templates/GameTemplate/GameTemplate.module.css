@@ -1,3 +1,57 @@
+/********************** EXPERIMENTING only modify below here *******************/
+.NewGameContainer {
+        width: 100vw;
+        background-color: skyblue;
+}
+
+.NewGameBoard {
+        width: 100%;
+        min-height: 600px;
+        /* background-color: rgb(103, 115, 134); */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+}
+
+.NewCol {
+        width: 18%;
+        /* background-color: pink; */
+        /* border: 2px solid red; */
+}
+
+.NewTarget {
+        height: 175px;
+        width: 100%;
+        box-sizing: border-box;
+        /* padding: 5px; */
+        margin-bottom: 15px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-radius: 2px;
+        background-color: rgb(129, 89, 89);
+        box-shadow: 3px 4px 2px -3px gray;
+}
+.NewCardContainer {
+        width: 200px;
+        margin: auto;
+        margin-top: 2px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        background-color: #03a9f4;
+        box-shadow: 3px 4px 2px -3px gray;
+        border-radius: 3px;
+        cursor: move;
+}
+/********************** EXPERIMENTING only modify above here *******************/
+
 .GameContainer {
         transition: 2s;
         min-width: 650px;
