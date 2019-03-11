@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import cls from './GameTemplate.module.css';
 
 const Cards = props => {
         const handleDrag = e => {
-                console.log('<Cards />: handleDrag - ', e.target.id);
                 e.dataTransfer.setData('text', e.target.id);
         };
         const shuffleArray = array => {
@@ -34,7 +33,7 @@ const Cards = props => {
                                 // add an image card to the array
                                 cards.push(
                                         <div
-                                                className={cls.NewCardContainer}
+                                                className={cls.NewCard}
                                                 key={`${col}_${item}`}
                                                 id={`${col}_${item}`}
                                                 onDragStart={handleDrag}
@@ -56,19 +55,23 @@ const Cards = props => {
                                         <div
                                                 key={`${col}_${item}`}
                                                 id={`${col}_${item}`}
-                                                className={cls.NewCardContainer}
+                                                className={cls.NewCard}
                                                 onDragStart={handleDrag}
                                                 draggable
                                                 // onClick={this.handleCardClick}
                                         >
-                                                <div className={cls.CardContent}>{gameCopy[col][item]}</div>
+                                                {gameCopy[col][item]}
                                         </div>
                                 );
                         }
                 });
         });
         let shuffledCards = shuffleArray(cards);
-        return shuffledCards;
+        return (
+                <div className={cls.NewCardDeckContainer}>
+                        <div className={cls.NewCardStackLocation}>{shuffledCards}</div>
+                </div>
+        );
 };
 
 export default Cards;
