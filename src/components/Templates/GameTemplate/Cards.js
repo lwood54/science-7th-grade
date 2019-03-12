@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import cls from './GameTemplate.module.css';
 
-const Cards = props => {
+const Cards = React.forwardRef((props, ref) => {
         const handleDrag = e => {
                 e.dataTransfer.setData('text', e.target.id);
         };
@@ -69,9 +69,11 @@ const Cards = props => {
         let shuffledCards = shuffleArray(cards);
         return (
                 <div className={cls.NewCardDeckContainer}>
-                        <div className={cls.NewCardStackLocation}>{shuffledCards}</div>
+                        <div className={cls.NewCardStackLocation} ref={ref}>
+                                {shuffledCards}
+                        </div>
                 </div>
         );
-};
+});
 
 export default Cards;
