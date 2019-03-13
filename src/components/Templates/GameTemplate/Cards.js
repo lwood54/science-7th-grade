@@ -1,27 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import cls from './GameTemplate.module.css';
 
-const Cards = React.forwardRef((props, ref) => {
-        const handleDrag = e => {
-                e.dataTransfer.setData('text', e.target.id);
-        };
-        const shuffleArray = array => {
-                // copy array to manipulate
-                let arrayCopy = [...array];
-                let mixedArray = [];
-                // loop through copy until no elements left
-                while (arrayCopy.length > 0) {
-                        let randNum = Math.floor(Math.random() * arrayCopy.length);
-                        // add removed elements to mixedArray as looping occurs
-                        mixedArray.push(arrayCopy.splice(randNum, 1)[0]);
-                }
-                return mixedArray;
-        };
-
-        let cards = [];
+const useCards = (game, handleDrag, shuffleArray) => {
+        let newCards = [];
         // copy the game object so this can be manipulated and used to update state
-        let gameCopy = { ...props.game };
+        let gameCopy = { ...game };
         // create an array of columns (keys) that can be iterated and used to
         // access their values
         let arrayOfCols = Object.keys(gameCopy);
@@ -31,7 +15,7 @@ const Cards = React.forwardRef((props, ref) => {
                 itemsArray.forEach(item => {
                         if (item === 'image') {
                                 // add an image card to the array
-                                cards.push(
+                                newCards.push(
                                         <div
                                                 className={cls.NewCard}
                                                 key={`${col}_${item}`}
@@ -51,7 +35,7 @@ const Cards = React.forwardRef((props, ref) => {
                         } else if (item === 'hint' || item === 'definition') {
                                 // excluding the heading key/value, add cards
                                 // to the card array and set their properties
-                                cards.push(
+                                newCards.push(
                                         <div
                                                 key={`${col}_${item}`}
                                                 id={`${col}_${item}`}
@@ -66,14 +50,8 @@ const Cards = React.forwardRef((props, ref) => {
                         }
                 });
         });
-        let shuffledCards = shuffleArray(cards);
-        return (
-                <div className={cls.NewCardDeckContainer}>
-                        <div className={cls.NewCardStackLocation} ref={ref}>
-                                {shuffledCards}
-                        </div>
-                </div>
-        );
-});
+        let shuffledCards = shuffleArray(newCards);
+        return shuffledCards;
+};
 
-export default Cards;
+export default useCards;

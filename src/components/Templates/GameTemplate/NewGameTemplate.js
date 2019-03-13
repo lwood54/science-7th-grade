@@ -5,66 +5,14 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import Slide from '@material-ui/core/Slide';
-import Paper from '@material-ui/core/Paper';
+// import Paper from '@material-ui/core/Paper';
 import NavigationBar from '../../Navigation/NavigationBar/NavigationBar';
-// import Targets from './Targets';
-// import Cards from './Cards';
+import useTargets from './Targets';
+import useCards from './Cards';
 import cls from './GameTemplate.module.css';
 import keep_going from './keep_going.gif';
 const Transition = props => {
         return <Slide direction="up" {...props} />;
-};
-
-const useCards = (game, handleDrag, shuffleArray) => {
-        let newCards = [];
-        // copy the game object so this can be manipulated and used to update state
-        let gameCopy = { ...game };
-        // create an array of columns (keys) that can be iterated and used to
-        // access their values
-        let arrayOfCols = Object.keys(gameCopy);
-        // chose a forEach because I did not want a return on every loop
-        arrayOfCols.forEach(col => {
-                let itemsArray = Object.keys(gameCopy[col]);
-                itemsArray.forEach(item => {
-                        if (item === 'image') {
-                                // add an image card to the array
-                                newCards.push(
-                                        <div
-                                                className={cls.NewCard}
-                                                key={`${col}_${item}`}
-                                                id={`${col}_${item}`}
-                                                onDragStart={handleDrag}
-                                                draggable
-                                                // onClick={this.handleCardClick}
-                                        >
-                                                <img
-                                                        src={gameCopy[col][item]}
-                                                        alt="game piece"
-                                                        className={cls.Image}
-                                                        draggable="false"
-                                                />
-                                        </div>
-                                );
-                        } else if (item === 'hint' || item === 'definition') {
-                                // excluding the heading key/value, add cards
-                                // to the card array and set their properties
-                                newCards.push(
-                                        <div
-                                                key={`${col}_${item}`}
-                                                id={`${col}_${item}`}
-                                                className={cls.NewCard}
-                                                onDragStart={handleDrag}
-                                                draggable
-                                                // onClick={this.handleCardClick}
-                                        >
-                                                {gameCopy[col][item]}
-                                        </div>
-                                );
-                        }
-                });
-        });
-        let shuffledCards = shuffleArray(newCards);
-        return shuffledCards;
 };
 
 const NewGameTemplate = props => {
@@ -80,12 +28,16 @@ const NewGameTemplate = props => {
         const [calculatedScore, setCalculatedScore] = useState(0);
 
         const updateScore = () => {
-                console.log('updateScore() is running');
-                setCalculatedScore(Math.round(((correct - incorrect) / correct) * 100));
+                let score = Math.round(((correct - incorrect) / correct) * 100);
+                if (score > 0) {
+                        setCalculatedScore(score);
+                } else {
+                        setCalculatedScore(0);
+                }
         };
-        let freshCards = [];
-        let freshTargets = [];
 
+        // Goes through all targets and counts the number of targets with
+        // children. So when all 15 targets have a child node, the round is over.
         const checkRoundStatus = () => {
                 let targetsWithCardsCount = 0;
                 for (let k = 0; k < targetsRef.current.children.length; k++) {
@@ -102,20 +54,28 @@ const NewGameTemplate = props => {
                 }
         };
 
+        // adds 1 every time card is dropped in correct target
         const handleCorrect = () => {
                 setCorrect(correct + 1);
         };
 
+        // adds 1 every time card is dropped in incorrect target
         const handleIncorrect = () => {
                 setIncorrect(incorrect + 1);
         };
 
+        // this will monitor side effects and re-check the round status
+        // every time correct or incorrect state changes
         useEffect(() => {
                 checkRoundStatus();
         }, [correct, incorrect]);
 
+        // take in event target ID and use it to find and return targetRef
+        // navigates through the ref created by React.createRef used for targets
+        // loop through the children to access the target, then compare it with
+        // the id identified through the dropEvent
+        // this returns a mutable target ref
         const getTargetEl = evTargetID => {
-                // take in event target ID and use it to find and return targetRef
                 let targetChildren = targetsRef.current.children;
                 for (let i = 0; i < 5; i++) {
                         for (let k = 1; k < 4; k++) {
@@ -127,8 +87,10 @@ const NewGameTemplate = props => {
                 }
         };
 
+        // take in event card ID and use it to find and return cardRef
+        // navigate through the array of cards until the event id matches
+        // the ref, then return the mutable cardElement ref
         const getCardEl = evCardID => {
-                // take in event card ID and use it to find and return cardRef
                 let cardChildren = cardsRef.current.children;
                 for (let i = 0; i < cardChildren.length; i++) {
                         let cardElement = cardChildren[i];
@@ -136,6 +98,9 @@ const NewGameTemplate = props => {
                                 return cardElement;
                         }
                 }
+                // this is needed when a card had been dropped on an incorrect target and
+                // needs to be accessed by navigating the targets ref tree because the
+                // card is now a child of the target
                 for (let k = 0; k < targetsRef.current.children.length; k++) {
                         for (let j = 0; j < targetsRef.current.children[k].children.length; j++) {
                                 let nestedCards = targetsRef.current.children[k].children[j].children;
@@ -196,132 +161,58 @@ const NewGameTemplate = props => {
                 }
         };
 
+        // initial mount and render of targets, actively monitors as targets change
         const [targets, setTargets] = useState([]);
         useEffect(() => {
-                let newTargets = [];
-                for (let i = 1; i < 6; i++) {
-                        for (let k = 1; k < 4; k++) {
-                                newTargets.push(
-                                        <div
-                                                id={`col${i}_target${k}`}
-                                                key={`col${i}_target${k}`}
-                                                className={cls.NewTarget}
-                                                onDragOver={handleDragOver}
-                                                onDrop={handleDrop}
-                                        />
-                                );
-                        }
-                }
-                freshTargets = [...newTargets];
-                setTargets([...newTargets]);
+                let newTargets = useTargets(handleDragOver, handleDrop);
+                setTargets(newTargets);
         }, [targets]);
 
+        // initial mount and render of cards, will not change upon re-render
         const [cards, setCards] = useState([]);
         useEffect(() => {
                 setCards(useCards(props.game, handleDrag, shuffleArray));
         }, []);
-        // useEffect(() => {
-        // let newCards = [];
-        // // copy the game object so this can be manipulated and used to update state
-        // let gameCopy = { ...props.game };
-        // // create an array of columns (keys) that can be iterated and used to
-        // // access their values
-        // let arrayOfCols = Object.keys(gameCopy);
-        // // chose a forEach because I did not want a return on every loop
-        // arrayOfCols.forEach(col => {
-        //         let itemsArray = Object.keys(gameCopy[col]);
-        //         itemsArray.forEach(item => {
-        //                 if (item === 'image') {
-        //                         // add an image card to the array
-        //                         newCards.push(
-        //                                 <div
-        //                                         className={cls.NewCard}
-        //                                         key={`${col}_${item}`}
-        //                                         id={`${col}_${item}`}
-        //                                         onDragStart={handleDrag}
-        //                                         draggable
-        //                                         // onClick={this.handleCardClick}
-        //                                 >
-        //                                         <img
-        //                                                 src={gameCopy[col][item]}
-        //                                                 alt="game piece"
-        //                                                 className={cls.Image}
-        //                                                 draggable="false"
-        //                                         />
-        //                                 </div>
-        //                         );
-        //                 } else if (item === 'hint' || item === 'definition') {
-        //                         // excluding the heading key/value, add cards
-        //                         // to the card array and set their properties
-        //                         newCards.push(
-        //                                 <div
-        //                                         key={`${col}_${item}`}
-        //                                         id={`${col}_${item}`}
-        //                                         className={cls.NewCard}
-        //                                         onDragStart={handleDrag}
-        //                                         draggable
-        //                                         // onClick={this.handleCardClick}
-        //                                 >
-        //                                         {gameCopy[col][item]}
-        //                                 </div>
-        //                         );
-        //                 }
-        //         });
-        // });
-        // let shuffledCards = shuffleArray(newCards);
-        //         freshCards = [...newCards];
-        //         setCards([...shuffledCards]);
-        // }, []);
+
+        // identify trigger to restart section, can be switched when
+        // button 'try section again' is clicked on dialog window
         const [canRestart, setCanRestart] = useState(false);
         const removeCards = () => {
-                let recoveryCardDeck = [];
                 for (let k = 0; k < targetsRef.current.children.length; k++) {
                         for (let j = 0; j < targetsRef.current.children[k].children.length; j++) {
                                 let nestedCards = targetsRef.current.children[k].children[j].children;
                                 if (nestedCards[0]) {
-                                        cardsRef.current.appendChild(nestedCards[0]);
-                                        console.log('cardRef.current: ', cardsRef.current);
-                                        /*
-                                                CURRENT PROBLEM: find a way to reset cards array
-                                                it is keeping refs and not letting me remove and add a new
-                                                deck in its place, I am not able to iterate through and pull out
-                                                by ref either, or at least I can't take those and make a new
-                                                deck yet.
-                                        */
-                                        // recoveryCardDeck.push(nestedCards[0]);
+                                        let removedChild = targetsRef.current.children[k].children[
+                                                j
+                                        ].removeChild(nestedCards[0]);
+                                        targetsRef.current.children[k].children[j].classList.remove(
+                                                cls.CorrectTarget,
+                                                cls.IncorrectTarget
+                                        );
+                                        removedChild.classList.remove(cls.Correct, cls.Incorrect);
+                                        removedChild.setAttribute('draggable', true);
+                                        cardsRef.current.appendChild(removedChild);
                                 }
                         }
                 }
-                // console.log('recoveryCardDeck: ', recoveryCardDeck);
-
-                // let newCards = shuffleArray(React.cloneElement(cards));
-                // console.log('newCards in removeCards: ', newCards);
-                // return newCards;
         };
+
         useEffect(() => {
                 if (canRestart) {
                         // console.log('canRestart is running');
-                        // let shuffledCards = shuffleArray(removeCards());
-                        // setCards(shuffledCards);
-                        // setCanRestart(false);
+                        let shuffledCards = shuffleArray(useCards(props.game, handleDrag, shuffleArray));
+                        setCards(shuffledCards);
+                        setTargets(useTargets(handleDragOver, handleDrop));
+                        setCanRestart(false);
+                        setIsRoundOver(false);
+                        setCorrect(0);
+                        setIncorrect(0);
+                        setCalculatedScore(0);
                 }
-                // return () => {
-                //         // console.log('cleanup function running');
-                //         // useCards(props.game, handleDrag, shuffleArray);
-                //         setCanRestart(false);
-                // };
         }, [canRestart]);
         const handleRestart = () => {
-                // this currently works, but it is not using React and I lose
-                // speed. I would prefer to reset the cards array and have it re-render;
-                // look into removing refs or resetting refs
-                window.location.reload();
-                // setCanRestart(true);
-                // setTargets(freshTargets);
-                // setIsRoundOver(false);
-                // setCorrect(0);
-                // setIncorrect(0);
-                // setCalculatedScore(0);
+                removeCards();
+                setCanRestart(true);
         };
 
         const restart = (
