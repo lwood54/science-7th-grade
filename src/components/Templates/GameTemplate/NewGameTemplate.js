@@ -15,6 +15,58 @@ const Transition = props => {
         return <Slide direction="up" {...props} />;
 };
 
+const useCards = (game, handleDrag, shuffleArray) => {
+        let newCards = [];
+        // copy the game object so this can be manipulated and used to update state
+        let gameCopy = { ...game };
+        // create an array of columns (keys) that can be iterated and used to
+        // access their values
+        let arrayOfCols = Object.keys(gameCopy);
+        // chose a forEach because I did not want a return on every loop
+        arrayOfCols.forEach(col => {
+                let itemsArray = Object.keys(gameCopy[col]);
+                itemsArray.forEach(item => {
+                        if (item === 'image') {
+                                // add an image card to the array
+                                newCards.push(
+                                        <div
+                                                className={cls.NewCard}
+                                                key={`${col}_${item}`}
+                                                id={`${col}_${item}`}
+                                                onDragStart={handleDrag}
+                                                draggable
+                                                // onClick={this.handleCardClick}
+                                        >
+                                                <img
+                                                        src={gameCopy[col][item]}
+                                                        alt="game piece"
+                                                        className={cls.Image}
+                                                        draggable="false"
+                                                />
+                                        </div>
+                                );
+                        } else if (item === 'hint' || item === 'definition') {
+                                // excluding the heading key/value, add cards
+                                // to the card array and set their properties
+                                newCards.push(
+                                        <div
+                                                key={`${col}_${item}`}
+                                                id={`${col}_${item}`}
+                                                className={cls.NewCard}
+                                                onDragStart={handleDrag}
+                                                draggable
+                                                // onClick={this.handleCardClick}
+                                        >
+                                                {gameCopy[col][item]}
+                                        </div>
+                                );
+                        }
+                });
+        });
+        let shuffledCards = shuffleArray(newCards);
+        return shuffledCards;
+};
+
 const NewGameTemplate = props => {
         const navHome = props.vertMenuItems[0]['Home'];
         const navUnit = props.vertMenuItems[1]['Unit Page'];
@@ -44,7 +96,6 @@ const NewGameTemplate = props => {
                                 }
                         }
                 }
-                console.log('targetsFilled: ', targetsWithCardsCount);
                 if (targetsWithCardsCount === 15) {
                         updateScore();
                         setIsRoundOver(true);
@@ -52,14 +103,10 @@ const NewGameTemplate = props => {
         };
 
         const handleCorrect = () => {
-                console.log('handleCorrect() RAN');
-                console.log('correct: ', correct);
                 setCorrect(correct + 1);
         };
 
         const handleIncorrect = () => {
-                console.log('handleIncorrect() RAN');
-                console.log('incorrect: ', incorrect);
                 setIncorrect(incorrect + 1);
         };
 
@@ -123,10 +170,8 @@ const NewGameTemplate = props => {
         };
 
         const handleDrop = e => {
-                let targetChildren = targetsRef.current.children;
                 let eTargetID = e.target.id;
                 let eTargetID3 = eTargetID.split('')[3];
-                let cardsChildren = cardsRef.current.children;
                 let eCardID = e.dataTransfer.getData('text');
                 // console.log('eCardID: ', props.children);
                 let eCardID3 = eCardID.split('')[3];
@@ -173,66 +218,110 @@ const NewGameTemplate = props => {
 
         const [cards, setCards] = useState([]);
         useEffect(() => {
-                let newCards = [];
-                // copy the game object so this can be manipulated and used to update state
-                let gameCopy = { ...props.game };
-                // create an array of columns (keys) that can be iterated and used to
-                // access their values
-                let arrayOfCols = Object.keys(gameCopy);
-                // chose a forEach because I did not want a return on every loop
-                arrayOfCols.forEach(col => {
-                        let itemsArray = Object.keys(gameCopy[col]);
-                        itemsArray.forEach(item => {
-                                if (item === 'image') {
-                                        // add an image card to the array
-                                        newCards.push(
-                                                <div
-                                                        className={cls.NewCard}
-                                                        key={`${col}_${item}`}
-                                                        id={`${col}_${item}`}
-                                                        onDragStart={handleDrag}
-                                                        draggable
-                                                        // onClick={this.handleCardClick}
-                                                >
-                                                        <img
-                                                                src={gameCopy[col][item]}
-                                                                alt="game piece"
-                                                                className={cls.Image}
-                                                                draggable="false"
-                                                        />
-                                                </div>
-                                        );
-                                } else if (item === 'hint' || item === 'definition') {
-                                        // excluding the heading key/value, add cards
-                                        // to the card array and set their properties
-                                        newCards.push(
-                                                <div
-                                                        key={`${col}_${item}`}
-                                                        id={`${col}_${item}`}
-                                                        className={cls.NewCard}
-                                                        onDragStart={handleDrag}
-                                                        draggable
-                                                        // onClick={this.handleCardClick}
-                                                >
-                                                        {gameCopy[col][item]}
-                                                </div>
-                                        );
-                                }
-                        });
-                });
-                let shuffledCards = shuffleArray(newCards);
-                freshCards = [...newCards];
-                setCards([...shuffledCards]);
+                setCards(useCards(props.game, handleDrag, shuffleArray));
         }, []);
+        // useEffect(() => {
+        // let newCards = [];
+        // // copy the game object so this can be manipulated and used to update state
+        // let gameCopy = { ...props.game };
+        // // create an array of columns (keys) that can be iterated and used to
+        // // access their values
+        // let arrayOfCols = Object.keys(gameCopy);
+        // // chose a forEach because I did not want a return on every loop
+        // arrayOfCols.forEach(col => {
+        //         let itemsArray = Object.keys(gameCopy[col]);
+        //         itemsArray.forEach(item => {
+        //                 if (item === 'image') {
+        //                         // add an image card to the array
+        //                         newCards.push(
+        //                                 <div
+        //                                         className={cls.NewCard}
+        //                                         key={`${col}_${item}`}
+        //                                         id={`${col}_${item}`}
+        //                                         onDragStart={handleDrag}
+        //                                         draggable
+        //                                         // onClick={this.handleCardClick}
+        //                                 >
+        //                                         <img
+        //                                                 src={gameCopy[col][item]}
+        //                                                 alt="game piece"
+        //                                                 className={cls.Image}
+        //                                                 draggable="false"
+        //                                         />
+        //                                 </div>
+        //                         );
+        //                 } else if (item === 'hint' || item === 'definition') {
+        //                         // excluding the heading key/value, add cards
+        //                         // to the card array and set their properties
+        //                         newCards.push(
+        //                                 <div
+        //                                         key={`${col}_${item}`}
+        //                                         id={`${col}_${item}`}
+        //                                         className={cls.NewCard}
+        //                                         onDragStart={handleDrag}
+        //                                         draggable
+        //                                         // onClick={this.handleCardClick}
+        //                                 >
+        //                                         {gameCopy[col][item]}
+        //                                 </div>
+        //                         );
+        //                 }
+        //         });
+        // });
+        // let shuffledCards = shuffleArray(newCards);
+        //         freshCards = [...newCards];
+        //         setCards([...shuffledCards]);
+        // }, []);
+        const [canRestart, setCanRestart] = useState(false);
+        const removeCards = () => {
+                let recoveryCardDeck = [];
+                for (let k = 0; k < targetsRef.current.children.length; k++) {
+                        for (let j = 0; j < targetsRef.current.children[k].children.length; j++) {
+                                let nestedCards = targetsRef.current.children[k].children[j].children;
+                                if (nestedCards[0]) {
+                                        cardsRef.current.appendChild(nestedCards[0]);
+                                        console.log('cardRef.current: ', cardsRef.current);
+                                        /*
+                                                CURRENT PROBLEM: find a way to reset cards array
+                                                it is keeping refs and not letting me remove and add a new
+                                                deck in its place, I am not able to iterate through and pull out
+                                                by ref either, or at least I can't take those and make a new
+                                                deck yet.
+                                        */
+                                        // recoveryCardDeck.push(nestedCards[0]);
+                                }
+                        }
+                }
+                // console.log('recoveryCardDeck: ', recoveryCardDeck);
 
+                // let newCards = shuffleArray(React.cloneElement(cards));
+                // console.log('newCards in removeCards: ', newCards);
+                // return newCards;
+        };
+        useEffect(() => {
+                if (canRestart) {
+                        // console.log('canRestart is running');
+                        // let shuffledCards = shuffleArray(removeCards());
+                        // setCards(shuffledCards);
+                        // setCanRestart(false);
+                }
+                // return () => {
+                //         // console.log('cleanup function running');
+                //         // useCards(props.game, handleDrag, shuffleArray);
+                //         setCanRestart(false);
+                // };
+        }, [canRestart]);
         const handleRestart = () => {
-                let newCardDeck = shuffleArray(freshCards);
-                setCards(newCardDeck);
-                setTargets(freshTargets);
-                setIsRoundOver(false);
-                setCorrect(0);
-                setIncorrect(0);
-                setCalculatedScore(0);
+                // this currently works, but it is not using React and I lose
+                // speed. I would prefer to reset the cards array and have it re-render;
+                // look into removing refs or resetting refs
+                window.location.reload();
+                // setCanRestart(true);
+                // setTargets(freshTargets);
+                // setIsRoundOver(false);
+                // setCorrect(0);
+                // setIncorrect(0);
+                // setCalculatedScore(0);
         };
 
         const restart = (
