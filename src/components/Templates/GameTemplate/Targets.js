@@ -25,40 +25,43 @@ const Targets = React.forwardRef((props, ref) => {
                         );
                 }
         }
-        return (
-                <div className={cls.NewGameBoard} ref={ref}>
-                        <div className={cls.NewCol} ref={col1Ref}>
-                                <h1 className={cls.NewColTitle}>{props.game.col1.heading}</h1>
-                                {targets[0]}
-                                {targets[1]}
-                                {targets[2]}
-                        </div>
-                        <div className={cls.NewCol} ref={col2Ref}>
-                                <h1 className={cls.NewColTitle}>{props.game.col2.heading}</h1>
-                                {targets[3]}
-                                {targets[4]}
-                                {targets[5]}
-                        </div>
-                        <div className={cls.NewCol} ref={col3Ref}>
-                                <h1 className={cls.NewColTitle}>{props.game.col3.heading}</h1>
-                                {targets[6]}
-                                {targets[7]}
-                                {targets[8]}
-                        </div>
-                        <div className={cls.NewCol} ref={col4Ref}>
-                                <h1 className={cls.NewColTitle}>{props.game.col4.heading}</h1>
-                                {targets[9]}
-                                {targets[10]}
-                                {targets[11]}
-                        </div>
-                        <div className={cls.NewCol} ref={col5Ref}>
-                                <h1 className={cls.NewColTitle}>{props.game.col5.heading}</h1>
-                                {targets[12]}
-                                {targets[13]}
-                                {targets[14]}
-                        </div>
-                </div>
-        );
+        console.log('targets in Targets: ', targets);
+        return targets;
 });
 
 export default Targets;
+
+// return (
+//         <div className={cls.NewGameBoard} ref={ref}>
+//                 <div className={cls.NewCol} ref={col1Ref}>
+//                         <h1 className={cls.NewColTitle}>{props.game.col1.heading}</h1>
+//                         {targets[0]}
+//                         {targets[1]}
+//                         {targets[2]}
+//                 </div>
+//                 <div className={cls.NewCol} ref={col2Ref}>
+//                         <h1 className={cls.NewColTitle}>{props.game.col2.heading}</h1>
+//                         {targets[3]}
+//                         {targets[4]}
+//                         {targets[5]}
+//                 </div>
+//                 <div className={cls.NewCol} ref={col3Ref}>
+//                         <h1 className={cls.NewColTitle}>{props.game.col3.heading}</h1>
+//                         {targets[6]}
+//                         {targets[7]}
+//                         {targets[8]}
+//                 </div>
+//                 <div className={cls.NewCol} ref={col4Ref}>
+//                         <h1 className={cls.NewColTitle}>{props.game.col4.heading}</h1>
+//                         {targets[9]}
+//                         {targets[10]}
+//                         {targets[11]}
+//                 </div>
+//                 <div className={cls.NewCol} ref={col5Ref}>
+//                         <h1 className={cls.NewColTitle}>{props.game.col5.heading}</h1>
+//                         {targets[12]}
+//                         {targets[13]}
+//                         {targets[14]}
+//                 </div>
+//         </div>
+// );

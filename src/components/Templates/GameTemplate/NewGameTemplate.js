@@ -1,17 +1,19 @@
-// use React's Hooks to remake GameTemplate with a functional component
-// tryout useRef()
-// try React.lazy()
-// try to import cards and targets as separate components again since
-// we can use hooks like useEffect to update the DOM while change occurs.
-// useEffect to monitor drag and drop? changes in DOM?
 import React, { useState, useEffect, useRef } from 'react';
-
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import Slide from '@material-ui/core/Slide';
+import Paper from '@material-ui/core/Paper';
 import NavigationBar from '../../Navigation/NavigationBar/NavigationBar';
-import Targets from './Targets';
-import Cards from './Cards';
+// import Targets from './Targets';
+// import Cards from './Cards';
 import cls from './GameTemplate.module.css';
-
-// export const GameStatusContext = React.createContext({ roundStats: false, handleRoundOver: () => {} });
+import keep_going from './keep_going.gif';
+const Transition = props => {
+        return <Slide direction="up" {...props} />;
+};
 
 const NewGameTemplate = props => {
         const navHome = props.vertMenuItems[0]['Home'];
@@ -20,30 +22,50 @@ const NewGameTemplate = props => {
         const navQuizlet = props.vertMenuItems[3]['Quizlet'];
         const targetsRef = useRef();
         const cardsRef = useRef();
-        const [cardToAppend, setCardToAppend] = useState(null);
-        // identify card to append, make a copy of it, append to target, remove from cardsArray
         const [isRoundOver, setIsRoundOver] = useState(false);
         const [correct, setCorrect] = useState(0);
         const [incorrect, setIncorrect] = useState(0);
+        const [calculatedScore, setCalculatedScore] = useState(0);
+
+        const updateScore = () => {
+                console.log('updateScore() is running');
+                setCalculatedScore(Math.round(((correct - incorrect) / correct) * 100));
+        };
+        let freshCards = [];
+        let freshTargets = [];
+
         const checkRoundStatus = () => {
-                if (correct === 3) {
+                let targetsWithCardsCount = 0;
+                for (let k = 0; k < targetsRef.current.children.length; k++) {
+                        for (let j = 0; j < targetsRef.current.children[k].children.length; j++) {
+                                let nestedCards = targetsRef.current.children[k].children[j].children;
+                                if (nestedCards[0]) {
+                                        targetsWithCardsCount++;
+                                }
+                        }
+                }
+                console.log('targetsFilled: ', targetsWithCardsCount);
+                if (targetsWithCardsCount === 15) {
+                        updateScore();
                         setIsRoundOver(true);
                 }
         };
+
         const handleCorrect = () => {
                 console.log('handleCorrect() RAN');
+                console.log('correct: ', correct);
                 setCorrect(correct + 1);
         };
+
         const handleIncorrect = () => {
                 console.log('handleIncorrect() RAN');
+                console.log('incorrect: ', incorrect);
                 setIncorrect(incorrect + 1);
         };
+
         useEffect(() => {
                 checkRoundStatus();
-        }, [correct]);
-        const handleDragOver = e => {
-                e.preventDefault();
-        };
+        }, [correct, incorrect]);
 
         const getTargetEl = evTargetID => {
                 // take in event target ID and use it to find and return targetRef
@@ -61,19 +83,43 @@ const NewGameTemplate = props => {
         const getCardEl = evCardID => {
                 // take in event card ID and use it to find and return cardRef
                 let cardChildren = cardsRef.current.children;
-                for (let i = 0; i < 15; i++) {
+                for (let i = 0; i < cardChildren.length; i++) {
                         let cardElement = cardChildren[i];
-                        // clone needs a react element and not the actual DOM
                         if (evCardID === cardElement.id) {
-                                // clone element in order to append to target
-                                // after it's been called
-                                console.log('cardElement: ', cardElement);
-                                //navigage the cards component and find element with ID
-                                let clonedCardEl = React.cloneElement(/*need react element*/);
-                                console.log('clonedCardEl: ', clonedCardEl);
-                                return clonedCardEl;
+                                return cardElement;
                         }
                 }
+                for (let k = 0; k < targetsRef.current.children.length; k++) {
+                        for (let j = 0; j < targetsRef.current.children[k].children.length; j++) {
+                                let nestedCards = targetsRef.current.children[k].children[j].children;
+                                if (nestedCards[0]) {
+                                        if (nestedCards[0].id === evCardID) {
+                                                return nestedCards[0];
+                                        }
+                                }
+                        }
+                }
+        };
+
+        const shuffleArray = array => {
+                // copy array to manipulate
+                let arrayCopy = [...array];
+                let mixedArray = [];
+                // loop through copy until no elements left
+                while (arrayCopy.length > 0) {
+                        let randNum = Math.floor(Math.random() * arrayCopy.length);
+                        // add removed elements to mixedArray as looping occurs
+                        mixedArray.push(arrayCopy.splice(randNum, 1)[0]);
+                }
+                return mixedArray;
+        };
+
+        const handleDrag = e => {
+                e.dataTransfer.setData('text', e.target.id);
+        };
+
+        const handleDragOver = e => {
+                e.preventDefault();
         };
 
         const handleDrop = e => {
@@ -90,17 +136,117 @@ const NewGameTemplate = props => {
                         //find when target ref = event target
                         targetEl = getTargetEl(eTargetID);
                         cardEl = getCardEl(eCardID);
-                        targetEl.style.backgroundColor = 'green';
                         targetEl.appendChild(cardEl);
-                        console.log('targetEl: ', targetEl);
-                        console.log('cardEl: ', cardEl);
+                        cardEl.setAttribute('draggable', false);
+                        cardEl.classList.add(cls.Correct);
+                        targetEl.classList.add(cls.CorrectTarget);
                         handleCorrect();
                 } else {
                         targetEl = getTargetEl(eTargetID);
-                        targetEl.style.backgroundColor = 'red';
+                        cardEl = getCardEl(eCardID);
+                        targetEl.appendChild(cardEl);
+                        targetEl.classList.add(cls.IncorrectTarget);
+                        cardEl.classList.add(cls.Incorrect);
                         handleIncorrect();
                 }
         };
+
+        const [targets, setTargets] = useState([]);
+        useEffect(() => {
+                let newTargets = [];
+                for (let i = 1; i < 6; i++) {
+                        for (let k = 1; k < 4; k++) {
+                                newTargets.push(
+                                        <div
+                                                id={`col${i}_target${k}`}
+                                                key={`col${i}_target${k}`}
+                                                className={cls.NewTarget}
+                                                onDragOver={handleDragOver}
+                                                onDrop={handleDrop}
+                                        />
+                                );
+                        }
+                }
+                freshTargets = [...newTargets];
+                setTargets([...newTargets]);
+        }, [targets]);
+
+        const [cards, setCards] = useState([]);
+        useEffect(() => {
+                let newCards = [];
+                // copy the game object so this can be manipulated and used to update state
+                let gameCopy = { ...props.game };
+                // create an array of columns (keys) that can be iterated and used to
+                // access their values
+                let arrayOfCols = Object.keys(gameCopy);
+                // chose a forEach because I did not want a return on every loop
+                arrayOfCols.forEach(col => {
+                        let itemsArray = Object.keys(gameCopy[col]);
+                        itemsArray.forEach(item => {
+                                if (item === 'image') {
+                                        // add an image card to the array
+                                        newCards.push(
+                                                <div
+                                                        className={cls.NewCard}
+                                                        key={`${col}_${item}`}
+                                                        id={`${col}_${item}`}
+                                                        onDragStart={handleDrag}
+                                                        draggable
+                                                        // onClick={this.handleCardClick}
+                                                >
+                                                        <img
+                                                                src={gameCopy[col][item]}
+                                                                alt="game piece"
+                                                                className={cls.Image}
+                                                                draggable="false"
+                                                        />
+                                                </div>
+                                        );
+                                } else if (item === 'hint' || item === 'definition') {
+                                        // excluding the heading key/value, add cards
+                                        // to the card array and set their properties
+                                        newCards.push(
+                                                <div
+                                                        key={`${col}_${item}`}
+                                                        id={`${col}_${item}`}
+                                                        className={cls.NewCard}
+                                                        onDragStart={handleDrag}
+                                                        draggable
+                                                        // onClick={this.handleCardClick}
+                                                >
+                                                        {gameCopy[col][item]}
+                                                </div>
+                                        );
+                                }
+                        });
+                });
+                let shuffledCards = shuffleArray(newCards);
+                freshCards = [...newCards];
+                setCards([...shuffledCards]);
+        }, []);
+
+        const handleRestart = () => {
+                let newCardDeck = shuffleArray(freshCards);
+                setCards(newCardDeck);
+                setTargets(freshTargets);
+                setIsRoundOver(false);
+                setCorrect(0);
+                setIncorrect(0);
+                setCalculatedScore(0);
+        };
+
+        const restart = (
+                <Button onClick={handleRestart} variant="contained" color="primary">
+                        Try section again
+                </Button>
+        );
+        const nextSection = (
+                <Link to={`${navGame}b`} className={cls.Link}>
+                        <Button variant="contained" color="primary">
+                                Move on to Section 2
+                        </Button>
+                </Link>
+        );
 
         return (
                 <div style={{ width: '100%' }}>
@@ -110,15 +256,77 @@ const NewGameTemplate = props => {
                                 homeLink={navHome}
                                 unitMain={navUnit}
                         />
+                        <Dialog
+                                open={isRoundOver}
+                                TransitionComponent={Transition}
+                                keepMounted
+                                aria-labelledby="alert-dialog-slide-title"
+                                aria-describedby="alert-dialog-slide-description"
+                        >
+                                <DialogContent>
+                                        {calculatedScore >= 70 ? (
+                                                <div className={cls.VictoryContainer}>
+                                                        <h2>
+                                                                You passed this section with a score of{' '}
+                                                                {calculatedScore}!!! Great job!!!
+                                                        </h2>
+                                                        <img
+                                                                src={keep_going}
+                                                                className={cls.Image}
+                                                                alt="keep going Homer Simpson"
+                                                        />
+                                                </div>
+                                        ) : (
+                                                <h2>
+                                                        Sorry, you got a score of {calculatedScore}. Go ahead
+                                                        and retry this section.
+                                                </h2>
+                                        )}
+                                </DialogContent>
+                                <DialogActions>
+                                        {restart}
+                                        {calculatedScore >= 70 ? nextSection : null}
+                                </DialogActions>
+                        </Dialog>
                         <div className={cls.NewGameContainer}>
                                 <h1 className={cls.NewTitle}>New Game Template</h1>
-                                <Targets
-                                        ref={targetsRef}
-                                        {...props}
-                                        handleDragOver={handleDragOver}
-                                        handleDrop={handleDrop}
-                                />
-                                <Cards game={props.game} ref={cardsRef} />
+                                <div className={cls.NewGameBoard} ref={targetsRef}>
+                                        <div className={cls.NewCol}>
+                                                <h1 className={cls.NewColTitle}>{props.game.col1.heading}</h1>
+                                                {targets[0]}
+                                                {targets[1]}
+                                                {targets[2]}
+                                        </div>
+                                        <div className={cls.NewCol}>
+                                                <h1 className={cls.NewColTitle}>{props.game.col2.heading}</h1>
+                                                {targets[3]}
+                                                {targets[4]}
+                                                {targets[5]}
+                                        </div>
+                                        <div className={cls.NewCol}>
+                                                <h1 className={cls.NewColTitle}>{props.game.col3.heading}</h1>
+                                                {targets[6]}
+                                                {targets[7]}
+                                                {targets[8]}
+                                        </div>
+                                        <div className={cls.NewCol}>
+                                                <h1 className={cls.NewColTitle}>{props.game.col4.heading}</h1>
+                                                {targets[9]}
+                                                {targets[10]}
+                                                {targets[11]}
+                                        </div>
+                                        <div className={cls.NewCol}>
+                                                <h1 className={cls.NewColTitle}>{props.game.col5.heading}</h1>
+                                                {targets[12]}
+                                                {targets[13]}
+                                                {targets[14]}
+                                        </div>
+                                </div>
+                                <div className={cls.NewCardDeckContainer}>
+                                        <div className={cls.NewCardStackLocation} ref={cardsRef}>
+                                                {cards}
+                                        </div>
+                                </div>
                                 <h3>Correct</h3>
                                 <div className={cls.CorrectScore}>{correct}</div>
                                 <h3>Incorrect</h3>

@@ -126,12 +126,12 @@
         text-align: center;
 }
 
-.Wrong {
+.Incorrect {
         background-color: #ba000d;
         box-shadow: 2px 2px 4px black;
 }
 
-.WrongTarget {
+.IncorrectTarget {
         background-color: #ba000d;
 }
 
@@ -147,7 +147,7 @@
         width: 150%;
 }
 
-.WrongTarget .CardContent {
+.IncorrectTarget .CardContent {
         transform: scale(0.75, 0.75) translateX(-18px);
         width: 120%;
 }

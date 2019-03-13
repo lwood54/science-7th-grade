@@ -9,9 +9,6 @@ import Paper from '@material-ui/core/Paper';
 
 import NavigationBar from '../../Navigation/NavigationBar/NavigationBar';
 
-// import GameBoard from "./GameBoard";
-// import CardDeck from "./CardDeck";
-
 import cls from './GameTemplate.module.css';
 
 import keep_going from './keep_going.gif';
