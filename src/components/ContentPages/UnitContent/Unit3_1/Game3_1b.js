@@ -2,10 +2,10 @@ import React from 'react';
 
 import Unit3_1Obj from './Unit3_1Obj';
 
-import GameTemplateB from '../../../Templates/GameTemplate/GameTemplateB';
+import NewGameTemplateB from '../../../Templates/GameTemplate/NewGameTemplateB';
 
 const game3_1b = props => {
-        return <GameTemplateB {...Unit3_1Obj} />;
+        return <NewGameTemplateB {...Unit3_1Obj} />;
 };
 
 export default game3_1b;

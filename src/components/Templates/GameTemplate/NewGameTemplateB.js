@@ -10,12 +10,13 @@ import NavigationBar from '../../Navigation/NavigationBar/NavigationBar';
 import useTargets from './Targets';
 import useCards from './Cards';
 import cls from './GameTemplate.module.css';
-import keep_going from './keep_going.gif';
+import victory_royale from './victory_royale.gif';
 const Transition = props => {
         return <Slide direction="up" {...props} />;
 };
 
-const NewGameTemplate = props => {
+const NewGameTemplateB = props => {
+        console.log('NewGameTemplateB is running');
         const navHome = props.vertMenuItems[0]['Home'];
         const navUnit = props.vertMenuItems[1]['Unit Page'];
         const navGame = props.vertMenuItems[2]['Game'];
@@ -171,7 +172,7 @@ const NewGameTemplate = props => {
         // initial mount and render of cards, will not change upon re-render
         const [cards, setCards] = useState([]);
         useEffect(() => {
-                setCards(useCards(props.game, handleDrag, shuffleArray));
+                setCards(useCards(props.game2, handleDrag, shuffleArray));
         }, []);
 
         // identify trigger to restart section, can be switched when
@@ -200,7 +201,7 @@ const NewGameTemplate = props => {
         useEffect(() => {
                 if (canRestart) {
                         // console.log('canRestart is running');
-                        let shuffledCards = shuffleArray(useCards(props.game, handleDrag, shuffleArray));
+                        let shuffledCards = shuffleArray(useCards(props.game2, handleDrag, shuffleArray));
                         setCards(shuffledCards);
                         setTargets(useTargets(handleDragOver, handleDrop));
                         setCanRestart(false);
@@ -220,10 +221,17 @@ const NewGameTemplate = props => {
                         Try section again
                 </Button>
         );
-        const nextSection = (
+        const restartGame = (
                 <Link to={`${navGame}b`} className={cls.Link}>
                         <Button variant="contained" color="primary">
-                                Move on to Section 2
+                                Try Game Again!
+                        </Button>
+                </Link>
+        );
+        const unitPage = (
+                <Link to={navUnit} className={cls.Link}>
+                        <Button variant="contained" color="primary">
+                                Leave to Unit Page
                         </Button>
                 </Link>
         );
@@ -247,55 +255,66 @@ const NewGameTemplate = props => {
                                         {calculatedScore >= 70 ? (
                                                 <div className={cls.VictoryContainer}>
                                                         <h2>
-                                                                You passed this section with a score of{' '}
-                                                                {calculatedScore}!!! Great job!!!
+                                                                You won with a score of {calculatedScore}
+                                                                !!! Great job!!! What would you like to do
+                                                                next?
                                                         </h2>
                                                         <img
-                                                                src={keep_going}
+                                                                src={victory_royale}
                                                                 className={cls.Image}
-                                                                alt="keep going Homer Simpson"
+                                                                alt="victory royale"
                                                         />
                                                 </div>
                                         ) : (
                                                 <h2>
-                                                        Sorry, you got a score of {calculatedScore}. Go ahead
-                                                        and retry this section.
+                                                        Sorry, you got a score of {calculatedScore}. What
+                                                        would you like to do?
                                                 </h2>
                                         )}
                                 </DialogContent>
                                 <DialogActions>
-                                        {restart}
-                                        {calculatedScore >= 70 ? nextSection : null}
+                                        {calculatedScore >= 70 ? restartGame : restart}
+                                        {unitPage}
                                 </DialogActions>
                         </Dialog>
                         <div className={cls.NewGameContainer}>
                                 <div className={cls.NewGameBoard} ref={targetsRef}>
                                         <div className={cls.NewCol}>
-                                                <h1 className={cls.NewColTitle}>{props.game.col1.heading}</h1>
+                                                <h1 className={cls.NewColTitle}>
+                                                        {props.game2.col1.heading}
+                                                </h1>
                                                 {targets[0]}
                                                 {targets[1]}
                                                 {targets[2]}
                                         </div>
                                         <div className={cls.NewCol}>
-                                                <h1 className={cls.NewColTitle}>{props.game.col2.heading}</h1>
+                                                <h1 className={cls.NewColTitle}>
+                                                        {props.game2.col2.heading}
+                                                </h1>
                                                 {targets[3]}
                                                 {targets[4]}
                                                 {targets[5]}
                                         </div>
                                         <div className={cls.NewCol}>
-                                                <h1 className={cls.NewColTitle}>{props.game.col3.heading}</h1>
+                                                <h1 className={cls.NewColTitle}>
+                                                        {props.game2.col3.heading}
+                                                </h1>
                                                 {targets[6]}
                                                 {targets[7]}
                                                 {targets[8]}
                                         </div>
                                         <div className={cls.NewCol}>
-                                                <h1 className={cls.NewColTitle}>{props.game.col4.heading}</h1>
+                                                <h1 className={cls.NewColTitle}>
+                                                        {props.game2.col4.heading}
+                                                </h1>
                                                 {targets[9]}
                                                 {targets[10]}
                                                 {targets[11]}
                                         </div>
                                         <div className={cls.NewCol}>
-                                                <h1 className={cls.NewColTitle}>{props.game.col5.heading}</h1>
+                                                <h1 className={cls.NewColTitle}>
+                                                        {props.game2.col5.heading}
+                                                </h1>
                                                 {targets[12]}
                                                 {targets[13]}
                                                 {targets[14]}
@@ -320,4 +339,4 @@ const NewGameTemplate = props => {
         );
 };
 
-export default NewGameTemplate;
+export default NewGameTemplateB;

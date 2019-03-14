@@ -61,7 +61,7 @@ const unit4_1Obj = {
         ],
         game: {
                 col1: {
-                        heading: '',
+                        heading: 'col 1 section 1',
                         hint: '',
                         image: '',
                         definition: ''
@@ -93,7 +93,7 @@ const unit4_1Obj = {
         },
         game2: {
                 col1: {
-                        heading: '',
+                        heading: 'col 2 section 2',
                         hint: '',
                         image: '',
                         definition: ''
