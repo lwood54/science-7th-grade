@@ -16,7 +16,7 @@ const Transition = props => {
 };
 
 const NewGameTemplate = props => {
-        console.log('NewGameTemplate is RUNNING');
+        console.log('NewGameTemplate RENDERED');
         const navHome = props.vertMenuItems[0]['Home'];
         const navUnit = props.vertMenuItems[1]['Unit Page'];
         const navGame = props.vertMenuItems[2]['Game'];
@@ -68,7 +68,6 @@ const NewGameTemplate = props => {
         // this will monitor side effects and re-check the round status
         // every time correct or incorrect state changes
         useEffect(() => {
-                console.log('useEffect 1');
                 checkRoundStatus();
         }, [correct, incorrect]);
 
@@ -239,7 +238,6 @@ const NewGameTemplate = props => {
 
         const [targets, setTargets] = useState([]);
         useEffect(() => {
-                console.log('useEffect 2');
                 let newTargets = useTargets(handleDragOver, handleDrop, handleTargetClick);
                 setTargets(newTargets);
         }, [correct, incorrect, dragClickId]); // changed [targets] (which caused infinite re-render)
@@ -247,7 +245,6 @@ const NewGameTemplate = props => {
         // initial mount and render of cards, will not change upon re-render
         const [cards, setCards] = useState([]);
         useEffect(() => {
-                console.log('useEffect 3');
                 setCards(useCards(props.game, handleDrag, handleCardClick, shuffleArray));
         }, []);
 
@@ -275,7 +272,6 @@ const NewGameTemplate = props => {
         };
 
         useEffect(() => {
-                console.log('useEffect 4');
                 if (canRestart) {
                         // console.log('canRestart is running');
                         let shuffledCards = shuffleArray(
