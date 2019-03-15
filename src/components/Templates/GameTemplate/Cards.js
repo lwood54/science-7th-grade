@@ -2,7 +2,7 @@ import React from 'react';
 
 import cls from './GameTemplate.module.css';
 
-const useCards = (game, handleDrag, shuffleArray) => {
+const useCards = (game, handleDrag, handleCardClick, shuffleArray) => {
         let newCards = [];
         // copy the game object so this can be manipulated and used to update state
         let gameCopy = { ...game };
@@ -22,7 +22,7 @@ const useCards = (game, handleDrag, shuffleArray) => {
                                                 id={`${col}_${item}`}
                                                 onDragStart={handleDrag}
                                                 draggable
-                                                // onClick={this.handleCardClick}
+                                                onClick={handleCardClick}
                                         >
                                                 <img
                                                         src={gameCopy[col][item]}
@@ -42,7 +42,7 @@ const useCards = (game, handleDrag, shuffleArray) => {
                                                 className={cls.NewCard}
                                                 onDragStart={handleDrag}
                                                 draggable
-                                                // onClick={this.handleCardClick}
+                                                onClick={handleCardClick}
                                         >
                                                 {gameCopy[col][item]}
                                         </div>

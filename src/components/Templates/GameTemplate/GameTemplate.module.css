@@ -66,6 +66,12 @@
         cursor: move;
 }
 
+.clicked {
+        background-color: #40879c;
+        transform: scale(1.08);
+        color: #fafafa;
+}
+
 .NewCardDeckContainer {
         width: 98%;
         min-width: 800px;

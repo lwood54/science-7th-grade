@@ -16,7 +16,7 @@ const Transition = props => {
 };
 
 const NewGameTemplateB = props => {
-        console.log('NewGameTemplateB is running');
+        console.log('NewGameTemplateB is RUNNING');
         const navHome = props.vertMenuItems[0]['Home'];
         const navUnit = props.vertMenuItems[1]['Unit Page'];
         const navGame = props.vertMenuItems[2]['Game'];
@@ -162,17 +162,84 @@ const NewGameTemplateB = props => {
                 }
         };
 
+        const handleTargetClick = e => {
+                // if the target does not have any children &
+                // if there is a valid id stored in dragClickId state
+                if (!e.target.children.length > 0 && dragClickId) {
+                        let eTargetID = e.target.id;
+                        let eTargetID3 = eTargetID.split('')[3];
+                        // had to access id with state instead of data transfer when using click
+                        let eCardID = dragClickId;
+                        let eCardID3 = eCardID.split('')[3];
+                        let targetEl = null;
+                        let cardEl = null;
+                        if (eTargetID3 === eCardID3) {
+                                // find when target ref = event target
+                                // which means CORRECT drop
+                                targetEl = getTargetEl(eTargetID);
+                                cardEl = getCardEl(eCardID);
+                                targetEl.appendChild(cardEl);
+                                cardEl.setAttribute('draggable', false);
+                                setDragClickId(null);
+                                cardEl.classList.remove(cls.clicked);
+                                cardEl.classList.add(cls.Correct);
+                                targetEl.classList.add(cls.CorrectTarget);
+                                handleCorrect();
+                        } else {
+                                // when INCORRECT drop
+                                targetEl = getTargetEl(eTargetID);
+                                cardEl = getCardEl(eCardID);
+                                targetEl.appendChild(cardEl);
+                                setDragClickId(null);
+                                targetEl.classList.add(cls.IncorrectTarget);
+                                cardEl.classList.remove(cls.clicked);
+                                cardEl.classList.add(cls.Incorrect);
+                                handleIncorrect();
+                        }
+                } else {
+                        return;
+                }
+        };
+
+        const [dragClickId, setDragClickId] = useState(null);
+        const handleCardClick = e => {
+                // sets cardID to e.target.id if test, or looks to parent div if img w/ no id
+                let cardID = null;
+                if (e.target.id) {
+                        cardID = e.target.id;
+                        if (cardID.split('')[3] !== e.target.parentNode.id.split('')[3]) {
+                                let clickedCard = getCardEl(cardID);
+                                clickedCard.classList.remove(cls.Incorrect);
+                                clickedCard.classList.add(cls.clicked);
+                                setDragClickId(cardID);
+                                return;
+                        } else {
+                                return;
+                        }
+                } else if (e.target.parentNode.id) {
+                        // this is if it is a card with an image instead of text
+                        // must check for parent div of image that has the id
+                        cardID = e.target.parentNode.id;
+                        if (cardID.split('')[3] !== e.target.parentNode.parentNode.id.split('')[3]) {
+                                let clickedCard = getCardEl(cardID);
+                                clickedCard.classList.remove(cls.Incorrect);
+                                clickedCard.classList.add(cls.clicked);
+                                setDragClickId(cardID);
+                        }
+                }
+        };
+
         // initial mount and render of targets, actively monitors as targets change
         const [targets, setTargets] = useState([]);
         useEffect(() => {
-                let newTargets = useTargets(handleDragOver, handleDrop);
+                let newTargets = useTargets(handleDragOver, handleDrop, handleTargetClick);
                 setTargets(newTargets);
-        }, [targets]);
+        }, [correct, incorrect, dragClickId]); // changed [targets] to fix infinite re-render
 
         // initial mount and render of cards, will not change upon re-render
         const [cards, setCards] = useState([]);
         useEffect(() => {
-                setCards(useCards(props.game2, handleDrag, shuffleArray));
+                setCards(useCards(props.game2, handleDrag, handleCardClick, shuffleArray));
         }, []);
 
         // identify trigger to restart section, can be switched when
@@ -201,7 +268,9 @@ const NewGameTemplateB = props => {
         useEffect(() => {
                 if (canRestart) {
                         // console.log('canRestart is running');
-                        let shuffledCards = shuffleArray(useCards(props.game2, handleDrag, shuffleArray));
+                        let shuffledCards = shuffleArray(
+                                useCards(props.game2, handleDrag, handleCardClick, shuffleArray)
+                        );
                         setCards(shuffledCards);
                         setTargets(useTargets(handleDragOver, handleDrop));
                         setCanRestart(false);
@@ -222,7 +291,7 @@ const NewGameTemplateB = props => {
                 </Button>
         );
         const restartGame = (
-                <Link to={`${navGame}b`} className={cls.Link}>
+                <Link to={navGame} className={cls.Link}>
                         <Button variant="contained" color="primary">
                                 Try Game Again!
                         </Button>
