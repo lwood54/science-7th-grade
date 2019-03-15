@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "31a18fddc09373c64919",
-    "url": "/static/css/main.542fa0be.chunk.css"
+    "revision": "457e3a7347923be74051",
+    "url": "/static/css/main.d5342347.chunk.css"
   },
   {
-    "revision": "31a18fddc09373c64919",
-    "url": "/static/js/main.31a18fdd.chunk.js"
+    "revision": "457e3a7347923be74051",
+    "url": "/static/js/main.457e3a73.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "a4ee9a2c405aed09c576",
-    "url": "/static/js/2.a4ee9a2c.chunk.js"
+    "revision": "7c26de14b9d0adbc9559",
+    "url": "/static/js/2.7c26de14.chunk.js"
   },
   {
     "revision": "4b3f9d345ce6ca54aa43e64673ce67f2",
@@ -308,7 +308,47 @@ self.__precacheManifest = [
     "url": "/static/media/saturated.5a91bb71.jpg"
   },
   {
-    "revision": "3a60eb1d3bd2fbc553c816bf062144e6",
+    "revision": "1dcff968460c59f3697a38bc5633fd7e",
+    "url": "/static/media/habitable-zone.1dcff968.jpg"
+  },
+  {
+    "revision": "cc42dd45b670c0c821187311b2828b56",
+    "url": "/static/media/atmosphere.cc42dd45.jpg"
+  },
+  {
+    "revision": "5f906a9365f88327bcf9a49a8a7fee67",
+    "url": "/static/media/lightyear_info.5f906a93.jpg"
+  },
+  {
+    "revision": "3b3ea60f1e0077c73fb019b072539097",
+    "url": "/static/media/solar_system.3b3ea60f.gif"
+  },
+  {
+    "revision": "3933970416b9eaf4b9da3d3a692295a5",
+    "url": "/static/media/ISS.39339704.gif"
+  },
+  {
+    "revision": "805e03faef1eaa877c32715081bc8cb2",
+    "url": "/static/media/asteroid.805e03fa.jpg"
+  },
+  {
+    "revision": "99ef9a1aaeb3a9e3dd61662bdb41d122",
+    "url": "/static/media/ozone_layer.99ef9a1a.png"
+  },
+  {
+    "revision": "b340f2fb7e55f3f1a3eaeac895004970",
+    "url": "/static/media/gravity.b340f2fb.gif"
+  },
+  {
+    "revision": "bb8c9abe72de785717bac04837d1ee8c",
+    "url": "/static/media/launch.bb8c9abe.gif"
+  },
+  {
+    "revision": "49cf0261195c9cc1376353eca9b1e964",
+    "url": "/static/media/orbital_velocity.49cf0261.gif"
+  },
+  {
+    "revision": "673b3a9625f9abfdbb6afa8df999005c",
     "url": "/index.html"
   }
 ];

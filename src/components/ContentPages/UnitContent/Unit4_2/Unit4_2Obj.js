@@ -59,8 +59,7 @@ const unit4_2Obj = {
                         heading: 'Tornado',
                         hint: 'Churning winds, top speed over 300 mph',
                         image: require('./images/gifs/tornado.gif'),
-                        definition:
-                                'A destructive vortex of violently rotating winds having the appearance of a funnel-shaped cloud'
+                        definition: 'Funnel-shaped destructive vortex of violently rotating winds'
                 },
                 col3: {
                         heading: 'Flood',
@@ -72,8 +71,7 @@ const unit4_2Obj = {
                         heading: 'Earthquake',
                         hint: 'These are common along transform boundaries and can cause tsunamis',
                         image: require('./images/gifs/earthquake.gif'),
-                        definition:
-                                'Sudden, violent shaking of the ground, usually due to slipping or colliding tectonic plates'
+                        definition: 'Sudden, violent shaking, due to slipping or colliding tectonic plates'
                 },
                 col5: {
                         heading: 'Hurricane',
@@ -86,8 +84,7 @@ const unit4_2Obj = {
         game2: {
                 col1: {
                         heading: 'Pioneer Species',
-                        hint:
-                                'Examples in primary succession: lichens & mosses, whereas secondary succession may have wildflowers or ferns',
+                        hint: 'Ex in primary succession: lichens / Ex in secondary succession: ferns',
                         image: require('./images/gifs/wildflower.gif'),
                         definition: 'Species that are the first to grow in a disturbed environment'
                 },

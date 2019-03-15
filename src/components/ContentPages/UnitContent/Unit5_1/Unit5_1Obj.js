@@ -48,7 +48,7 @@ const unit5_1Obj = {
                         hint: 'A garden with weeds',
                         image: require('../Unit4_2/images/gifs/microhabitat.gif'),
                         definition:
-                                'A habitat that is of small extent and which differs in character from its surroundings'
+                                'A smaller habitat that is different than its larger, surrounding environment'
                 },
                 col2: {
                         heading: 'Ecosystem',
@@ -61,15 +61,14 @@ const unit5_1Obj = {
                         heading: 'Biome',
                         hint: 'Tundra, Taiga, Temperate Forest, Tropical Rainforest, etc',
                         image: require('./images/biome.jpg'),
-                        definition:
-                                'A large naturally occurring community of plants and animals occupying a major habitat'
+                        definition: 'A large community of plants and animals occupying a major habitat'
                 },
                 col4: {
                         heading: 'Ecoregion',
                         hint: "Pineywoods, Gulf Prairie, Edward's Plateau, etc",
                         image: require('./images/ecoregions.png'),
                         definition:
-                                'A major ecosystem defined by distinctive geography and receiving uniform solar radiation and moisture'
+                                'A major ecosystem within an area having similar geography, sunlight, and water'
                 },
                 col5: {
                         heading: 'Sustainability',
@@ -85,36 +84,32 @@ const unit5_1Obj = {
                         hint: 'Extremely cold, very low biodiversity',
                         image: require('./images/gifs/tundra.gif'),
                         definition:
-                                'A vast, flat, treeless Arctic region of Europe, Asia, and North America in which the subsoil is permanently frozen'
+                                'Vast, flat, treeless Arctic regions in which the subsoil is permanently frozen'
                 },
                 col2: {
                         heading: 'Taiga',
                         hint: 'A forest that looks like a bunch of Christmas trees',
                         image: require('./images/gifs/taiga.gif'),
-                        definition:
-                                'The sometimes swampy coniferous forest of high northern latitudes. Largest land-based biome on Earth.'
+                        definition: 'Coniferous forests of high northern latitudes. Largest land-based biome.'
                 },
                 col3: {
                         heading: 'Temperate Forest',
-                        hint:
-                                'United States of America has many of these types of forests. Can include deciduous, coniferous, or broadleafed trees',
+                        hint: 'USA has many of these forests. Trees drop leaves in the fall',
                         image: require('./images/gifs/temperate_forest.gif'),
                         definition:
-                                'A forest found between the tropics and polar regions. This forest has the most significant seasonal changes.'
+                                'These experience 4 seasons, but not as far from the equator as the taiga.'
                 },
                 col4: {
                         heading: 'Tropical Rainforest',
                         hint: 'Amazon Jungle is an example',
                         image: require('./images/gifs/rainforest.gif'),
-                        definition:
-                                'A forest found in the tropics which receives an anual rainfall of at least 100 inches'
+                        definition: 'Forest found in tropics that gets at least 100 inches of yearly rainfall'
                 },
                 col5: {
                         heading: 'Desert',
                         hint: 'can be hot or cold, but has little rain',
                         image: require('./images/gifs/desert.gif'),
-                        definition:
-                                'A region so arid (lacking precipitation) that it supports very little vegetation or none at all'
+                        definition: 'Region getting such little rains that it supports very few plants if any'
                 }
         }
 };

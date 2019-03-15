@@ -1,6 +1,6 @@
 import React from 'react';
 
-import cls from './GameTemplate.module.css';
+import cls from './NewGameTemplate.module.css';
 
 const useCards = (game, handleDrag, handleCardClick, shuffleArray) => {
         let newCards = [];
@@ -44,7 +44,13 @@ const useCards = (game, handleDrag, handleCardClick, shuffleArray) => {
                                                 draggable
                                                 onClick={handleCardClick}
                                         >
-                                                {gameCopy[col][item]}
+                                                {gameCopy[col][item].length < 80
+                                                        ? gameCopy[col][item]
+                                                        : console.log(
+                                                                  `${col} : ${item} too long by ${gameCopy[
+                                                                          col
+                                                                  ][item].length - 80}`
+                                                          )}
                                         </div>
                                 );
                         }

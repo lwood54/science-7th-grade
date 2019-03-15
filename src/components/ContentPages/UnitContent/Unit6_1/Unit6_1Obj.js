@@ -50,15 +50,14 @@ const unit6_1Obj = {
                         hint: "Pineywoods, Gulf Prairie, Edward's Plateau",
                         image: require('../Unit5_1/images/ecoregions.png'),
                         definition:
-                                'A major ecosystem defined by distinctive geography and receiving uniform solar radiation and moisture'
+                                'A major ecosystem within an area having similar geography, sunlight, and water'
                 },
                 col2: {
                         heading: 'Weathering',
-                        hint:
-                                'Break it...(like ice wedging, oxidation, splitting). Includes both mechical and chemical',
+                        hint: 'Break it: (like ice wedging, oxidation). Can be mechical and chemical',
                         image: require('./images/ice_wedging.jpg'),
                         definition:
-                                'Breaking down and loosening of surface minerals of rock so they can be transproted away by erosion'
+                                'Breaking down and loosening of rock so they can be carried away by erosion'
                 },
                 col3: {
                         heading: 'Erosion',
@@ -76,8 +75,7 @@ const unit6_1Obj = {
                         heading: 'Watershed',
                         hint: 'Rain on a ridge can flow in multiple directions',
                         image: require('./images/watershed.gif'),
-                        definition:
-                                'An area or ridge of land that separates waters flowing to different rivers, basins, or seas'
+                        definition: 'An area or ridge of land that separates waters flowing downhill'
                 }
         },
         game2: {

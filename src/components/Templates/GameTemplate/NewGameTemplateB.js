@@ -9,7 +9,7 @@ import Slide from '@material-ui/core/Slide';
 import NavigationBar from '../../Navigation/NavigationBar/NavigationBar';
 import useTargets from './Targets';
 import useCards from './Cards';
-import cls from './GameTemplate.module.css';
+import cls from './NewGameTemplate.module.css';
 import victory_royale from './victory_royale.gif';
 const Transition = props => {
         return <Slide direction="up" {...props} />;

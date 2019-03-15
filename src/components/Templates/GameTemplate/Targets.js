@@ -1,6 +1,6 @@
 import React from 'react';
 
-import cls from './GameTemplate.module.css';
+import cls from './NewGameTemplate.module.css';
 
 const useTargets = (handleDragOver, handleDrop, handleTargetClick) => {
         let newTargets = [];

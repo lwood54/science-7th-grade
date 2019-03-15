@@ -63,6 +63,8 @@
         box-shadow: 3px 4px 2px -3px gray;
         border-radius: 3px;
         cursor: move;
+        box-sizing: border-box;
+        padding: 2px;
 }
 
 .clicked {
@@ -75,7 +77,7 @@
         width: 98%;
         min-width: 800px;
         max-width: 1200px;
-        height: 200px;
+        height: 150px;
         padding: 0 10px;
         position: absolute;
         display: flex;
@@ -152,6 +154,12 @@
         background-color: #4db6ac;
         color: #fafafa;
         font-weight: bold;
+}
+
+.IncorrectScore h3,
+.CorrectScore h3 {
+        margin-bottom: 3px;
+        margin-top: 3px;
 }
 
 .scoreText {
@@ -232,6 +240,22 @@
         }
 }
 
+@media (min-width: 340px) {
+        .NewGameContainer {
+                transform: scale(0.45, 0.45);
+                margin-left: -68%;
+                margin-top: -35%;
+        }
+}
+
+@media (min-width: 365px) {
+        .NewGameContainer {
+                transform: scale(0.47, 0.47);
+                margin-left: -65%;
+                margin-top: -33%;
+        }
+}
+
 @media (min-width: 370px) {
         .NewGameContainer {
                 transform: scale(0.48, 0.48);
@@ -251,7 +275,7 @@
 @media (min-width: 385px) {
         .NewGameContainer {
                 transform: scale(0.48, 0.48);
-                margin-left: -75%;
+                margin-left: -60%;
                 margin-top: -30%;
         }
 }
@@ -355,7 +379,7 @@
 @media (min-width: 750px) {
         .NewGameContainer {
                 transform: scale(0.95, 0.95);
-                margin-left: -7%;
+                margin-left: -5%;
                 margin-top: 0;
         }
 }

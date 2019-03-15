@@ -43,8 +43,7 @@ const unit5_2Obj = {
                         heading: 'Food Chain',
                         hint: 'Simple relationship model between predator, prey, and other organisms',
                         image: require('./images/food_chain.jpg'),
-                        definition:
-                                'A hierarchical series of organisms each dependent on the next as a source of food'
+                        definition: 'Simple model of organisms each dependent on the next as a source of food'
                 },
                 col2: {
                         heading: 'Food Web',
@@ -69,7 +68,7 @@ const unit5_2Obj = {
                         hint: 'We like eating things that eat plants!',
                         image: require('./images/secondary_consumer.jpg'),
                         definition:
-                                '2nd level consumers that feed on primary consumers. They can be carnivores or omnivores'
+                                '2nd level consumers: feed on primary consumers / can be carnivores or omnivores'
                 }
         },
         game2: {
@@ -84,22 +83,19 @@ const unit5_2Obj = {
                         heading: 'Decomposer',
                         hint: 'Mushrooms, Bacteria, Earthworms, etc',
                         image: require('./images/decomposer.jpg'),
-                        definition:
-                                'An organism, especially a soil bacterium, fungus, or invertebrate, that breaks down organic material'
+                        definition: 'Organisms like fungus that break down dead organic material'
                 },
                 col3: {
                         heading: 'Producer',
                         hint: 'We are also known as plants and autotrophs!',
                         image: require('./images/leaves.jpg'),
-                        definition:
-                                'Organisms that take in energy from the Sun and make their own food by Photosynthesis'
+                        definition: 'Organisms that take in energy from the Sun & make food by Photosynthesis'
                 },
                 col4: {
                         heading: 'Energy',
                         hint: 'This is required by all living things',
                         image: require('./images/wind_mills.jpg'),
-                        definition:
-                                'All organisms spend a large amount of their resources trying to attain this. It is required to live'
+                        definition: 'All organisms compete for this, it is required for ALL life'
                 },
                 col5: {
                         heading: 'Decay',
