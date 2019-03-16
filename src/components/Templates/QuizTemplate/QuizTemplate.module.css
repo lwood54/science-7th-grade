@@ -15,6 +15,7 @@
 
 .AnswerButtonContainer {
         width: 100%;
+        max-width: 550px;
         margin: 15px auto;
         height: 75px;
         /* border: 2px solid red; */
@@ -39,6 +40,7 @@
 
 .QuizImage {
         width: 75%;
+        max-width: 500px;
 }
 
 /* I don't hink I'm using this class. */
@@ -51,10 +53,11 @@
         .AnswerContainer {
                 flex-direction: row;
                 flex-wrap: wrap;
+                max-width: 1000px;
         }
 
         .AnswerButtonContainer {
-                width: 45%;
+                width: 40%;
         }
 
         .OptionsButtonContainer {

@@ -6,7 +6,7 @@ import Obj7_13A from '../../TEKSContent/TEKS7_13A/Obj7_13A';
 
 const unit1_2Obj = {
         title: 'Unit 1.2',
-        subtitle: 'Energy Transformation in Living Systems',
+        subtitle: 'Energy Transformations',
         pageExtension: '/unit1_2',
         imageLocation: '/static/images/cards/seedling.jpg',
         imgTitle: 'seedling',
@@ -54,8 +54,7 @@ const unit1_2Obj = {
                         teksQuiz: Obj7_13A.teksQuiz
                 }
         ],
-        summary:
-                'In this unit, we look at how and why energy transformations take place within living systems.',
+        summary: 'Focus: Energy transformations take place within living systems.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit1_2' },

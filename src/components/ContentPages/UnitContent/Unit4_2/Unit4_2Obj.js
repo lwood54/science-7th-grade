@@ -3,7 +3,7 @@ import Obj7_10C from '../../TEKSContent/TEKS7_10C/Obj7_10C';
 
 const unit4_2Obj = {
         title: 'Unit 4.2',
-        subtitle: 'Ecological Succession and Catastrophic Events',
+        subtitle: 'Ecological Succession',
         pageExtension: '/unit4_2',
         imageLocation: '/static/images/cards/tornado.jpg',
         imgTitle: 'tornado',
@@ -36,8 +36,7 @@ const unit4_2Obj = {
                         teksQuiz: Obj7_10C.teksQuiz
                 }
         ],
-        summary:
-                'In this unit, we look at how catastrophic events affect ecosystems. We will also observe and analyze the process that ecosystems go through to reach homeostasis.',
+        summary: 'Focus: Effects of catastrophic events on ecosystems and ecological succession.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit4_2' },

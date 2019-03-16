@@ -3,7 +3,7 @@ import Obj7_12F from '../../TEKSContent/TEKS7_12F/Obj7_12F';
 
 const unit1_1Obj = {
         title: 'Unit 1.1',
-        subtitle: 'Cell Theory and Levels of Organization',
+        subtitle: 'Cell Theory',
         pageExtension: '/unit1_1',
         imageLocation: '/static/images/cards/dividing_cells.jpg',
         imgTitle: 'cell division',
@@ -34,8 +34,7 @@ const unit1_1Obj = {
                         teksQuiz: Obj7_12F.teksQuiz
                 }
         ],
-        summary:
-                'In this unit we will cover the 3 main parts of cell theory and observe the levels of organization that make up cells in living things.',
+        summary: 'Focus: 3 main parts of cell theory and levels of organization at the cellular level.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit1_1' },

@@ -3,7 +3,7 @@ import Obj7_8C from '../../TEKSContent/TEKS7_8C/Obj7_8C';
 
 const unit6_1Obj = {
         title: 'Unit 6.1',
-        subtitle: 'Weathering, Erosion, Deposition, Ground Water, and Watersheds',
+        subtitle: 'Weathering, Erosion, Deposition',
         pageExtension: '/unit6_1',
         imageLocation: '/static/images/cards/erosion.jpg',
         imgTitle: 'erosion',
@@ -33,8 +33,7 @@ const unit6_1Obj = {
                         teksQuiz: Obj7_8C.teksQuiz
                 }
         ],
-        summary:
-                'In this unit, we look how weathering, erosion, and deposition affect an ecosystem. We will also look at the human impact on ground water and watersheds.',
+        summary: 'Focus: Weathering, erosion, deposition, and human impact on watersheds.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit6_1' },

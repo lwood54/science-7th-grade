@@ -26,7 +26,7 @@ const unit2_1Obj = {
                         teksQuiz: Obj7_12D.teksQuiz
                 }
         ],
-        summary: 'In this unit we will observe and analyze the differences between plant and animal cells.',
+        summary: 'Focus: Observe and analyze the differences between plant and animal cell.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit2_1' },

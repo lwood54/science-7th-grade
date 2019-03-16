@@ -24,8 +24,7 @@ const unit2_2Obj = {
                         teksQuiz: Obj7_12B.teksQuiz
                 }
         ],
-        summary:
-                'In this unit, we look at the main systems and organs of the human body and analyze how they work together to help the body maintain homeostasis.',
+        summary: 'Focus: The main systems of the human body and how they work together.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit2_2' },

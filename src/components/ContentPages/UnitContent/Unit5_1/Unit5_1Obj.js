@@ -31,8 +31,7 @@ const unit5_1Obj = {
                         teksQuiz: Obj7_10B.teksQuiz
                 }
         ],
-        summary:
-                'In this unit, we look at a range of environments from microhabitats to biomes and how biodiversity contributes to their sustainability.',
+        summary: 'Focus: Biomes, microhabitats, and how biodiversity contributes to sustainability.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit5_1' },

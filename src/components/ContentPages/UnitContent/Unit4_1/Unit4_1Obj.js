@@ -5,7 +5,7 @@ import Obj7_12A from '../../TEKSContent/TEKS7_12A/Obj7_12A';
 
 const unit4_1Obj = {
         title: 'Unit 4.1',
-        subtitle: 'Natural Selection, Selective breeding, and Variation',
+        subtitle: 'Natural Selection',
         pageExtension: '/unit4_1',
         imageLocation: '/static/images/cards/salamander.jpg',
         imgTitle: 'salamander',
@@ -48,8 +48,7 @@ const unit4_1Obj = {
                         teksQuiz: Obj7_12A.teksQuiz
                 }
         ],
-        summary:
-                'In this unit, we learn how to use dichotomous keys. We also observe and understand the factors that influence natural selection.',
+        summary: 'Focus: Dichotomous keys and a look at factors that influence natural selection.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit4_1' },

@@ -29,7 +29,7 @@ const notes7_5B = props => {
                                         <p>
                                                 It's important to understand that all life on earth needs
                                                 energy. Much of the diversity of organisms and their
-                                                adaptations come as a result of the need to acquire energy.
+                                                adaptations comes as a result of the need to acquire energy.
                                         </p>
                                 </div>
                                 <div className={cls.Notes}>
@@ -62,9 +62,9 @@ const notes7_5B = props => {
                                 </div>
                                 <div className={cls.Notes}>
                                         <p>
-                                                This concept is pretty understandable when we look at plants
-                                                and understand photosynthesis, but how does all that energy
-                                                makes it way throughout an ecosystem?
+                                                This concept is pretty clear when we look at plants and
+                                                understand photosynthesis, but how does all that energy make
+                                                its way throughout an ecosystem?
                                         </p>
                                 </div>
                         </div>
@@ -98,9 +98,8 @@ const notes7_5B = props => {
                                 <div className={cls.Notes}>
                                         <p>
                                                 When an animal eats a primary consumer, we call that a{' '}
-                                                <em>secondary consumer</em>. And an animal that eats primary
-                                                and secondary consumers is called a <em>tertiary consumer</em>
-                                                .
+                                                <em>secondary consumer</em>. And an animal that eats secondary
+                                                consumers is called a <em>tertiary consumer</em>.
                                         </p>
                                 </div>
                                 <div className={cls.ImageContainer}>
@@ -132,10 +131,9 @@ const notes7_5B = props => {
                                                 The problem with a food chain is that it doesn't show the
                                                 complexity in an ecosystem. As an example, we saw the bird
                                                 above identified as a tertiary consumer, but the lion was only
-                                                eating a primary consumer. In now way would that bird be
-                                                higher on a food chain than the lion. This is why a{' '}
-                                                <em>food web</em> can do a better job of modeling energy flow
-                                                in an ecosystem.
+                                                eating a primary consumer. In no way would that bird be higher
+                                                on a food chain than the lion. This is why a <em>food web</em>{' '}
+                                                can do a better job of modeling energy flow in an ecosystem.
                                         </p>
                                 </div>
                                 <div className={cls.ImageContainer}>
@@ -154,7 +152,7 @@ const notes7_5B = props => {
                                 </div>
                                 <div className={cls.Notes}>
                                         <p>
-                                                <em>Only about 10%</em> of the energy aquired by one level is
+                                                <em>Only about 10%</em> of the energy acquired by one level is
                                                 passed on to the level that consumes it. So what happens to
                                                 90% of the energy given to plants? Just like animals, plants
                                                 use energy for other requirements, like cell division and

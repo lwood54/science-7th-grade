@@ -3,7 +3,7 @@ import Obj7_9B from '../../TEKSContent/TEKS7_9B/Obj7_9B';
 
 const unit6_2Obj = {
         title: 'Unit 6.2',
-        subtitle: 'Space',
+        subtitle: 'Space Exploration',
         pageExtension: '/unit6_2',
         imageLocation: '/static/images/cards/spaceX.jpeg',
         imgTitle: 'spaceX',
@@ -32,8 +32,7 @@ const unit6_2Obj = {
                         teksQuiz: Obj7_9B.teksQuiz
                 }
         ],
-        summary:
-                'In this unit, we look at the characteristics of the solar system and what it takes for human space travel and exploration.',
+        summary: 'Focus: Characteristics of the solar system and human space exploration.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit6_2' },

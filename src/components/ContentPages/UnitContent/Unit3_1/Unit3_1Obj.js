@@ -45,8 +45,7 @@ const unit3_1Obj = {
                         teksQuiz: Obj7_14C.teksQuiz
                 }
         ],
-        summary:
-                'In this unit, we look at reproduction at the cellular level and understand how traits are passed to following generations.',
+        summary: 'Focus: Reproduction at the cellular level and the passage of genetic traits.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit3_1' },

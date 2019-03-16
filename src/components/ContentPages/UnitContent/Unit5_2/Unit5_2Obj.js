@@ -27,8 +27,7 @@ const unit5_2Obj = {
                         teksQuiz: Obj7_5B.teksQuiz
                 }
         ],
-        summary:
-                'In this unit, we look at the relationshiop between organisms that live together in an ecosystem and how energy is passed between them.',
+        summary: 'Focus: Relationships  and energy flow between organisms in an ecosystem.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit5_2' },
