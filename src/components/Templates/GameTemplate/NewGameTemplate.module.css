@@ -14,7 +14,7 @@
 
 .NewGameBoard {
         width: 100%;
-        max-height: 520px;
+        /* max-height: 520px; */
         /* background-color: rgb(103, 115, 134); */
         display: flex;
         flex-direction: row;
@@ -35,7 +35,7 @@
 }
 
 .NewTarget {
-        height: 135px;
+        height: 175px;
         width: 100%;
         margin-bottom: 10px;
         box-sizing: border-box;
@@ -74,7 +74,7 @@
 }
 
 .NewCardDeckContainer {
-        width: 98%;
+        width: 100%;
         min-width: 800px;
         max-width: 1200px;
         height: 150px;
@@ -196,7 +196,7 @@
         .NewGameContainer {
                 transform: scale(0.4, 0.4);
                 margin-left: -115%;
-                margin-top: -48%;
+                margin-top: -65%;
         }
 }
 
@@ -204,7 +204,15 @@
         .NewGameContainer {
                 transform: scale(0.4, 0.4);
                 margin-left: -110%;
-                margin-top: -45%;
+                margin-top: -62%;
+        }
+}
+
+@media (min-width: 260px) {
+        .NewGameContainer {
+                transform: scale(0.4, 0.4);
+                margin-left: -107%;
+                margin-top: -62%;
         }
 }
 
@@ -212,7 +220,7 @@
         .NewGameContainer {
                 transform: scale(0.4, 0.4);
                 margin-left: -105%;
-                margin-top: -45%;
+                margin-top: -60%;
         }
 }
 
@@ -220,15 +228,23 @@
         .NewGameContainer {
                 transform: scale(0.4, 0.4);
                 margin-left: -100%;
-                margin-top: -42%;
+                margin-top: -55%;
         }
 }
 
 @media (min-width: 300px) {
         .NewGameContainer {
                 transform: scale(0.4, 0.4);
-                margin-left: -83%;
-                margin-top: -35%;
+                margin-left: -85%;
+                margin-top: -52%;
+        }
+}
+
+@media (min-width: 320px) {
+        .NewGameContainer {
+                transform: scale(0.4, 0.4);
+                margin-left: -78%;
+                margin-top: -53%;
         }
 }
 
@@ -236,15 +252,7 @@
         .NewGameContainer {
                 transform: scale(0.45, 0.45);
                 margin-left: -70%;
-                margin-top: -35%;
-        }
-}
-
-@media (min-width: 340px) {
-        .NewGameContainer {
-                transform: scale(0.45, 0.45);
-                margin-left: -68%;
-                margin-top: -35%;
+                margin-top: -45%;
         }
 }
 
@@ -252,7 +260,7 @@
         .NewGameContainer {
                 transform: scale(0.47, 0.47);
                 margin-left: -65%;
-                margin-top: -33%;
+                margin-top: -43%;
         }
 }
 
@@ -260,7 +268,7 @@
         .NewGameContainer {
                 transform: scale(0.48, 0.48);
                 margin-left: -60%;
-                margin-top: -32%;
+                margin-top: -42%;
         }
 }
 
@@ -268,7 +276,7 @@
         .NewGameContainer {
                 transform: scale(0.48, 0.48);
                 margin-left: -62%;
-                margin-top: -32%;
+                margin-top: -42%;
         }
 }
 
@@ -276,7 +284,7 @@
         .NewGameContainer {
                 transform: scale(0.48, 0.48);
                 margin-left: -60%;
-                margin-top: -30%;
+                margin-top: -40%;
         }
 }
 
@@ -284,7 +292,7 @@
         .NewGameContainer {
                 transform: scale(0.5, 0.5);
                 margin-left: -50%;
-                margin-top: -25%;
+                margin-top: -35%;
         }
 }
 
@@ -292,7 +300,7 @@
         .NewGameContainer {
                 transform: scale(0.52, 0.52);
                 margin-left: -52%;
-                margin-top: -25%;
+                margin-top: -35%;
         }
 }
 
@@ -300,15 +308,15 @@
         .NewGameContainer {
                 transform: scale(0.52, 0.52);
                 margin-left: -51%;
-                margin-top: -25%;
+                margin-top: -35%;
         }
 }
 
 @media (min-width: 425px) {
         .NewGameContainer {
                 transform: scale(0.52, 0.52);
-                margin-left: -50%;
-                margin-top: -24%;
+                margin-left: -46%;
+                margin-top: -32%;
         }
 }
 
@@ -316,7 +324,7 @@
         .NewGameContainer {
                 transform: scale(0.6, 0.6);
                 margin-left: -40%;
-                margin-top: -20%;
+                margin-top: -25%;
         }
 }
 
@@ -324,7 +332,7 @@
         .NewGameContainer {
                 transform: scale(0.6, 0.6);
                 margin-left: -35%;
-                margin-top: -18%;
+                margin-top: -22%;
         }
 }
 
@@ -332,7 +340,7 @@
         .NewGameContainer {
                 transform: scale(0.65, 0.65);
                 margin-left: -30%;
-                margin-top: -15%;
+                margin-top: -20%;
         }
 }
 
@@ -388,5 +396,27 @@
         .NewGameContainer {
                 transform: scale(1, 1);
                 margin: auto;
+        }
+}
+
+@media (min-width: 850px) {
+        .NewTarget {
+                height: 145px;
+        }
+}
+
+@media (min-width: 1000px) {
+        .NewTarget {
+                height: 130px;
+        }
+        .NewColTitle {
+                margin-top: 15px;
+                margin-bottom: 0px;
+        }
+}
+
+@media (min-width: 1200px) {
+        .NewTarget {
+                height: 125px;
         }
 }
