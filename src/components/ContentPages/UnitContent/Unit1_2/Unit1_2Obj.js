@@ -54,7 +54,7 @@ const unit1_2Obj = {
                         teksQuiz: Obj7_13A.teksQuiz
                 }
         ],
-        summary: 'Focus: Energy transformations take place within living systems including photosynthesis.',
+        summary: 'Focus: Energy transformations within living systems including photosynthesis.',
         vertMenuItems: [
                 { Home: '/' },
                 { 'Unit Page': '/unit1_2' },
