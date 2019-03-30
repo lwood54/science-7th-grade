@@ -21,6 +21,8 @@ const NewGameTemplate = props => {
         const navUnit = props.vertMenuItems[1]['Unit Page'];
         const navGame = props.vertMenuItems[2]['Game'];
         const navQuizlet = props.vertMenuItems[3]['Quizlet'];
+        // create a ref hook for targets and cards that can be accessed at a deeper level
+        // when a card is dropped on a target
         const targetsRef = useRef();
         const cardsRef = useRef();
         const [isRoundOver, setIsRoundOver] = useState(false);
@@ -33,6 +35,7 @@ const NewGameTemplate = props => {
                 if (score > 0) {
                         setCalculatedScore(score);
                 } else {
+                        // this prevents students from trying to score a -400
                         setCalculatedScore(0);
                 }
         };
@@ -40,9 +43,13 @@ const NewGameTemplate = props => {
         // Goes through all targets and counts the number of targets with
         // children. So when all 15 targets have a child node, the round is over.
         const checkRoundStatus = () => {
+                // set counter to 0
                 let targetsWithCardsCount = 0;
+                // loop through target columns
                 for (let k = 0; k < targetsRef.current.children.length; k++) {
+                        // loop through targets
                         for (let j = 0; j < targetsRef.current.children[k].children.length; j++) {
+                                // check children of targets
                                 let nestedCards = targetsRef.current.children[k].children[j].children;
                                 if (nestedCards[0]) {
                                         targetsWithCardsCount++;
@@ -72,16 +79,21 @@ const NewGameTemplate = props => {
         }, [correct, incorrect]);
 
         // take in event target ID and use it to find and return targetRef
-        // navigates through the ref created by React.createRef used for targets
+        // navigates through the ref created by useRef hook used for targets
         // loop through the children to access the target, then compare it with
         // the id identified through the dropEvent
         // this returns a mutable target ref
         const getTargetEl = evTargetID => {
+                // access ref object that can be mutated
                 let targetChildren = targetsRef.current.children;
+                // loop columns
                 for (let i = 0; i < 5; i++) {
+                        // loop children aka targets within columns
                         for (let k = 1; k < 4; k++) {
+                                // target column @ target square
                                 let targetEl = targetChildren[i].children[k];
                                 if (evTargetID === targetEl.id) {
+                                        // returns mutable ref using targetRef traversal
                                         return targetEl;
                                 }
                         }
@@ -92,7 +104,9 @@ const NewGameTemplate = props => {
         // navigate through the array of cards until the event id matches
         // the ref, then return the mutable cardElement ref
         const getCardEl = evCardID => {
+                // set mutable ref
                 let cardChildren = cardsRef.current.children;
+                // loop through card stack, whose length will change
                 for (let i = 0; i < cardChildren.length; i++) {
                         let cardElement = cardChildren[i];
                         if (evCardID === cardElement.id) {
@@ -128,6 +142,8 @@ const NewGameTemplate = props => {
         };
 
         const handleDrag = e => {
+                // provides the target id (which will be a card that is being dragged)
+                // NOTE: event target is not the same thing as a game board target
                 e.dataTransfer.setData('text', e.target.id);
         };
 
@@ -136,27 +152,24 @@ const NewGameTemplate = props => {
         };
 
         const handleDrop = e => {
+                // if the game target does not have children
                 if (!e.target.children.length > 0) {
                         let eTargetID = e.target.id;
-                        let eTargetID3 = eTargetID.split('')[3];
+                        let eTargetID3 = eTargetID.split('')[3]; // basically gets column number
                         let eCardID = e.dataTransfer.getData('text');
-                        let eCardID3 = eCardID.split('')[3];
-                        let targetEl = null;
-                        let cardEl = null;
+                        let eCardID3 = eCardID.split('')[3]; // gets pre-labeled column number match
+                        let targetEl = getTargetEl(eTargetID); // get mutable target ref
+                        let cardEl = getCardEl(eCardID); // get mutable card ref
+                        targetEl.appendChild(cardEl); // add card to target
+                        // check if target column matches card column
                         if (eTargetID3 === eCardID3) {
-                                //find when target ref = event target
-                                targetEl = getTargetEl(eTargetID);
-                                cardEl = getCardEl(eCardID);
-                                targetEl.appendChild(cardEl);
-                                cardEl.setAttribute('draggable', false);
-                                cardEl.classList.remove(cls.clicked);
-                                cardEl.classList.add(cls.Correct);
-                                targetEl.classList.add(cls.CorrectTarget);
-                                handleCorrect();
+                                cardEl.setAttribute('draggable', false); // change card to not be draggable
+                                cardEl.classList.remove(cls.clicked); // remove clicked styling
+                                cardEl.classList.add(cls.Correct); // add correct styling
+                                targetEl.classList.add(cls.CorrectTarget); // add correct target styling
+                                handleCorrect(); // update correct count
                         } else {
-                                targetEl = getTargetEl(eTargetID);
-                                cardEl = getCardEl(eCardID);
-                                targetEl.appendChild(cardEl);
+                                // if card is dropped in wrong target
                                 targetEl.classList.add(cls.IncorrectTarget);
                                 cardEl.classList.remove(cls.clicked);
                                 cardEl.classList.add(cls.Incorrect);
@@ -167,6 +180,8 @@ const NewGameTemplate = props => {
                 }
         };
 
+        const [dragClickId, setDragClickId] = useState(null);
+        // this is used for touch screens, click instead of drag
         const handleTargetClick = e => {
                 // if the target does not have any children &
                 // if there is a valid id stored in dragClickId state
@@ -175,28 +190,19 @@ const NewGameTemplate = props => {
                         let eTargetID3 = eTargetID.split('')[3];
                         // had to access id with state instead of data transfer when using click
                         let eCardID = dragClickId;
-                        let eCardID3 = eCardID.split('')[3];
-                        let targetEl = null;
-                        let cardEl = null;
+                        let eCardID3 = eCardID.split('')[3]; // access column number
+                        let targetEl = getTargetEl(eTargetID); // get mutable target using refs
+                        let cardEl = getCardEl(eCardID); // get mutable card using refs
+                        targetEl.appendChild(cardEl); // add the card to the target
+                        setDragClickId(null); // resets dragClickId in state
                         if (eTargetID3 === eCardID3) {
-                                // find when target ref = event target
-                                // which means CORRECT drop
-                                targetEl = getTargetEl(eTargetID);
-                                cardEl = getCardEl(eCardID);
-                                targetEl.appendChild(cardEl);
                                 cardEl.setAttribute('draggable', false);
-                                setDragClickId(null);
                                 cardEl.classList.remove(cls.clicked);
                                 cardEl.classList.add(cls.Correct);
                                 targetEl.classList.add(cls.CorrectTarget);
-                                // setTargets(targets);
                                 handleCorrect();
                         } else {
                                 // when INCORRECT drop
-                                targetEl = getTargetEl(eTargetID);
-                                cardEl = getCardEl(eCardID);
-                                targetEl.appendChild(cardEl);
-                                setDragClickId(null);
                                 targetEl.classList.add(cls.IncorrectTarget);
                                 cardEl.classList.remove(cls.clicked);
                                 cardEl.classList.add(cls.Incorrect);
@@ -206,7 +212,7 @@ const NewGameTemplate = props => {
                         return;
                 }
         };
-        const [dragClickId, setDragClickId] = useState(null);
+
         const handleCardClick = e => {
                 // sets cardID to e.target.id if test, or looks to parent div if img w/ no id
                 let cardID = null;
@@ -234,10 +240,11 @@ const NewGameTemplate = props => {
                 }
         };
 
-        // initial mount and render of targets, actively monitors as targets change
-
+        // initial mount and render of targets, actively monitors correct/incorrect/dragClickId
+        // having it monitor targets resulted in infinite loop because of rerendering gameboard
         const [targets, setTargets] = useState([]);
         useEffect(() => {
+                // generates new targets using imported targets creator function
                 let newTargets = useTargets(handleDragOver, handleDrop, handleTargetClick);
                 setTargets(newTargets);
         }, [correct, incorrect, dragClickId]); // changed [targets] (which caused infinite re-render)
@@ -252,6 +259,8 @@ const NewGameTemplate = props => {
         // button 'try section again' is clicked on dialog window
         const [canRestart, setCanRestart] = useState(false);
         const removeCards = () => {
+                // loops through and removes each child/card from each target
+                // when reset is requested
                 for (let k = 0; k < targetsRef.current.children.length; k++) {
                         for (let j = 0; j < targetsRef.current.children[k].children.length; j++) {
                                 let nestedCards = targetsRef.current.children[k].children[j].children;
@@ -265,6 +274,7 @@ const NewGameTemplate = props => {
                                         );
                                         removedChild.classList.remove(cls.Correct, cls.Incorrect);
                                         removedChild.setAttribute('draggable', true);
+                                        // once removed, then it has to be re-added back to the card deck
                                         cardsRef.current.appendChild(removedChild);
                                 }
                         }
@@ -273,19 +283,18 @@ const NewGameTemplate = props => {
 
         useEffect(() => {
                 if (canRestart) {
-                        // console.log('canRestart is running');
                         let shuffledCards = shuffleArray(
                                 useCards(props.game, handleDrag, handleCardClick, shuffleArray)
                         );
                         setCards(shuffledCards);
-                        setTargets(useTargets(handleDragOver, handleDrop));
+                        setTargets(useTargets(handleDragOver, handleDrop, handleTargetClick));
                         setCanRestart(false);
                         setIsRoundOver(false);
                         setCorrect(0);
                         setIncorrect(0);
                         setCalculatedScore(0);
                 }
-        }, [canRestart]);
+        }, [canRestart]); // monitors effect when canRestart changes status
         const handleRestart = () => {
                 removeCards();
                 setCanRestart(true);
