@@ -8,6 +8,9 @@ import cls from '../../../Templates/NotesTemplate/NotesTemplate.module.css';
 //////////////////// PICTURE IMPORTS /////////////////////////////////
 import Robert_Hooke from './images/Robert_Hooke.jpg';
 import cells from './images/cells.jpg';
+import single_celled_organisms from './images/single-cell-organism.jpeg';
+import body_systems from './images/body_systems.jpg';
+import cell_division from './images/cell_division.jpg';
 
 const notes7_12F = props => {
         return (
@@ -45,6 +48,50 @@ const notes7_12F = props => {
                                 </div>
                                 <div className={cls.ImageContainer}>
                                         <img className={cls.Image} src={cells} alt="cells" />
+                                </div>
+                        </div>
+                        <div className={cls.NotesContainer}>
+                                <div className={cls.Notes}>
+                                        <p>
+                                                All observable life on Earth is composed of at least once
+                                                well. There is an incredible complexity of life, and living
+                                                things must carry out common process like obtaining energy,
+                                                processing that energy, carrying out cell division and getting
+                                                rid of wastes.
+                                        </p>
+                                </div>
+                                <div className={cls.ImageContainer}>
+                                        <img
+                                                className={cls.Image}
+                                                src={single_celled_organisms}
+                                                alt="single celled organism"
+                                        />
+                                </div>
+                        </div>
+                        <div className={cls.NotesContainer}>
+                                <div className={cls.ImageContainer}>
+                                        <img className={cls.Image} src={body_systems} alt="body systems" />
+                                </div>
+                                <div className={cls.Notes}>
+                                        <p>
+                                                Cells are the basic building blocks of life. We saw previously
+                                                that one cell can be the basis for an organism, but we can
+                                                also observe extremely complex organisms like ourselves made
+                                                up of many millions of cells. Each cell has its role and works
+                                                with other cells, tissues, organs, and organ systems.
+                                        </p>
+                                </div>
+                        </div>
+                        <div className={cls.NotesContainer}>
+                                <div className={cls.Notes}>
+                                        <p>
+                                                Some cells copy their DNA completely, then divide. Other times
+                                                cells may copy half their DNA and combine it with another
+                                                cell's DNA to create a new cell and new organism.
+                                        </p>
+                                </div>
+                                <div className={cls.ImageContainer}>
+                                        <img className={cls.Image} src={cell_division} alt="cell division" />
                                 </div>
                         </div>
                 </NotesTemplate>
