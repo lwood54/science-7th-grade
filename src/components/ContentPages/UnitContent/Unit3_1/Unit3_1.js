@@ -1,40 +1,23 @@
 import React from 'react';
 
-import Unit3_1Obj from './Unit3_1Obj';
-import NavigationBar from '../../../Navigation/NavigationBar/NavigationBar';
-import UnitPageTemplate from '../../../Templates/UnitPageTemplate/UnitPageTemplate';
+// import Unit3_1Obj from './Unit3_1Obj';
+// import UnitPageTemplate from '../../../Templates/UnitPageTemplate/UnitPageTemplate';
 
-const unit3_1 = props => {
-        // search for keys this way instead of hard coding array index because I may change that in the future.
-        const quizletLink = Unit3_1Obj.vertMenuItems
-                .map(item => {
-                        return item['Quizlet'];
-                })
-                .join('');
-        const gameLink = Unit3_1Obj.vertMenuItems
-                .map(item => {
-                        return item['Game'];
-                })
-                .join('');
-        const homeLink = Unit3_1Obj.vertMenuItems
-                .map(item => {
-                        return item['Home'];
-                })
-                .join('');
-        return (
-                <React.Fragment>
-                        <NavigationBar
-                                title={Unit3_1Obj.title}
-                                gameLink={gameLink}
-                                quizletLink={quizletLink}
-                                homeLink={homeLink}
-                                TEKSArray={Unit3_1Obj.TEKS}
-                        />
-                        <UnitPageTemplate {...Unit3_1Obj}>
-                                <p>Content coming soon!</p>
-                        </UnitPageTemplate>
-                </React.Fragment>
-        );
-};
+// import Notes14A from '../../TEKSContent/TEKS7_14A/Notes7_14A';
+// import Notes14B from '../../TEKSContent/TEKS7_14B/Notes7_14B';
+// import Notes14C from '../../TEKSContent/TEKS7_14C/Notes7_14C';
+
+// const unit3_1 = props => {
+//         return (
+//                 <UnitPageTemplate {...Unit3_1Obj}>
+//                         <Notes14A />
+//                         <Notes14B />
+//                         <Notes14C />
+//                 </UnitPageTemplate>
+//         );
+// };
+
+import ComingSoon from '../ComingSoon';
+const unit3_1 = () => <ComingSoon />;
 
 export default unit3_1;

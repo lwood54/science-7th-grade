@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "ef977b15eadbc0022c02",
+    "revision": "cff75285752b4ada2192",
     "url": "/static/css/main.50f6849e.chunk.css"
   },
   {
-    "revision": "ef977b15eadbc0022c02",
-    "url": "/static/js/main.ef977b15.chunk.js"
+    "revision": "cff75285752b4ada2192",
+    "url": "/static/js/main.cff75285.chunk.js"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.fdfcfda2.js"
   },
   {
-    "revision": "3b29fd10d9da2bba3a25",
-    "url": "/static/js/2.3b29fd10.chunk.js"
+    "revision": "0ed9e765f42e9848449c",
+    "url": "/static/js/2.0ed9e765.chunk.js"
   },
   {
     "revision": "4b3f9d345ce6ca54aa43e64673ce67f2",
@@ -150,10 +150,6 @@ self.__precacheManifest = [
   {
     "revision": "5c359f7aaac1fc40177fadea9a6965e9",
     "url": "/static/media/victory_royale.5c359f7a.gif"
-  },
-  {
-    "revision": "8633a3e6a7f9dbd8bd4771823a0dca60",
-    "url": "/static/media/dichot_leaves.8633a3e6.jpg"
   },
   {
     "revision": "0b6694b944f8ce4eac959a1c03f14257",
@@ -420,7 +416,7 @@ self.__precacheManifest = [
     "url": "/static/media/orbital_velocity.49cf0261.gif"
   },
   {
-    "revision": "8d8acbcb5e1f961ec1837322400b6cae",
+    "revision": "9ed5a495aefdccfbf48fd3ff5831635f",
     "url": "/index.html"
   }
 ];
