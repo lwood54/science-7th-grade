@@ -25,21 +25,6 @@ PATTERN
         box-shadow: 3px 4px 2px -3px gray;
 }
 
-/* .NotesWrapContainer {
-        width: 45%;
-        vertical-align: middle;
-        margin: 15px auto;
-        box-sizing: border-box;
-        box-shadow: 3px 4px 2px -3px gray;
-}
-
-.WrappedImage {
-        max-height: auto;
-        max-width: 30vh;
-        float: left;
-        margin: 0 10px;
-} */
-
 .ImageContainer,
 .FullImageContainer {
         width: 100%;
@@ -48,6 +33,15 @@ PATTERN
         /* margin: 10px; */
         /* transition: 1s; */
         /* border: 2px solid black; */
+        text-align: center;
+}
+
+.textOnly {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
         text-align: center;
 }
 
@@ -188,7 +182,8 @@ PATTERN
 
         p {
                 padding: 0 10px;
-                box-shadow: -3px 0 6px -5px #0d47a1; /* left vertical bar */
+                border-left: 2px solid #2745744f;
+                /* box-shadow: -3px 0 6px -5px #0d47a1;  left vertical bar */
         }
 
         .QuizButton {

@@ -6,6 +6,7 @@ import Obj7_8C from './Obj7_8C';
 import cls from '../../../Templates/NotesTemplate/NotesTemplate.module.css';
 
 //////////////////// PICTURE IMPORTS /////////////////////////////////
+import groundwater from './images/groundwater.png';
 
 const notes7_8C = props => {
         return (
@@ -15,7 +16,11 @@ const notes7_8C = props => {
                         teksQuiz={Obj7_8C.teksQuiz}
                         title={Obj7_8C.teksLabel}
                 >
-                        <h1>notes7_8C</h1>
+                        <div className={cls.NotesContainer}>
+                                <div className={cls.ImageContainer}>
+                                        <img className={cls.Image} src={groundwater} alt="groundwater" />
+                                </div>
+                        </div>
                 </NotesTemplate>
         );
 };
