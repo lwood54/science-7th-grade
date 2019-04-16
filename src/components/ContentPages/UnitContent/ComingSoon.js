@@ -45,6 +45,11 @@ const ComingSoon = () => {
                                                 Unit 5.2
                                         </Link>
                                 </Button>
+                                <Button variant="contained" color="primary" style={buttonStyle}>
+                                        <Link to="unit6_1" style={linkStyle}>
+                                                Unit 6.1
+                                        </Link>
+                                </Button>
                         </div>
                 </div>
         );

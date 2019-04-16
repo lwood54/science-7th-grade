@@ -11,6 +11,9 @@ import w_e_d from './images/w_e_d.jpg';
 import ice_wedging from './images/ice_wedging.jpg';
 import weathering from './images/weathering.jpg';
 import erosion from './images/erosion.jpg';
+import delta from './images/delta.jpg';
+import himalayan_mountains from './images/himalayan_mountains.jpg';
+import arbuckle_mountains from './images/arbuckle_mountains.jpg';
 
 const notes7_8B = props => {
         return (
@@ -56,6 +59,26 @@ const notes7_8B = props => {
                                 <em>Deposition</em> is what happens when agents of erosion run out of energy.
                                 It is the <em>"Drop It"</em> of our simple phrase. There are interesting and
                                 unique land formations that are created from deposition.
+                        </NoteCard>
+
+                        <NoteCard source={delta} alt="delta" imageDir="right">
+                                <em>Deltas</em> are formed when large amounts of sediment are dropped at at
+                                the mouth of a river where the kinetic energy runs out and the water dumps out
+                                into a larget body of water.
+                        </NoteCard>
+
+                        <NoteCard source={himalayan_mountains} alt="hemalayan mountains" imageDir="left">
+                                Younger mountains are much more jagged because they have faced the agents of
+                                weathering and erosion over time. These Himalayan Mountains began forming
+                                around 50 million years ago. That may sound like alot until we see the Arbucke
+                                Mountains.
+                        </NoteCard>
+
+                        <NoteCard source={arbuckle_mountains} alt="arbuckle mountains" imageDir="right">
+                                The Arbuckle Mountains found in Southern Oklahoma are not nearly as magnifcent
+                                and sharp as the Himalayan Mountains. But the Arbuckle Mountains are about 525
+                                millions years old! That is almost 10 times older than the Himalayan
+                                Mountains!
                         </NoteCard>
                 </NotesTemplate>
         );

@@ -37,12 +37,12 @@ PATTERN
 }
 
 .textOnly {
-        width: 100%;
+        padding: 10%;
+        margin: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-content: center;
-        text-align: center;
 }
 
 .QuizButtonContainer {

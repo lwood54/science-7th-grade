@@ -38,7 +38,9 @@ const NoteCard = props => {
         } else {
                 return (
                         <div className={cls.NotesContainer}>
-                                <div className={cls.textOnly}>{props.children}</div>
+                                <div className={cls.textOnly}>
+                                        <p>{props.children}</p>
+                                </div>
                         </div>
                 );
         }
