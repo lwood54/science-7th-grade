@@ -37,6 +37,45 @@ const obj7_8C = {
                                 { correct: 'An increase in runoff and erosion.' }
                         ],
                         image: require('./images/runoff.JPG')
+                },
+                {
+                        text: 'What must be true for the water table to remain at the same level?',
+                        answers: [
+                                {
+                                        wrong1:
+                                                'The rate of recharge must be greater than the rate of discharge.'
+                                },
+                                {
+                                        wrong2:
+                                                'The rate of discharge must be greater than the rate of recharge.'
+                                },
+                                {
+                                        wrong3:
+                                                'The water table will remain the same regardless of discharge rates.'
+                                },
+                                { correct: 'The rate of recharge must be the same as the rate of discharge.' }
+                        ],
+                        image: require('./images/water_table.png') // leave as an empty string if there is no image needed
+                },
+                {
+                        text:
+                                'Why is it better to allow increase the amount of water that soaks into the ground and becomes groundwater?',
+                        answers: [
+                                { wrong1: 'Because it makes the land swell up and become more useful.' },
+                                {
+                                        wrong2:
+                                                'Because it increases runoff and carries trash to one useful position.'
+                                },
+                                {
+                                        wrong3:
+                                                'Because lakes and rivers are too full, so we might as well store water underground.'
+                                },
+                                {
+                                        correct:
+                                                'Because increased groundwater means reduced erosion, cleaner water, and reduced runoff, which reduces contamination.'
+                                }
+                        ],
+                        image: require('') // leave as an empty string if there is no image needed
                 }
         ]
 };

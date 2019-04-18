@@ -36,6 +36,19 @@ const obj7_8B = {
                                 { correct: 'All of these choices increases erosion.' }
                         ],
                         image: ''
+                },
+                {
+                        text: 'Why would a faster moving river cause greater erosion?',
+                        answers: [
+                                {
+                                        wrong1:
+                                                'Because faster moving rivers are always more shallow, carrying more sediment.'
+                                },
+                                { wrong2: 'Faster moving rivers are always older.' },
+                                { wrong3: 'Slower moving rivers are always older.' },
+                                { correct: 'Faster moving rivers have more kinetic energy.' }
+                        ],
+                        image: require('./images/river.jpg')
                 }
         ]
 };
