@@ -16,7 +16,7 @@ const Transition = props => {
 };
 
 const NewGameTemplateB = props => {
-        console.log('NewGameTemplateB is RUNNING');
+        // console.log('NewGameTemplateB is RUNNING');
         const navHome = props.vertMenuItems[0]['Home'];
         const navUnit = props.vertMenuItems[1]['Unit Page'];
         const navGame = props.vertMenuItems[2]['Game'];

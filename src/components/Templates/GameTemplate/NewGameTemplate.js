@@ -16,7 +16,7 @@ const Transition = props => {
 };
 
 const NewGameTemplate = props => {
-        console.log('NewGameTemplate RENDERED');
+        // console.log('NewGameTemplate RENDERED');
         const navHome = props.vertMenuItems[0]['Home'];
         const navUnit = props.vertMenuItems[1]['Unit Page'];
         const navGame = props.vertMenuItems[2]['Game'];

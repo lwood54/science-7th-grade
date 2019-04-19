@@ -39,7 +39,7 @@ const NoteCard = props => {
                 return (
                         <div className={cls.NotesContainer}>
                                 <div className={cls.textOnly}>
-                                        <p>{props.children}</p>
+                                        <div>{props.children}</div>
                                 </div>
                         </div>
                 );

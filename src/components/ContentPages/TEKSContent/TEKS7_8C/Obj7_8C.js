@@ -59,7 +59,7 @@ const obj7_8C = {
                 },
                 {
                         text:
-                                'Why is it better to allow increase the amount of water that soaks into the ground and becomes groundwater?',
+                                'Why is it better to increase the amount of water that soaks into the ground and becomes groundwater?',
                         answers: [
                                 { wrong1: 'Because it makes the land swell up and become more useful.' },
                                 {
@@ -75,7 +75,7 @@ const obj7_8C = {
                                                 'Because increased groundwater means reduced erosion, cleaner water, and reduced runoff, which reduces contamination.'
                                 }
                         ],
-                        image: require('') // leave as an empty string if there is no image needed
+                        image: require('./images/groundwater.png') // leave as an empty string if there is no image needed
                 }
         ]
 };
