@@ -1,10 +1,10 @@
 ## When adding new unit content:
 
-- make sure to
-     - create the Notes.js file in the TEKS specific folder
-     - copy paste from previous Notes.js file, then update with new TEKS objects and export name and title\
-     - import the Notes.js file for whatever TEKS will be used into the Unit.js file
-     - wrap the Notes.js component with the <UnitPageTemplate>
+-   make sure to
+    -   create the Notes.js file in the TEKS specific folder
+    -   copy paste from previous Notes.js file, then update with new TEKS objects and export name and title\
+    -   import the Notes.js file for whatever TEKS will be used into the Unit.js file
+    -   wrap the Notes.js component with the <UnitPageTemplate>
 
 ## Notes.js blueprint:
 
@@ -53,3 +53,7 @@ questions: [
         }
 ]
 ```
+
+## Recirect for Netlify
+
+good resource: https://stackoverflow.com/questions/55990467/catch-all-redirect-for-create-react-app-in-netlify
